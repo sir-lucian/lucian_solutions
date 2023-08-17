@@ -1,0 +1,122 @@
+<article class="article col-lg mx-auto" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+
+    <div class="container my-3">
+
+        <!-- Article Title -->
+        <h2 itemprop="headline" class="h2 lang-thai fw-bold"><txp:title /></h2>
+        <!--meta name="title" content="Lucian Solutions - <txp:title />">
+        <meta property="og:title" content="Lucian Solutions - Blog | <txp:title />" />
+        <meta name="twitter:title" content="Lucian Solutions - Blog | <txp:title />" /-->
+
+        <!-- Article Description -->
+        <!--meta name="description" content="<txp:meta_description format="" />">
+        <meta property="og:description" content="<txp:meta_description format="" />" />
+        <meta name="twitter:description" content="<txp:meta_description format="" />" /-->
+
+        <!-- Article Date, Author, Categories -->
+        <p class="text-muted">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+            </svg>
+            <time datetime="<txp:posted format="iso8601" />" itemprop="datePublished">
+                <txp:posted />
+            </time>
+            <meta itemprop="dateModified" content="<txp:modified format="iso8601" />" />   
+
+        <br />
+            
+            <txp:meta_author />
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+            </svg>
+            <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <span itemprop="name">
+                    <txp:author this_section link class="text-decoration-none" />
+                </span>
+            </span>
+
+        <br />
+
+            <txp:meta_keywords />
+
+            <txp:if_article_category>
+                <h3 class="h5 text-muted lang-thai">Categories / ประเภท</h3>
+                <span itemprop="keywords">
+                    <txp:category_list categories='<txp:category1 />,<txp:category2 />' children="0" break=" " trim>
+                        <txp:category title link class="btn btn-outline-dark btn-sm"/>
+                    </txp:category_list>
+                </span>
+            </txp:if_article_category>
+        </p>
+
+        <div class="position-relative">
+            <p>
+                <a href="https://twitter.com/share?url=<txp:site_url trim="/" /><txp:page_url />" target="_blank" class="btn btn-info border-0 mb-1 me-1 text-white"  data-size="large" data-url="https://lucian.solutions" data-hashtags="lucianavenue" data-show-count="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                        <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                    </svg>
+                    Tweet
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=<txp:site_url trim="/" /><txp:page_url />" target="_blank" class=" btn btn-primary mb-1 me-1 border-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                    </svg>
+                    Share
+                </a>
+                <button class="btn btn-secondary mb-1 me-1 border-0" onclick="copyToClipboard('#article-link')">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
+                        <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
+                        <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/>
+                    </svg>
+                    Copy Link
+                </button>
+                <span id="article-link" class="d-none"><txp:site_url trim="/" /><txp:page_url /></span>
+            </p>
+            <div class="position-absolute p-3" style="left: 50%; position: fixed; transform: translate(-50%, 0px); z-index: 9999;">
+                <div class="toast align-items-center text-white bg-dark" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                        <div class="toast-body" style="flex: 1 1 0; min-width: 0;">
+                            Copied link to clipboard.
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Article Image (if any) -->
+        <txp:if_article_image>
+
+            <div class="p-0 position-relative">
+                <txp:article_image class="w-100 h-auto" style="aspect-ratio: 3/1; object-fit: cover; z-index: -1;" thumbnail="1" />
+                <div class="position-absolute top-0 start-0 w-100 h-100 img-card-gradient"></div>
+            </div>
+
+            <!-- Open Graph Article Image -->
+            <!--meta property="og:image" content="http://lucian.solutions/images/<txp:images limit="1"><txp:image_info type="id" />t<txp:image_info type="ext" /></txp:images>" />
+            <meta property="og:image:secure_url" content="<txp:images limit="1"><txp:image_url thumbnail /></txp:images>" />
+            <meta name="twitter:image" content="<txp:images limit="1"><txp:image_url thumbnail /></txp:images>" /-->
+
+        <txp:else />
+
+            <!--meta property="og:image" content="https://lucian.solutions/images/58t.jpg" />
+            <meta property="og:image:secure_url" content="https://lucian.solutions/images/58t.jpg" />
+            <meta name="twitter:image" content="https://lucian.solutions/images/58t.jpg" /-->
+                
+        </txp:if_article_image>
+
+        <div itemprop="articleBody" class="py-3">
+            <txp:body />
+        </div>
+
+    </div>
+
+    <!-- if this is an individual article then add the comments section via form: comments_display.article.txp -->
+    <txp:if_individual_article>
+        <!--txp:output_form form="comments_display" /-->
+    </txp:if_individual_article>
+
+</article>

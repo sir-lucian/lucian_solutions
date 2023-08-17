@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="<txp:lang />" dir="<txp:text item="lang_dir" />">
+
+<head>
+    <meta charset="utf-8">
+    <txp:output_form form="adsense-google" />
+    
+    <title><txp:page_title /></title>
+
+    <!-- Metadata -->
+
+    <txp:output_form form="open_graph_blog" />
+
+    <txp:if_search> <!-- Search result page -->
+        <meta name="robots" content="none">
+        <meta name="keywords" content="blog, <txp:search_term />"/>
+        <meta name="title" content="Lucian Solutions - Blog | <txp:search_term />">
+        <meta name="description" content="Where art and algorithms meet. Art commissions including emotes, illustrations, and Live2D models.">
+
+        <meta property="og:title" content="Lucian Solutions - Blog | <txp:search_term />" />
+        <meta property="og:url" content="<txp:site_url trim="/" /><txp:page_url />" />
+        <meta property="og:image" content="https://lucian.solutions/images/22t.jpg" />
+        <meta property="og:image:secure_url" content="https://lucian.solutions/images/22t.jpg" />
+        <meta property="og:description" content="Where art and algorithms meet. Art commissions including emotes, illustrations, and Live2D models." />
+
+        <meta name="twitter:title" content="Lucian Solutions - <txp:search_term />" />
+        <meta name="twitter:url" content="<txp:site_url />/blog/<txp:page_url />" />
+        <meta name="twitter:image" content="https://lucian.solutions/images/22t.jpg" />
+        <meta name="twitter:description" content="Where art and algorithms meet. Art commissions including emotes, illustrations, and Live2D models." />
+
+    <txp:else />
+        <txp:if_author> <!-- Author search page -->
+            <meta name="robots" content="noindex, follow">
+            <meta name="keywords" content="blog, <txp:author />"/>
+            <meta name="title" content="Lucian Solutions - Blog | <txp:author />">
+            <meta name="description" content="Where art and algorithms meet. Art commissions including emotes, illustrations, and Live2D models.">
+
+            <meta property="og:title" content="Lucian Solutions - Blog | <txp:author />" />
+            <meta property="og:url" content="<txp:site_url trim="/" /><txp:page_url />" />
+            <meta property="og:image" content="https://lucian.solutions/images/22t.jpg" />
+            <meta property="og:image:secure_url" content="https://lucian.solutions/images/22t.jpg" />
+            <meta property="og:description" content="Where art and algorithms meet. Art commissions including emotes, illustrations, and Live2D models." />
+
+            <meta name="twitter:title" content="Lucian Solutions - Blog | <txp:author />" />
+            <meta name="twitter:url" content="<txp:site_url trim="/" /><txp:page_url />" />
+            <meta name="twitter:image" content="https://lucian.solutions/images/22t.jpg" />
+            <meta name="twitter:description" content="Where art and algorithms meet. Art commissions including emotes, illustrations, and Live2D models." />
+
+        <txp:else />
+            <txp:if_category> <!-- Category Page -->
+                <meta name="robots" content="noindex, follow">
+                <meta name="keywords" content="blog, <txp:category title />"/>
+                <meta name="title" content="Lucian Solutions - Blog | <txp:category title />">
+                <meta name="description" content="Where art and algorithms meet. Art commissions including emotes, illustrations, and Live2D models.">
+
+                <meta property="og:title" content="Lucian Solutions - Blog | <txp:category title />" />
+                <meta property="og:url" content="<txp:site_url trim="/" /><txp:page_url />" />
+                <meta property="og:image" content="http://lucian.solutions/images/22t.jpg" />
+                <meta property="og:image:secure_url" content="https://lucian.solutions/images/22t.jpg" />
+                <meta property="og:description" content="Where art and algorithms meet. Art commissions including emotes, illustrations, and Live2D models." />
+
+                <meta name="twitter:title" content="Lucian Solutions - Blog | <txp:category title />" />
+                <meta name="twitter:url" content="<txp:site_url trim="/" /><txp:page_url />" />
+                <meta name="twitter:image" content="https://lucian.solutions/images/22t.jpg" />
+                <meta name="twitter:description" content="Where art and algorithms meet. Art commissions including emotes, illustrations, and Live2D models." />
+
+            <txp:else /> <!-- List Page & Article Page -->
+                <txp:variable name="page" value='<txp:page_url type="pg" />' />
+
+                <!-- If Single Article -->
+                <txp:if_individual_article>
+
+                    <!-- Article Title -->
+                    <meta name="title" content="Lucian Solutions - <txp:title />">
+                    <meta property="og:title" content="Lucian Solutions - Blog | <txp:title />" />
+                    <meta name="twitter:title" content="Lucian Solutions - Blog | <txp:title />" />
+
+                    <!-- Article Description -->
+                    <meta name="description" content="<txp:meta_description format="" />">
+                    <meta property="og:description" content="<txp:meta_description format="" />" />
+                    <meta name="twitter:description" content="<txp:meta_description format="" />" />
+
+                    <txp:if_article_image>
+
+                        <!-- Open Graph Article Image -->
+                        <meta property="og:image" content="http://lucian.solutions/images/<txp:images limit="1"><txp:image_info type="id" />t<txp:image_info type="ext" /></txp:images>" />
+                        <meta property="og:image:secure_url" content="<txp:images limit="1"><txp:image_url thumbnail /></txp:images>" />
+                        <meta name="twitter:image" content="<txp:images limit="1"><txp:image_url thumbnail /></txp:images>" />
+
+                    <txp:else />
+
+                        <meta property="og:image" content="https://lucian.solutions/images/58t.jpg" />
+                        <meta property="og:image:secure_url" content="https://lucian.solutions/images/58t.jpg" />
+                        <meta name="twitter:image" content="https://lucian.solutions/images/58t.jpg" />
+                
+                    </txp:if_article_image>
+
+                <!-- If List Page -->
+                <txp:else />
+
+                    <meta name="title" content="Lucian Solutions - Blog">
+                    <meta name="twitter:title" content="Lucian Solutions - Blog" />
+                    <meta property="og:title" content="Lucian Solutions - Blog" />
+
+                    <meta name="description" content="Where art and algorithms meet. Art commissions including emotes, illustrations, and Live2D models.">
+                    <meta name="twitter:description" content="Where art and algorithms meet. Art commissions including emotes, illustrations, and Live2D models." />
+                    <meta property="og:description" content="Where art and algorithms meet. Art commissions including emotes, illustrations, and Live2D models." />
+
+                    <meta property="og:image" content="https://lucian.solutions/images/58t.jpg" />
+                    <meta property="og:image:secure_url" content="https://lucian.solutions/images/58t.jpg" />
+                    <meta name="twitter:image" content="https://lucian.solutions/images/58t.jpg" /> 
+
+                <!-- End If -->
+                </txp:if_individual_article>
+
+                <txp:if_variable name="page" value="1">
+                    <meta name="robots" content="index, follow">
+                <txp:else />
+                    <meta name="robots" content="noindex, follow">
+                </txp:if_variable>
+
+                <txp:variable name="front-page" value="1" />
+            </txp:if_category>
+        </txp:if_author>
+    </txp:if_search>
+
+    <link rel="stylesheet" href="/themes/lucian-theme/styles/css/bootstrap.css">
+    <link rel="stylesheet" href="/themes/lucian-theme/styles/css/navbar.css">
+    <link rel="stylesheet" href="https://emoji-css.afeld.me/emoji.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <style>
+        a {
+            color: #D4AF37;
+            transition: 0.5s;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #EEDFAF;
+        }
+        .article-list {
+            transition: 0.5s;
+        }
+        .article-list:hover {
+            filter: brightness(80%) saturate(90%);
+        }
+        .ratio.ratio-16x9 {
+            background-color: rgba(0,0,0,0.5) !important;
+        }
+        .square-pix {
+            aspect-ratio: 1/1;
+        }
+        img.emoji {
+            height: 1em;
+            width: 1em;
+            margin: 0 .05em 0 .1em;
+            vertical-align: -0.1em;
+        }
+        .img-card-gradient {
+            display: inline-block;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.3) 100%); /* General */
+            background: -moz-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(0,0,0,0.3) 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.3))); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%,rgba(0,0,0,0.3) 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, rgba(0,0,0,0) 50%,rgba(0,0,0,0.3) 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, rgba(0,0,0,0) 50%,rgba(0,0,0,0.3) 100%); /* IE10+ */
+        }
+    </style>
+
+</head>
+
+<txp:if_variable name="front-page">
+    <body class="front-page" itemscope itemtype="https://schema.org/WebPage">
+<txp:else />
+    <txp:if_search>
+        <body class="search-page" itemscope itemtype="https://schema.org/SearchResultsPage">
+    <txp:else />
+        <body class="listing-page" itemscope itemtype="https://schema.org/CollectionPage">
+    </txp:if_search>
+</txp:if_variable>
+
+    <txp:output_form form="top_navbar" />
+
+    <div id="spacer" style="height: 65px;"></div>
+
+    <div id="comm-details" class="container-xl">
+
+        <div class="my-5 container-lg mx-auto px-3">
+            <h1 class="comm-details-title mb-3 text-center" id="top-comm">lucian.solutions/<a href="/blog/" class="text-decoration-none fw-bold">blog</a>/</h1>
+            <p class="blockquote-footer text-center">News & Announcement by <cite title="Lucian Solutions">Sir Lucian</cite></p>
+        </div>
+
+        <hr class="lucian-divider" />
+
+    <div class="wrapper">
+        <div class="container-lg">
+
+            <!-- Main content -->
+            <main id="main" aria-label="<txp:text item="main_content" />" itemscope itemtype="https://schema.org/Blog">
+
+                <!-- is this the search result page? also omits the pagination links below (uses pagination format within search_display.txp instead) -->
+                <txp:if_search>
+                    <div class="container-lg">
+                        <txp:output_form form="search_input" />
+                    </div>
+                    <txp:output_form form="search_display" />
+
+                <txp:else />
+                    <!-- else is this the front page? -->
+                    <txp:if_variable name="front-page">
+                        <txp:if_individual_article>
+                            <!-- Do nothing -->
+                        <txp:else />
+                            <div class="container-lg">
+                                <txp:output_form form="search_input" />
+                            </div>
+                        </txp:if_individual_article>
+                        <div class="row mx-auto my-4">
+                            <txp:article status="live" limit="12" />
+                        </div>
+
+                    <txp:else />
+                        <!-- else is this an article author list? -->
+                        <div class="container-lg">
+                            <txp:output_form form="search_input" />
+                        </div>
+                        <txp:if_author>
+                            <h1 class="h3 container-lg col mx-auto mb-3 lang-thai" itemprop="name">
+                                <span class="gold-highlight">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+                                    </svg>
+                                </span>
+                                <txp:author />
+                            </h1>
+                        <txp:else />
+                            <!-- else is this an article category list? -->
+                            <txp:if_category>
+                                <h1 class="h3 container-lg col mx-auto mb-3 lang-thai" itemprop="name">
+                                    <span class="gold-highlight">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                        </svg>
+                                    </span>
+                                    <txp:category title />
+                                </h1>
+                            </txp:if_category>
+                        </txp:if_author>
+                        <div class="row mx-auto my-4">
+                            <txp:article status="live" form="article_listing" limit="12" />
+                        </div>
+                    </txp:if_variable>
+
+                    <!-- add pagination links to foot of front page/author listings/category listings if there are more articles available -->
+                    <txp:evaluate test="newer,older">
+                        <nav class="paginator mb-3 text-center" aria-label="<txp:text item="page_nav" />">
+                            <txp:newer rel="prev">
+                                <button type="button" class="btn btn-sm btn-dark" title="<txp:text item='newer' />">
+                                    <i class="bi bi-caret-left-fill"></i>
+                                    Previous / ก่อนหน้า
+                                </button>
+                            </txp:newer>
+                            <txp:older rel="next">
+                                <button type="button" class="btn btn-sm btn-dark" title="<txp:text item='older' />">
+                                    Next / ต่อไป
+                                    <i class="bi bi-caret-right-fill"></i>
+                                </button>
+                            </txp:older>
+                        </nav>
+                    </txp:evaluate>
+                </txp:if_search>
+
+            </main>
+
+            <txp:output_form form="body_aside" />
+
+
+        </div> <!-- /.container -->
+    </div> <!-- /.wrapper -->
+
+    <txp:output_form form="bottom_footer" />
+
+    <script src="/themes/lucian-theme/styles/js/extended.js"></script>
+    <script src="/themes/lucian-theme/styles/js/bootstrap.min.js"></script>
+    <script src="/themes/lucian-theme/styles/js/lightbox.js"></script>
+    <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.nav').removeClass('affix');
+            }
+
+            pxlCount = $(document).scrollTop()/50;
+
+            if (1-$(document).scrollTop()/2000 > 0){
+                opacity = 1-$(document).scrollTop()/2000;
+            }
+            else {
+                opacity = 0;
+            }
+            $(".home").css({
+                "-webkit-filter": "blur("+pxlCount+"px) opacity("+opacity+")",
+                "-moz-filter": "blur("+pxlCount+"px) opacity("+opacity+")",
+                "filter": "blur("+pxlCount+"px) opacity("+opacity+")"
+            })
+        });
+
+        $(document).ready(function() {
+            $(window).scroll( function() {
+                $('.hideme').each( function(i) {
+                    var bottom_of_object = $(this).offset().top + 20;
+                    var bottom_of_window = $(window).scrollTop() + $(window).height();
+                    if( bottom_of_window > bottom_of_object ){
+                        $(this).fadeOut(1);
+                        $(this).addClass("visible");
+                        $(this).fadeIn(500);
+                    }
+                });
+            });
+        });
+
+        /*
+        $(window).onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                $('#backtotop').show();
+            }
+            else {
+                $('#backtotop').removeAttr("style").hide();;
+            }
+        };
+        */
+
+        $(document).ready(function(){
+            $("#page-title").fadeOut(1);
+            $("#page-title").removeClass("invisible");
+            $("#page-title").fadeIn(1000);
+        });
+
+        twemoji.parse(document.body);
+
+        function copyToClipboard(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            $temp.remove();
+            $(".toast").toast('show');
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<div class="col-lg-4 col-md-6 p-2">
+    <div class="article-list card border-0 p-0 bg-light h-100 shadow" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <txp:if_article_image>
+            <txp:images form="images_card_top" thumbnail />
+            <h4 class="lang-thai mx-3" itemprop="headline">
+                <b><txp:title /></b>
+            </h4>
+        <txp:else />
+            <div class="position-relative">
+                <txp:image id="58" class="card-img-top" thumbnail style="object-fit: cover; aspect-ratio: 2 / 1; height: auto;" loading="lazy" itemprop="url contentUrl" src="<txp:image_url link='0' />" />
+                <div class="position-absolute top-0 start-0 w-100 h-100 img-card-gradient"></div>
+            </div>
+            <h4 class="lang-thai mx-3 mt-3" itemprop="headline">
+                <b><txp:title /></b>
+            </h4>
+        </txp:if_article_image>
+    
+    
+        <!-- if the article has an excerpt, display that -->
+        <txp:if_excerpt>
+            <div class="mx-3" itemprop="description">
+                <txp:excerpt />
+            </div>
+        </txp:if_excerpt>
+    
+        <p class="footnote mx-3 text-muted mt-3 mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+            </svg>
+            <time datetime="<txp:posted format="iso8601" />" itemprop="datePublished">
+                <txp:posted />
+            </time>
+            <meta itemprop="dateModified" content="<txp:modified format="iso8601" />" />
+            <br />
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+            </svg>
+            <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <span itemprop="name">
+                    <txp:author />
+                </span>
+            </span>
+        </p>
+        <a href="<txp:permlink />" class="stretched-link" itemprop="url mainEntityOfPage" title="<txp:text item="read_more" />"></a>
+    
+        <div class="position-absolute bottom-0 start-0 p-3">
+            <div class="footnote text-muted">
+                <txp:if_article_category>
+                    <span itemprop="keywords">
+                        <txp:category_list categories='<txp:category1 />,<txp:category2 />' children="0" break=" " trim>
+                        <txp:category title link class="badge bg-dark text-decoration-none"/>
+                        </txp:category_list>
+                    </span>
+                </txp:if_article_category>
+            </div>
+        </div>
+    </div>
+</div>
