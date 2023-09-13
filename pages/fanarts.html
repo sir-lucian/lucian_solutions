@@ -33,6 +33,11 @@
         .charsheet-pix {
             aspect-ratio: 3/4;
         }
+
+        .artist-list::first-letter {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
     </style>
 
 </head>
@@ -105,17 +110,13 @@
                         $json = file_get_contents($url);
                         $contributors = json_decode($json);
 
-                        foreach ($contributors as $entry) {/*
-                        if (array_key_exists('slug', $entry)){
-                        echo '<a href="#'.strtolower($entry->artist).'"
-                            class="btn btn-sm btn-light m-1">'.$entry->artist.' <small
-                                lang="'.$entry->slug_lang.'">'.$entry->slug.'</small></a>';
+                        foreach ($contributors as $entry) {
+                            if (isset($entry->slug)) {
+                                echo '<a href="#'.strtolower($entry->artist).'" class="artist-list btn btn-sm btn-light m-1">'.$entry->artist.' <small lang="'.$entry->slug_lang.'">'.$entry->slug.'</small></a>';
+                            } else {
+                                echo '<a href="#'.strtolower($entry->artist).'" class="artist-list btn btn-sm btn-light m-1">'.$entry->artist.'</a>';
+                            }
                         }
-                        else {*/
-                        echo '<a href="#'.strtolower($entry->artist).'"
-                            class="btn btn-sm btn-light m-1">'.$entry->artist.'</a>';
-                        }
-
                     </txp:php>
                 </notextile>
             </div>
@@ -127,546 +128,37 @@
             </div>
             <hr class="lucian-divider" />
 
-            <h3 class="h5 my-1 gold-highlight" id="artbozzcast" itemprop="name">Artbozzcast</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/28.jpg" data-toggle="lightbox">
-                        <txp:image id="28" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
+            <notextile>
+                <txp:php>
+                    $url = 'https://raw.githubusercontent.com/lucidkarn/lucian_solutions/main/fanarts.json';
+                    $json = file_get_contents($url);
+                    $contributors = json_decode($json);
 
-            <h3 class="h5 my-1 gold-highlight" id="bavverissibaveras" itemprop="name">BavverissiBaveras</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/127.png" data-toggle="lightbox">
-                        <txp:image id="127" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="blinkychan_" itemprop="name">BlinkyChan_</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/110.png" data-toggle="lightbox">
-                        <txp:image id="110" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="blu3koi" itemprop="name">Blu3koi</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/26.png" data-toggle="lightbox">
-                        <txp:image id="26" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="cathna" itemprop="name">CathNa</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/27.jpg" data-toggle="lightbox">
-                        <txp:image id="27" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/29.jpg" data-toggle="lightbox">
-                        <txp:image id="29" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/34.png" data-toggle="lightbox">
-                        <txp:image id="34" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="ekb43" itemprop="name">EKB43</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/115.png" data-toggle="lightbox">
-                        <txp:image id="115" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="fateaura" itemprop="name">FateAura</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/122.png" data-toggle="lightbox">
-                        <txp:image id="122" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="feentalis" itemprop="name">Feentalis</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/40.png" data-toggle="lightbox">
-                        <txp:image id="40" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="fucomina" itemprop="name">FuCoMiNa</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/33.png" data-toggle="lightbox">
-                        <txp:image id="33" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="ichiibal_sage" itemprop="name">Ichiibal_Sage</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/156.gif" data-toggle="lightbox">
-                        <txp:image id="156" thumbnail="0" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="ipubpy" itemprop="name">IPubpy</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/107.png" data-toggle="lightbox">
-                        <txp:image id="107" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="kichxnnn_" itemprop="name">Kichxnnn_</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/109.png" data-toggle="lightbox">
-                        <txp:image id="109" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="kurahadol33" itemprop="name">Kurahadol33</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/45.png" data-toggle="lightbox">
-                        <txp:image id="45" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/54.png" data-toggle="lightbox">
-                        <txp:image id="54" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="laplistz" itemprop="name">Laplistz</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/53.png" data-toggle="lightbox">
-                        <txp:image id="53" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="lacie" itemprop="name">lacie.</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/118.png" data-toggle="lightbox">
-                        <txp:image id="118" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="leiikz" itemprop="name">Leiikz</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/135.png" data-toggle="lightbox">
-                        <txp:image id="135" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="linna_rin" itemprop="name">Linna_rin</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/32.png" data-toggle="lightbox">
-                        <txp:image id="32" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="lunyatic" itemprop="name">Lunyatic</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/37.jpg" data-toggle="lightbox">
-                        <txp:image id="37" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/113.png" data-toggle="lightbox">
-                        <txp:image id="113" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/124.png" data-toggle="lightbox">
-                        <txp:image id="124" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/139.png" data-toggle="lightbox">
-                        <txp:image id="139" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="momineko"><span itemprop="name">Momineko</span> <small
-                    class="lang-thai fs-6" lang="jp">もみねこ</small></h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/46.png" data-toggle="lightbox">
-                        <txp:image id="46" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/132.png" data-toggle="lightbox">
-                        <txp:image id="132" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/159.png" data-toggle="lightbox">
-                        <txp:image id="159" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="moramypop" itemprop="name">Moramypop</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/38.jpg" data-toggle="lightbox">
-                        <txp:image id="38" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/114.png" data-toggle="lightbox">
-                        <txp:image id="114" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="mung_mingz" itemprop="name">Mung_MingZ</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/119.png" data-toggle="lightbox">
-                        <txp:image id="119" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="papang_uvu" itemprop="name">Papang_uvu</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/120.png" data-toggle="lightbox">
-                        <txp:image id="120" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="poychan" itemprop="name">Poychan</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/57.png" data-toggle="lightbox">
-                        <txp:image id="57" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/157.png" data-toggle="lightbox">
-                        <txp:image id="157" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="sksysono"><span itemprop="name">SksySONO</span> <small
-                    class="lang-thai fs-6" lang="jp">葉月想乃</small></h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/51.png" data-toggle="lightbox">
-                        <txp:image id="51" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/133.png" data-toggle="lightbox">
-                        <txp:image id="133" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="stone" itemprop="name">Stone</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/50.jpg" data-toggle="lightbox">
-                        <txp:image id="50" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="sylver_cat" itemprop="name">Sylver_Cat</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/31.png" data-toggle="lightbox">
-                        <txp:image id="31" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/44.png" data-toggle="lightbox">
-                        <txp:image id="44" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="tarvila_a" itemprop="name">Tarvila_a</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/55.png" data-toggle="lightbox">
-                        <txp:image id="55" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="unpaca" itemprop="name">Unpaca</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/47.png" data-toggle="lightbox">
-                        <txp:image id="47" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/48.png" data-toggle="lightbox">
-                        <txp:image id="48" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="yoru_0_0" itemprop="name">Yoru_0_0</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/134.png" data-toggle="lightbox">
-                        <txp:image id="134" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/153.png" data-toggle="lightbox">
-                        <txp:image id="153" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/166.png" data-toggle="lightbox">
-                        <txp:image id="166" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="yuuii_62" itemprop="name">yuuii_62</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/35.png" data-toggle="lightbox">
-                        <txp:image id="35" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/41.png" data-toggle="lightbox">
-                        <txp:image id="41" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/131.png" data-toggle="lightbox">
-                        <txp:image id="131" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/142.png" data-toggle="lightbox">
-                        <txp:image id="142" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="zantaneko" itemprop="name">Zantaneko</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/165.png" data-toggle="lightbox">
-                        <txp:image id="165" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
-
-            <h3 class="h5 my-1 gold-highlight" id="zaru_no" itemprop="name">zaru no.</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/30.png" data-toggle="lightbox">
-                        <txp:image id="30" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/36.jpg" data-toggle="lightbox">
-                        <txp:image id="36" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/39.png" data-toggle="lightbox">
-                        <txp:image id="39" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/49.png" data-toggle="lightbox">
-                        <txp:image id="49" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/52.png" data-toggle="lightbox">
-                        <txp:image id="52" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/126.png" data-toggle="lightbox">
-                        <txp:image id="126" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/140.png" data-toggle="lightbox">
-                        <txp:image id="140" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-
-            <h3 class="h5 my-1 gold-highlight" id="zzmonny" itemprop="name">zzMonnY</h3>
-            <div
-                class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">
-                <div class="col-4-md col-2-sm align-middle position-relative pt-4">
-                    <a href="/images/164.png" data-toggle="lightbox">
-                        <txp:image id="164" thumbnail="1" class="img-fluid shadow-sm h-100 lucian-showcase square-pix"
-                            loading="lazy" />
-                    </a>
-                </div>
-            </div>
-            <hr class="lucian-divider" />
+                    foreach ($contributors as $entry) {
+                        /* Title */
+                        if (isset($entry->slug)) {
+                            echo '<h3 class="h5 my-1 gold-highlight" id="'.strtolower($entry->artist).'"><span itemprop="name">'.$entry->artist.'</span> <small class="lang-thai fs-6" lang="'.$entry->slug_lang.'">'.$entry->slug_lang.'">'.$entry->slug.'</small></h3>';
+                        } else {
+                            echo '<h3 class="h5 my-1 gold-highlight" id="'.strtolower($entry->artist).'" itemprop="name">'.$entry->artist.'</h3>';
+                        }
+                    
+                        /* Container */
+                        echo '<div class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">';
+                    
+                        /* Artworks */
+                        foreach ($entry->art as $artpiece) {
+                            if ($artpiece->ext == 'gif') {
+                                echo '<div class="col-4-md col-2-sm align-middle position-relative pt-4"><a href="/images/'.$artpiece->id.'.'.$artpiece->ext.'" data-toggle="lightbox"><txp:image id="'.$artpiece->id.'" class="img-fluid shadow-sm h-100 lucian-showcase square-pix" loading="lazy" /></a></div>';
+                            } else {
+                                echo '<div class="col-4-md col-2-sm align-middle position-relative pt-4"><a href="/images/'.$artpiece->id.'.'.$artpiece->ext.'" data-toggle="lightbox"><txp:image id="'.$artpiece->id.'" thumbnail class="img-fluid shadow-sm h-100 lucian-showcase square-pix" loading="lazy" /></a></div>';
+                            }
+                        }
+                    
+                        /* End of Container */
+                        echo '</div><hr class="lucian-divider" />';
+                    }
+                </txp:php>
+            </notextile>
 
         </div>
 
