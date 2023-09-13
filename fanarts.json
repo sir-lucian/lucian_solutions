@@ -1,239 +1,250 @@
-{
-    "contributors" : [
-        {
-            "artist" : "Artbozzcast",
-            "art" : [
-                {
-                    "id" : 28,
-                    "ext" : "jpg"
-                }
-            ]
-        },
-        {
-            "artist" : "Bisolte",
-            "art" : [
-                {
-                    "id" : 127,
-                    "ext" : "png"
-                }
-            ]
-        },
-        {
-            "artist" : "Blinkychan_",
-            "art" : [
-                {
-                    "id" : 110,
-                    "ext" : "png"
-                }
-            ]
-        },
-        {
-            "artist" : "Blu3koi",
-            "art" : [
-                {
-                    "id" : 26,
-                    "ext" : "png"
-                }
-            ]
-        },
-        {
-            "artist" : "CathNa",
-            "art" : [
-                {
-                    "id" : 27,
-                    "ext" : "png"
-                },
-                {
-                    "id" : 29,
-                    "ext" : "jpg"
-                },
-                {
-                    "id" : 34,
-                    "ext" : "png"
-                }
-            ]
-        },
-        {
-            "artist" : "EKB43",
-            "art" : [
-                {
-                    "id" : 115,
-                    "ext" : "png"
-                }
-            ]
-        },
-        {
-            "artist" : "FateAura",
-            "art" : [
-                {
-                    "id" : 122,
-                    "ext" : "png"
-                }
-            ]
-        },
-        {
-            "artist" : "Feentalis",
-            "art" : [
-                {
-                    "id" : 40,
-                    "ext" : "png"
-                }
-            ]
-        },
-        {
-            "artist" : "FuCoMiNa",
-            "art" : [
-                {
-                    "id" : 33,
-                    "ext" : "png"
-                }
-            ]
-        },
-        {
-            "artist" : "Ichiibal_Sage",
-            "art" : [
-                {
-                    "id" : 156,
-                    "ext" : "gif"
-                }
-            ]
-        },
-        {
-            "artist" : "IPubpy",
-            "art" : [
-                {
-                    "id" : 107,
-                    "ext" : "png"
-                }
-            ]
-        },
-        {
-            "artist" : "Kichxnnn_",
-            "art" : [
-                {
-                    "id" : 109,
-                    "ext" : "png"
-                }
-            ]
-        },
-        {
-            "artist" : "Kurahadol33",
-            "art" : [
-                {
-                    "id" : 45,
-                    "ext" : "png"
-                },
-                {
-                    "id" : 54,
-                    "ext" : "png"
-                }
-            ]
-        },
-        {
-            "artist" : "Laplistz",
-            "art" : [
-                {
-                    "id" : 53,
-                    "ext" : "png"
-                }
-            ]
-        },
-        {
-            "artist" : "lacie.",
-            "art" : [
-                {
-                    "id" : 118,
-                    "ext" : "png"
-                }
-            ]
-        },
-        {
-            "artist" : "Leiikz",
-            "art" : [
-                {
-                    "id" : 135,
-                    "ext" : "png"
-                }
-            ]
-        },
-        {
-            "artist" : "Linna_rin",
-            "art" : [
-                {
-                    "id" : 32,
-                    "ext" : "png"
-                }
-            ]
-        },
-        {
-            "artist" : "Lunyatic",
-            "art" : [
-                {
-                    "id" : 37,
-                    "ext" : "jpg"
-                },
-                {
-                    "id" : 113,
-                    "ext" : "png"
-                },
-                {
-                    "id" : 124,
-                    "ext" : "png"
-                },
-                {
-                    "id" : 139,
-                    "ext" : "png"
-                }
-            ]
-        },
-        {
-            "artist" : "Momineko",
-            "slug" : "もみねこ",
-            "art" : [
-                {
-                    "id" : 46,
-                    "ext" : "png"
-                },
-                {
-                    "id" : 132,
-                    "ext" : "png"
-                },
-                {
-                    "id" : 159,
-                    "ext" : "png"
-                }
-            ]
-        },
-        {
-            "artist" : "Moramypop",
-            "art" : [
-                {
-                    "id" : 38,
-                    "ext" : "jpg"
-                },
-                {
-                    "id" : 114,
-                    "ext" : "png"
-                }
-            ]
-        },
-        {
-            "artist" : "Mung_MingZ",
-            "art" : [
-                {
-                    "id" : 119,
-                    "ext" : "png"
-                }
-            ]
-        },
-        {
-            "artist" : "Papang_uvu",
-            "art" : [
-                {
-                    "id" : 120,
-                    "ext" : "png"
-                }
-            ]
-        }
-    ]
-}
+[
+    {
+        "artist": "Artbozzcast",
+        "art": [
+            {
+                "id": 28,
+                "ext": "jpg"
+            }
+        ]
+    },
+    {
+        "artist": "Bisolte",
+        "art": [
+            {
+                "id": 127,
+                "ext": "png"
+            }
+        ]
+    },
+    {
+        "artist": "Blinkychan_",
+        "art": [
+            {
+                "id": 110,
+                "ext": "png"
+            }
+        ]
+    },
+    {
+        "artist": "Blu3koi",
+        "art": [
+            {
+                "id": 26,
+                "ext": "png"
+            }
+        ]
+    },
+    {
+        "artist": "CathNa",
+        "art": [
+            {
+                "id": 27,
+                "ext": "png"
+            },
+            {
+                "id": 29,
+                "ext": "jpg"
+            },
+            {
+                "id": 34,
+                "ext": "png"
+            }
+        ]
+    },
+    {
+        "artist": "EKB43",
+        "art": [
+            {
+                "id": 115,
+                "ext": "png"
+            }
+        ]
+    },
+    {
+        "artist": "FateAura",
+        "art": [
+            {
+                "id": 122,
+                "ext": "png"
+            }
+        ]
+    },
+    {
+        "artist": "Feentalis",
+        "art": [
+            {
+                "id": 40,
+                "ext": "png"
+            }
+        ]
+    },
+    {
+        "artist": "FuCoMiNa",
+        "art": [
+            {
+                "id": 33,
+                "ext": "png"
+            }
+        ]
+    },
+    {
+        "artist": "Ichiibal_Sage",
+        "art": [
+            {
+                "id": 156,
+                "ext": "gif"
+            }
+        ]
+    },
+    {
+        "artist": "IPubpy",
+        "art": [
+            {
+                "id": 107,
+                "ext": "png"
+            }
+        ]
+    },
+    {
+        "artist": "Kichxnnn_",
+        "art": [
+            {
+                "id": 109,
+                "ext": "png"
+            }
+        ]
+    },
+    {
+        "artist": "Kurahadol33",
+        "art": [
+            {
+                "id": 45,
+                "ext": "png"
+            },
+            {
+                "id": 54,
+                "ext": "png"
+            }
+        ]
+    },
+    {
+        "artist": "Laplistz",
+        "art": [
+            {
+                "id": 53,
+                "ext": "png"
+            }
+        ]
+    },
+    {
+        "artist": "lacie.",
+        "art": [
+            {
+                "id": 118,
+                "ext": "png"
+            }
+        ]
+    },
+    {
+        "artist": "Leiikz",
+        "art": [
+            {
+                "id": 135,
+                "ext": "png"
+            }
+        ]
+    },
+    {
+        "artist": "Linna_rin",
+        "art": [
+            {
+                "id": 32,
+                "ext": "png"
+            }
+        ]
+    },
+    {
+        "artist": "Lunyatic",
+        "art": [
+            {
+                "id": 37,
+                "ext": "jpg"
+            },
+            {
+                "id": 113,
+                "ext": "png"
+            },
+            {
+                "id": 124,
+                "ext": "png"
+            },
+            {
+                "id": 139,
+                "ext": "png"
+            }
+        ]
+    },
+    {
+        "artist": "Momineko",
+        "slug": "もみねこ",
+        "art": [
+            {
+                "id": 46,
+                "ext": "png"
+            },
+            {
+                "id": 132,
+                "ext": "png"
+            },
+            {
+                "id": 159,
+                "ext": "png"
+            }
+        ]
+    },
+    {
+        "artist": "Moramypop",
+        "art": [
+            {
+                "id": 38,
+                "ext": "jpg"
+            },
+            {
+                "id": 114,
+                "ext": "png"
+            }
+        ]
+    },
+    {
+        "artist": "Mung_MingZ",
+        "art": [
+            {
+                "id": 119,
+                "ext": "png"
+            }
+        ]
+    },
+    {
+        "artist": "Papang_uvu",
+        "art": [
+            {
+                "id": 120,
+                "ext": "png"
+            }
+        ]
+    },
+    {
+        "artist": "Poychan",
+        "art": [
+            {
+                "id": 57,
+                "ext": "png"
+            },
+            {
+                "id": 157,
+                "ext": "png"
+            }
+        ]
+    }
+]
