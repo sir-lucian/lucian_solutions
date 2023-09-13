@@ -33,11 +33,6 @@
         .charsheet-pix {
             aspect-ratio: 3/4;
         }
-
-        .artist-list::first-letter {
-            font-weight: bold;
-            font-size: 1.2em;
-        }
     </style>
 
 </head>
@@ -103,8 +98,8 @@
             <h2 class="comm-details-title mt-5" id="fanarts">Fanarts</h2>
             <h3 class="h5 mb-3 lang-thai">Contributors <small lang="th">ผู้สนับสนุน</small></h3>
 
-            <div class="text-center my-3 p-3">
-                <notextile>
+            <notextile>
+                <div class="text-center my-3 p-3">
                     <txp:php>
                         $url = 'https://raw.githubusercontent.com/lucidkarn/lucian_solutions/main/fanarts.json';
                         $json = file_get_contents($url);
@@ -112,14 +107,14 @@
 
                         foreach ($contributors as $entry) {
                             if (isset($entry->slug)) {
-                                echo '<a href="#'.strtolower($entry->artist).'" class="artist-list btn btn-sm btn-light m-1">'.$entry->artist.' <small lang="'.$entry->slug_lang.'">'.$entry->slug.'</small></a>';
+                                echo '<a href="#'.strtolower($entry->artist).'" class="artist-list btn btn-sm btn-light px-2 m-1">'.$entry->artist.' <small lang="'.$entry->slug_lang.'">'.$entry->slug.'</small></a>';
                             } else {
-                                echo '<a href="#'.strtolower($entry->artist).'" class="artist-list btn btn-sm btn-light m-1">'.$entry->artist.'</a>';
+                                echo '<a href="#'.strtolower($entry->artist).'" class="artist-list btn btn-sm btn-light px-2 m-1">'.$entry->artist.'</a>';
                             }
                         }
                     </txp:php>
-                </notextile>
-            </div>
+                </div>
+            </notextile>
 
             <hr class="lucian-divider" />
 

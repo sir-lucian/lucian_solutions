@@ -1,0 +1,90 @@
+[
+    {
+        "name": "Boyd TheRhythm",
+        "sub": "Kawachiboy14",
+        "lang": "en",
+        "picture": "150",
+        "badges": ["Lucian Solutions", "Streamer"],
+        "socials": {
+            "x": "https://x.com/kawachiboy14",
+            "twitch": "https://www.twitch.tv/kawachiboy14",
+            "youtube": "https://www.youtube.com/@BoydTR"
+        }   
+    },
+    {
+        "name": "Heroter",
+        "picture": "147",
+        "badges": ["Lucian Solutions", "Streamer"],
+        "socials": {
+            "twitch": "https://www.twitch.tv/heroter"
+        }   
+    },
+    {
+        "name": "InoOsaN",
+        "picture": "151",
+        "badges": ["Lucian Solutions", "Streamer", "Sound Engineer"],
+        "socials": {
+            "x": "https://x.com/inoosan1",
+            "twitch": "https://www.twitch.tv/inoosan",
+            "youtube": "https://www.youtube.com/@InoOsaN"
+        }   
+    },
+    {
+        "name": "thanik",
+        "picture": "146",
+        "badges": ["Lucian Solutions", "Streamer", "Developer"],
+        "socials": {
+            "x": "https://x.com/thanik",
+            "twitch": "https://www.twitch.tv/thanik5",
+            "github": "https://github.com/thanik"
+        }   
+    },
+    {
+        "name": "ThePopup",
+        "picture": "148",
+        "badges": ["Lucian Solutions", "Streamer"],
+        "socials": {
+            "x": "https://x.com/thepopup",
+            "twitch": "https://www.twitch.tv/thepopup"
+        }   
+    },
+    {
+        "name": "Lunyatic",
+        "picture": "20",
+        "badges": ["Artist", "Streamer"],
+        "socials": {
+            "facebook": "https://www.facebook.com/lunyatic.art/",
+            "instagram": "https://www.instagram.com/lunyatic_art/",
+            "x": "https://x.com/lunyatic_art",
+            "twitch": "https://www.twitch.tv/lunyatic",
+            "youtube": "https://www.youtube.com/@lunyatic"
+        },
+        "links": [
+            {
+                "title": "Commission Info",
+                "url": "https://lunyatic-en.carrd.co/"
+            },
+            {
+                "title": "Arbum",
+                "url": "https://arbum.art/u/Lunyatic"
+            }
+        ]
+    },
+    {
+        "name": "Momineko",
+        "sub": "もみねこ",
+        "lang": "jp",
+        "picture": "149",
+        "badges": ["Artist", "Streamer"],
+        "socials": {
+            "x": "https://x.com/mominyako",
+            "twitch": "https://www.twitch.tv/momineko"
+        },
+        "links": [
+            {
+                "title": "Arbum",
+                "url": "https://arbum.art/u/momineko"
+            }
+        ]
+    }
+]

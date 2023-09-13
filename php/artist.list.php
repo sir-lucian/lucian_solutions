@@ -6,8 +6,8 @@ $contributors = json_decode($json);
 
 foreach ($contributors as $entry) {
     if (isset($entry->slug)) {
-        echo '<a href="#'.strtolower($entry->artist).'" class="artist-list btn btn-sm btn-light m-1">'.$entry->artist.' <small lang="'.$entry->slug_lang.'">'.$entry->slug.'</small></a>';
+        echo '<a href="#'.strtolower($entry->artist).'" class="artist-list btn btn-sm btn-light px-2 m-1">'.$entry->artist.' <small lang="'.$entry->slug_lang.'">'.$entry->slug.'</small></a>';
     } else {
-        echo '<a href="#'.strtolower($entry->artist).'" class="artist-list btn btn-sm btn-light m-1">'.$entry->artist.'</a>';
+        echo '<a href="#'.strtolower($entry->artist).'" class="artist-list btn btn-sm btn-light px-2 m-1">'.$entry->artist.'</a>';
     }
 }
