@@ -1,7 +1,7 @@
 <?php
 
 /* Badges */
-define('badgeLS', '<span class="badge bg-primary text-white">Lucian Solutions</span> ');
+define('badgeLS', '<span class="badge bg-warning">Lucian Solutions</span> ');
 define('badgeStream', '<span class="badge bg-danger text-white">Streamer</span> ');
 define('badgeOther', ['<span class="badge bg-dark text-white">', '</span> ']);
 
@@ -38,6 +38,20 @@ foreach ($neighbours as $neighbour) {
     }
 
     /* Badge */
+    if (isset($neighbour->badges)) {
+        echo '<p>';
+        $badgeContainer = '';
+        foreach ($neighbour->$badges as $badge) {
+            if ($badge == 'Lucian Solutions') {
+                $badgeContainer .= badgeLS;
+            } elseif ($badge == 'Streamer') {
+                $badgeContainer .= badgeStream;
+            } else {
+                $badgeContainer .= badgeOther[0].$badge.badgeOther[1];
+            }
+        }
+        echo rtrim($badgeContainer).'</p>';
+    }
 
     /* Socials */
     if (isset($neighbour->socials)) {
@@ -45,8 +59,33 @@ foreach ($neighbours as $neighbour) {
         if (isset($neighbour->socials->facebook)) {
             echo iconButton.$neighbour->socials->facebook.iconFB;
         }
+        if (isset($neighbour->socials->instagram)) {
+            echo iconButton.$neighbour->socials->instagram.iconIG;
+        }
         if (isset($neighbour->socials->x)) {
             echo iconButton.$neighbour->socials->x.iconX;
         }
+        if (isset($neighbour->socials->fedi)) {
+            echo iconButton.$neighbour->socials->fedi.iconFedi;
+        }
+        if (isset($neighbour->socials->youtube)) {
+            echo iconButton.$neighbour->socials->youtube.iconYT;
+        }
+        if (isset($neighbour->socials->twitch)) {
+            echo iconButton.$neighbour->socials->twitch.iconTTV;
+        }
+        if (isset($neighbour->socials->github)) {
+            echo iconButton.$neighbour->socials->github.iconGH;
+        }
+        echo '</p>';
+    }
+
+    /* Links */
+    if (isset($neighbour->links)) {
+        echo '<p>';
+        foreach ($neighbour->links as $link) {
+            echo iconButton.$link->url.iconLink[0].$link->title.iconLink[1];
+        }
+        echo '</p>';
     }
 }
