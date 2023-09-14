@@ -113,5 +113,95 @@
                 "url": "https://neonsten.carrd.co/"
             }
         ]
+    },
+    {
+        "name": "Poychan",
+        "picture": "56",
+        "badges": ["Artist", "Streamer"],
+        "socials": {
+            "facebook": "https://www.facebook.com/Poychan8/",
+            "x": "https://x.com/poychanart",
+            "instagram": "https://www.instagram.com/poychanart/",
+            "twitch": "https://www.twitch.tv/poychan"
+        },
+        "links": [
+            {
+                "title": "Commission Info",
+                "url": "https://poychan.carrd.co/"
+            },
+            {
+                "title": "Arbum",
+                "url": "https://arbum.art/u/Poychan"
+            }
+        ]
+    },
+    {
+        "name": "SAISUD Studio",
+        "sub": "ทีมพากย์ใส่สุด",
+        "lang": "th",
+        "picture": "152",
+        "badges": ["Voiceover"],
+        "socials": {
+            "facebook": "https://www.facebook.com/SAISUDSTUDIO",
+            "youtube": "https://www.youtube.com/@SAISUD"
+        }
+    },
+    {
+        "name": "SksySONO",
+        "sub": "葉月想乃",
+        "lang": "jp",
+        "picture": "137",
+        "badges": ["Artist", "Streamer"],
+        "socials": {
+            "facebook": "https://www.facebook.com/SkSySONO",
+            "x": "https://x.com/SkSySono",
+            "twitch": "https://www.twitch.tv/sksysono"
+        },
+        "links": [
+            {
+                "title": "Commission Info",
+                "url": "https://sksysono.carrd.co/"
+            },
+            {
+                "title": "Arbum",
+                "url": "https://arbum.art/u/SkSySONO/"
+            },
+            {
+                "title": "Pixiv",
+                "url": "https://www.pixiv.net/users/4557928"
+            }
+        ]
+    },
+    {
+        "name": "Yukimi Satsuki",
+        "sub": "皐月ゆきみ",
+        "lang": "jp",
+        "picture": "143",
+        "badges": ["Artist", "Streamer"],
+        "socials": {
+            "x": "https://x.com/satsukiyukimi",
+            "youtube": "https://www.youtube.com/@satsukiyukimi"
+        },
+        "links": [
+
+            {
+                "title": "skeb",
+                "url": "http://skeb.jp/@satsukiyukimi"
+            },
+            {
+                "title": "Pixiv FANBOX",
+                "url": "https://satsukiyukimi.fanbox.cc/"
+            }
+        ]
+    },
+    {
+        "name": "zaru no.",
+        "picture": "21",
+        "badges": ["Artist", "Streamer"],
+        "socials": {
+            "x": "https://x.com/ZaruNo_21",
+            "instagram": "https://www.instagram.com/zaru_no._art/",
+            "twitch": "https://www.twitch.tv/zaru_no21"
+        }
     }
 ]
