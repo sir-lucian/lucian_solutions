@@ -30,6 +30,17 @@
         }   
     },
     {
+        "name": "KindnessNumberSix",
+        "picture": "145",
+        "badges": ["Lucian Solutions", "Streamer"],
+        "socials": {
+            "facebook": "https://www.facebook.com/KindnessNo6",
+            "x": "https://x.com/KindnessNumber6",
+            "twitch": "https://www.twitch.tv/kindnessnumbersix",
+            "youtube": "https://www.youtube.com/@KindnessNumberSix"
+        }   
+    },
+    {
         "name": "thanik",
         "picture": "146",
         "badges": ["Lucian Solutions", "Streamer", "Developer"],
@@ -84,6 +95,22 @@
             {
                 "title": "Arbum",
                 "url": "https://arbum.art/u/momineko"
+            }
+        ]
+    },
+    {
+        "name": "Neonsten",
+        "picture": "138",
+        "badges": ["Artist", "Streamer"],
+        "socials": {
+            "x": "https://x.com/neonsten",
+            "twitch": "https://www.twitch.tv/neonsten",
+            "youtube": "https://www.youtube.com/@neonsten5626"
+        },
+        "links": [
+            {
+                "title": "Commission Info",
+                "url": "https://neonsten.carrd.co/"
             }
         ]
     }
