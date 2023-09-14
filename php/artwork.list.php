@@ -7,9 +7,9 @@ $contributors = json_decode($json);
 foreach ($contributors as $entry) {
     /* Title */
     if (isset($entry->slug)) {
-        echo '<h3 class="h5 my-1 gold-highlight" id="'.strtolower($entry->artist).'"><span itemprop="name">'.$entry->artist.'</span> <small class="lang-thai fs-6" lang="'.$entry->slug_lang.'">'.$entry->slug.'</small></h3>';
+        echo '<h3 class="h5 my-1 gold-highlight" id="'.preg_replace('/\s+/', '_', strtolower($entry->artist)).'"><span itemprop="name">'.$entry->artist.'</span> <small class="lang-thai fs-6" lang="'.$entry->slug_lang.'">'.$entry->slug.'</small></h3>';
     } else {
-        echo '<h3 class="h5 my-1 gold-highlight" id="'.strtolower($entry->artist).'" itemprop="name">'.$entry->artist.'</h3>';
+        echo '<h3 class="h5 my-1 gold-highlight" id="'.preg_replace('/\s+/', '_', strtolower($entry->artist)).'" itemprop="name">'.$entry->artist.'</h3>';
     }
 
     /* Container */
