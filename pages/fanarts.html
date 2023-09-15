@@ -20,18 +20,50 @@
 
     <link rel="stylesheet" href="/themes/lucian-theme/styles/css/bootstrap.css">
     <link rel="stylesheet" href="/themes/lucian-theme/styles/css/navbar.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 
     <style>
         .ratio.ratio-16x9 {
             background-color: rgba(0, 0, 0, 0.5) !important;
         }
-
+    
         .square-pix {
             aspect-ratio: 1/1;
         }
-
+    
         .charsheet-pix {
             aspect-ratio: 3/4;
+        }
+    
+        .gallery-pic {
+            transition: 0.5s;
+        }
+    
+        .gallery-pic:hover {
+            filter: brightness(70%);
+            background-color: rgba(0, 0, 0, 0.3);
+            -webkit-filter: brightness(70%);
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            -ms-transition: all 1s ease;
+            transition: all 1s ease;
+        }
+    
+        .img-card-gradient {
+            display: inline-block;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.2) 100%);
+            /* General */
+            background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.2) 100%);
+            /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.2)));
+            /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.2) 100%);
+            /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.2) 100%);
+            /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.2) 100%);
+            /* IE10+ */
         }
     </style>
 
@@ -99,20 +131,20 @@
             <h3 class="h5 mb-3 lang-thai">Contributors <small lang="th">ผู้สนับสนุน</small></h3>
 
             <notextile>
-                <div class="d-flex flex-wrap justify-content-center position-relative">
+                <div class="d-flex flex-wrap justify-content-start position-relative">
                     <txp:php>
                         $url = 'https://raw.githubusercontent.com/lucidkarn/lucian_solutions/main/fanarts.json';
                         $json = file_get_contents($url);
                         $contributors = json_decode($json);
 
                         foreach ($contributors as $entry) {
-                            echo '<a href="#'.preg_replace('/\s+/', '_', strtolower($entry->artist)).'" class="artist-list btn btn-sm btn-light px-2 m-1">';
-                            echo '<strong style="color: #d4af37;">#</strong> '.$entry->artist;
+                            echo '<div class="col-lg-2 col-md-3 col-sm-4 col-6 p-1"><a href="#'.preg_replace('/\s+/', '_', strtolower($entry->artist)).'" class="artist-list border-0 btn btn-sm btn-outline-dark w-100 h-100 px-2 text-start">';
+                            echo '<i class="bi bi-person-fill me-2" style="color: #d4af37;"></i>'.$entry->artist;
                             if (isset($entry->slug)) {
                                 echo ' <small lang="'.$entry->slug_lang.'">'.$entry->slug.'</small>';
                             }
-                            echo '</a>';
-                        }                     
+                            echo '</a></div>';
+                        }              
                     </txp:php>
                 </div>
             </notextile>
@@ -125,35 +157,32 @@
             <hr class="lucian-divider" />
 
             <notextile>
-                <txp:php>
-                    $url = 'https://raw.githubusercontent.com/lucidkarn/lucian_solutions/main/fanarts.json';
-                    $json = file_get_contents($url);
-                    $contributors = json_decode($json);
-
-                    foreach ($contributors as $entry) {
-                        /* Title */
-                        if (isset($entry->slug)) {
-                            echo '<h3 class="h5 my-1 gold-highlight" id="'.preg_replace('/\s+/', '_', strtolower($entry->artist)).'"><span itemprop="name">'.$entry->artist.'</span> <small class="lang-thai fs-6" lang="'.$entry->slug_lang.'">'.$entry->slug.'</small></h3>';
-                        } else {
-                            echo '<h3 class="h5 my-1 gold-highlight" id="'.preg_replace('/\s+/', '_', strtolower($entry->artist)).'" itemprop="name">'.$entry->artist.'</h3>';
-                        }
-                    
-                        /* Container */
-                        echo '<div class="container-fluid row row-cols-xl-4 row-cols-md-3 row-cols-sm-2 text-center mb-4 mx-auto bg-light pt-4 pb-5">';
-                    
-                        /* Artworks */
-                        foreach ($entry->art as $artpiece) {
-                            if ($artpiece->ext == 'gif') {
-                                echo '<div class="col-4-md col-2-sm align-middle position-relative pt-4"><a href="/images/'.$artpiece->id.'.'.$artpiece->ext.'" data-toggle="lightbox"><txp:image id="'.$artpiece->id.'" class="img-fluid shadow-sm h-100 lucian-showcase square-pix" loading="lazy" /></a></div>';
-                            } else {
-                                echo '<div class="col-4-md col-2-sm align-middle position-relative pt-4"><a href="/images/'.$artpiece->id.'.'.$artpiece->ext.'" data-toggle="lightbox"><txp:image id="'.$artpiece->id.'" thumbnail class="img-fluid shadow-sm h-100 lucian-showcase square-pix" loading="lazy" /></a></div>';
+                <div class="d-flex flex-wrap">
+                    <txp:php>
+                        $url = 'https://raw.githubusercontent.com/lucidkarn/lucian_solutions/main/fanarts.json';
+                        $json = file_get_contents($url);
+                        $contributors = json_decode($json);
+                        
+                        foreach ($contributors as $entry) {
+                            $artNumber = 1;
+                            foreach ($entry->art as $artpiece) {
+                                echo '<a href="/images/'.$artpiece->id.'.'.$artpiece->ext.'" data-toggle="lightbox"';
+                                if ($artNumber == 1) {
+                                    echo ' id="'.preg_replace('/\s+/', '_', strtolower($entry->artist)).'"';
+                                }
+                                echo ' class="col-lg-3 col-md-4 col-sm-6 position-relative gallery-pic" data-caption="'.$entry->artist.'"><txp:image id="'.$artpiece->id.'" ';
+                                if ($artpiece->ext != 'gif') {
+                                    echo ' thumbnail ';
+                                }
+                                echo ' class="img-fluid h-100 lucian-showcase square-pix ratio ratio-1-1" loading="lazy" />';
+                                echo '<div class="position-absolute top-50 start-50 translate-middle w-100 h-100 img-card-gradient"></div>';
+                                echo '<div class="bg-dark text-white px-2 py-1 position-absolute bottom-0 end-0 fw-bold rounded-3" style="font-size: 0.8em; translate: -0.5em -0.5em;">'.$entry->artist.'</div>';
+                                echo '</a>';
+                                ++$artNumber;
                             }
                         }
-                    
-                        /* End of Container */
-                        echo '</div><hr class="lucian-divider" />';
-                    }
-                </txp:php>
+                    </txp:php>
+                </div>
             </notextile>
 
         </div>

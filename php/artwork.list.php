@@ -27,3 +27,22 @@ foreach ($contributors as $entry) {
     /* End of Container */
     echo '</div><hr class="lucian-divider" />';
 }
+
+foreach ($contributors as $entry) {
+    $artNumber = 1;
+    foreach ($entry->art as $artpiece) {
+        echo '<a href="/images/'.$artpiece->id.'.'.$artpiece->ext.'" data-toggle="lightbox"';
+        if ($artNumber == 1) {
+            echo ' id="'.preg_replace('/\s+/', '_', strtolower($entry->artist)).'"';
+        }
+        echo ' class="col-lg-3 col-md-4 col-sm-6 position-relative gallery-pic" data-caption="'.$entry->artist.'"><txp:image id="'.$artpiece->id.'" ';
+        if ($artpiece->ext != 'gif') {
+            echo ' thumbnail ';
+        }
+        echo ' class="img-fluid h-100 lucian-showcase square-pix ratio ratio-1-1" loading="lazy" />';
+        echo '<div class="position-absolute top-50 start-50 translate-middle w-100 h-100 img-card-gradient"></div>';
+        echo '<div class="bg-dark text-white px-2 py-1 position-absolute bottom-0 end-0 fw-bold rounded-3" style="font-size: 0.8em; translate: -0.5em -0.5em;">'.$entry->artist.'</div>';
+        echo '</a>';
+        ++$artNumber;
+    }
+}
