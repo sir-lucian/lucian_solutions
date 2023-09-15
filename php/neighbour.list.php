@@ -26,7 +26,7 @@ $neighbours = json_decode($json);
 
 foreach ($neighbours as $neighbour) {
     /* Container */
-    echo '<div id="'.preg_replace('/\s+/', '_', strtolower($neighbour->name)).'" class="col-lg-4 col-md-6 text-center my-1 mx-auto h-100">';
+    echo '<div id="'.preg_replace('/\s+/', '_', strtolower($neighbour->name)).'" class="col-lg-4 col-md-6 text-center my-1 h-100">';
 
     /* Picture */
     echo '<txp:image id="'.$neighbour->picture.'" thumbnail="1" class="img-fluid mx-auto d-block rounded-circle mt-3 shadow" style="height:200px; width: auto;" loading="lazy"/>';
