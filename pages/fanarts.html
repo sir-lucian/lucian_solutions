@@ -49,22 +49,6 @@
             -ms-transition: all 1s ease;
             transition: all 1s ease;
         }
-    
-        .img-card-gradient {
-            display: inline-block;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.2) 100%);
-            /* General */
-            background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.2) 100%);
-            /* FF3.6+ */
-            background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.2)));
-            /* Chrome,Safari4+ */
-            background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.2) 100%);
-            /* Chrome10+,Safari5.1+ */
-            background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.2) 100%);
-            /* Opera 11.10+ */
-            background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.2) 100%);
-            /* IE10+ */
-        }
     </style>
 
 </head>
@@ -176,7 +160,7 @@
                                 }
                                 echo ' class="img-fluid h-100 lucian-showcase square-pix ratio ratio-1-1" loading="lazy" />';
                                 echo '<div class="position-absolute top-50 start-50 translate-middle w-100 h-100 img-card-gradient"></div>';
-                                echo '<div class="bg-dark text-white px-2 py-1 position-absolute bottom-0 end-0 fw-bold rounded-3" style="font-size: 0.8em; translate: -0.5em -0.5em;">'.$entry->artist.'</div>';
+                                echo '<div class="bg-dark shadow-sm text-white px-2 py-1 position-absolute bottom-0 end-0 fw-bold rounded-3" style="font-size: 0.8em; translate: -0.5em -0.5em;">'.$entry->artist.'</div>';
                                 echo '</a>';
                                 ++$artNumber;
                             }
