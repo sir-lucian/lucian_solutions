@@ -20,36 +20,8 @@
 
     <link rel="stylesheet" href="/themes/lucian-theme/styles/css/bootstrap.css">
     <link rel="stylesheet" href="/themes/lucian-theme/styles/css/navbar.css">
+    <link rel="stylesheet" href="/themes/lucian-theme/styles/css/extended.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-
-    <style>
-        .ratio.ratio-16x9 {
-            background-color: rgba(0, 0, 0, 0.5) !important;
-        }
-    
-        .square-pix {
-            aspect-ratio: 1/1;
-        }
-    
-        .charsheet-pix {
-            aspect-ratio: 3/4;
-        }
-    
-        .gallery-pic {
-            transition: 0.5s;
-        }
-    
-        .gallery-pic:hover {
-            filter: brightness(70%);
-            background-color: rgba(0, 0, 0, 0.3);
-            -webkit-filter: brightness(70%);
-            -webkit-transition: all 1s ease;
-            -moz-transition: all 1s ease;
-            -o-transition: all 1s ease;
-            -ms-transition: all 1s ease;
-            transition: all 1s ease;
-        }
-    </style>
 
 </head>
 
@@ -154,11 +126,11 @@
                                 if ($artNumber == 1) {
                                     echo ' id="'.preg_replace('/\s+/', '_', strtolower($entry->artist)).'"';
                                 }
-                                echo ' class="col-lg-3 col-md-4 col-6 position-relative gallery-pic" data-caption="'.$entry->artist.'"><txp:image id="'.$artpiece->id.'" ';
+                                echo ' class="col-xl-2 col-lg-3 col-md-4 col-6 position-relative gallery-pic" data-caption="'.$entry->artist.'" data-gallery="fanarts"><txp:image id="'.$artpiece->id.'" ';
                                 if ($artpiece->ext != 'gif') {
                                     echo ' thumbnail ';
                                 }
-                                echo ' class="img-fluid h-100 lucian-showcase square-pix ratio ratio-1-1" style="object-fit: cover;" loading="lazy" />';
+                                echo ' class="img-fluid h-100 lucian-showcase square-pix ratio ratio-1x1" style="object-fit: cover;" loading="lazy" />';
                                 echo '<div class="position-absolute top-50 start-50 translate-middle w-100 h-100 img-card-gradient"></div>';
                                 echo '<div class="bg-dark shadow-sm text-white px-2 py-1 position-absolute bottom-0 end-0 fw-bold rounded-3" style="font-size: 0.8em; translate: -0.5em -0.5em;">'.$entry->artist.'</div>';
                                 echo '</a>';

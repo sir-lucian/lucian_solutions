@@ -1,1 +1,67 @@
 /* Reserved for more classes */
+a {
+    color: #D4AF37;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #EEDFAF;
+}
+
+.article-list {
+    transition: 0.5s;
+}
+.article-list:hover {
+    filter: brightness(80%) saturate(90%);
+}
+
+.square-pix {
+    aspect-ratio: 1/1;
+}
+
+.charsheet-pix {
+    aspect-ratio: 3/4;
+}
+
+.badge-gallery {
+    width: min-content;
+    text-align: right;
+}
+
+.gallery-pic {
+    transition: 0.5s;
+}
+
+.gallery-pic:hover {
+    filter: brightness(70%);
+    background-color: rgba(0, 0, 0, 0.3);
+    -webkit-filter: brightness(70%);
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.lightbox-fitscreen {
+    height: 85vh;
+    width: auto;
+    max-width: 95vw;
+}
+
+img.emoji {
+    height: 1em;
+    width: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
+}
+.img-card-gradient {
+    display: inline-block;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.3) 100%); /* General */
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(0,0,0,0.3) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.3))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%,rgba(0,0,0,0.3) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(0,0,0,0) 50%,rgba(0,0,0,0.3) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(0,0,0,0) 50%,rgba(0,0,0,0.3) 100%); /* IE10+ */
+}
