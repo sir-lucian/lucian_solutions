@@ -184,6 +184,20 @@
 		]
 	},
 	{
+		"name": "thanik",
+		"picture": "146",
+		"badges": [
+			"Lucian Solutions",
+			"Streamer",
+			"Developer"
+		],
+		"socials": {
+			"x": "https://x.com/thanik",
+			"twitch": "https://www.twitch.tv/thanik5",
+			"github": "https://github.com/thanik"
+		}
+	},
+    {
 		"name": "ThePopup",
 		"picture": "148",
 		"badges": [
@@ -195,7 +209,7 @@
 			"twitch": "https://www.twitch.tv/thepopup"
 		}
 	},
-	{
+    {
 		"name": "Yukimi Satsuki",
 		"sub": "皐月ゆきみ",
 		"lang": "jp",
@@ -218,20 +232,6 @@
 				"url": "https://satsukiyukimi.fanbox.cc/"
 			}
 		]
-	},
-	{
-		"name": "thanik",
-		"picture": "146",
-		"badges": [
-			"Lucian Solutions",
-			"Streamer",
-			"Developer"
-		],
-		"socials": {
-			"x": "https://x.com/thanik",
-			"twitch": "https://www.twitch.tv/thanik5",
-			"github": "https://github.com/thanik"
-		}
 	},
 	{
 		"name": "zaru no.",
