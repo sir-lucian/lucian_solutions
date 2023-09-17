@@ -26,13 +26,14 @@ $neighbours = json_decode($json);
 
 foreach ($neighbours as $neighbour) {
     /* Container */
-    echo '<div id="'.preg_replace('/\s+/', '_', strtolower($neighbour->name)).'" class="col-lg-4 col-md-6 text-center my-1 h-100">';
+    echo '<div class="col-lg-4 col-md-6">';
+    echo '<div id="'.preg_replace('/\s+/', '_', strtolower($neighbour->name)).'" class="mb-1 p-1 bg-light rounded-3 shadow-sm text-center position-relative" style="margin-top: 100px; height: calc(100% - 100px);">';
 
     /* Picture */
-    echo '<txp:image id="'.$neighbour->picture.'" thumbnail="1" class="img-fluid mx-auto d-block rounded-circle mt-3 shadow" style="height:200px; width: auto;" loading="lazy"/>';
+    echo '<txp:image id="'.$neighbour->picture.'" thumbnail class="img-fluid d-block rounded-circle shadow-sm position-absolute translate-middle start-50 bg-white" style="height:150px; width: auto;" loading="lazy"/>';
 
     /* Name */
-    echo '<h4 class="my-3">'.$neighbour->name.'</h4>';
+    echo '<div style="padding-top: 100px;"><h4 class="mb-3">'.$neighbour->name.'</h4>';
     if (isset($neighbour->sub)) {
         echo '<p style="margin-top: -1rem; color: #a0a0a0;" itemprop="name" lang="'.$neighbour->lang.'">'.$neighbour->sub.'</p>';
     }
@@ -88,5 +89,6 @@ foreach ($neighbours as $neighbour) {
         }
         echo '</div>';
     }
-    echo '</div>';
+
+    echo '</div></div></div>';
 }
