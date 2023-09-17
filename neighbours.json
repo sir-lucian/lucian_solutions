@@ -1,207 +1,249 @@
 [
-    {
-        "name": "Boyd TheRhythm",
-        "sub": "Kawachiboy14",
-        "lang": "en",
-        "picture": "150",
-        "badges": ["Lucian Solutions", "Streamer"],
-        "socials": {
-            "x": "https://x.com/kawachiboy14",
-            "twitch": "https://www.twitch.tv/kawachiboy14",
-            "youtube": "https://www.youtube.com/@BoydTR"
-        }   
-    },
-    {
-        "name": "Heroter",
-        "picture": "147",
-        "badges": ["Lucian Solutions", "Streamer"],
-        "socials": {
-            "twitch": "https://www.twitch.tv/heroter"
-        }   
-    },
-    {
-        "name": "InoOsaN",
-        "picture": "151",
-        "badges": ["Lucian Solutions", "Streamer", "Sound Engineer"],
-        "socials": {
-            "x": "https://x.com/inoosan1",
-            "twitch": "https://www.twitch.tv/inoosan",
-            "youtube": "https://www.youtube.com/@InoOsaN"
-        }   
-    },
-    {
-        "name": "KindnessNumberSix",
-        "picture": "145",
-        "badges": ["Lucian Solutions", "Streamer"],
-        "socials": {
-            "facebook": "https://www.facebook.com/KindnessNo6",
-            "x": "https://x.com/KindnessNumber6",
-            "twitch": "https://www.twitch.tv/kindnessnumbersix",
-            "youtube": "https://www.youtube.com/@KindnessNumberSix"
-        }   
-    },
-    {
-        "name": "thanik",
-        "picture": "146",
-        "badges": ["Lucian Solutions", "Streamer", "Developer"],
-        "socials": {
-            "x": "https://x.com/thanik",
-            "twitch": "https://www.twitch.tv/thanik5",
-            "github": "https://github.com/thanik"
-        }   
-    },
-    {
-        "name": "ThePopup",
-        "picture": "148",
-        "badges": ["Lucian Solutions", "Streamer"],
-        "socials": {
-            "x": "https://x.com/thepopup",
-            "twitch": "https://www.twitch.tv/thepopup"
-        }   
-    },
-    {
-        "name": "Lunyatic",
-        "picture": "20",
-        "badges": ["Streamer", "Artist"],
-        "socials": {
-            "facebook": "https://www.facebook.com/lunyatic.art/",
-            "instagram": "https://www.instagram.com/lunyatic_art/",
-            "x": "https://x.com/lunyatic_art",
-            "twitch": "https://www.twitch.tv/lunyatic",
-            "youtube": "https://www.youtube.com/@lunyatic"
-        },
-        "links": [
-            {
-                "title": "Commission Info",
-                "url": "https://lunyatic-en.carrd.co/"
-            },
-            {
-                "title": "Arbum",
-                "url": "https://arbum.art/u/Lunyatic"
-            }
-        ]
-    },
-    {
-        "name": "Momineko",
-        "sub": "もみねこ",
-        "lang": "jp",
-        "picture": "149",
-        "badges": ["Streamer", "Artist"],
-        "socials": {
-            "x": "https://x.com/mominyako",
-            "twitch": "https://www.twitch.tv/momineko"
-        },
-        "links": [
-            {
-                "title": "Arbum",
-                "url": "https://arbum.art/u/momineko"
-            }
-        ]
-    },
-    {
-        "name": "Neonsten",
-        "picture": "138",
-        "badges": ["Streamer", "Artist"],
-        "socials": {
-            "x": "https://x.com/neonsten",
-            "twitch": "https://www.twitch.tv/neonsten",
-            "youtube": "https://www.youtube.com/@neonsten5626"
-        },
-        "links": [
-            {
-                "title": "Commission Info",
-                "url": "https://neonsten.carrd.co/"
-            }
-        ]
-    },
-    {
-        "name": "Poychan",
-        "picture": "56",
-        "badges": ["Streamer", "Artist"],
-        "socials": {
-            "facebook": "https://www.facebook.com/Poychan8/",
-            "x": "https://x.com/poychanart",
-            "instagram": "https://www.instagram.com/poychanart/",
-            "twitch": "https://www.twitch.tv/poychan"
-        },
-        "links": [
-            {
-                "title": "Commission Info",
-                "url": "https://poychan.carrd.co/"
-            },
-            {
-                "title": "Arbum",
-                "url": "https://arbum.art/u/Poychan"
-            }
-        ]
-    },
-    {
-        "name": "SAISUD Studio",
-        "sub": "ทีมพากย์ใส่สุด",
-        "lang": "th",
-        "picture": "152",
-        "badges": ["Voiceover"],
-        "socials": {
-            "facebook": "https://www.facebook.com/SAISUDSTUDIO",
-            "youtube": "https://www.youtube.com/@SAISUD"
-        }
-    },
-    {
-        "name": "SksySONO",
-        "sub": "葉月想乃",
-        "lang": "jp",
-        "picture": "137",
-        "badges": ["Streamer", "Artist"],
-        "socials": {
-            "facebook": "https://www.facebook.com/SkSySONO",
-            "x": "https://x.com/SkSySono",
-            "twitch": "https://www.twitch.tv/sksysono"
-        },
-        "links": [
-            {
-                "title": "Commission Info",
-                "url": "https://sksysono.carrd.co/"
-            },
-            {
-                "title": "Arbum",
-                "url": "https://arbum.art/u/SkSySONO/"
-            },
-            {
-                "title": "Pixiv",
-                "url": "https://www.pixiv.net/users/4557928"
-            }
-        ]
-    },
-    {
-        "name": "Yukimi Satsuki",
-        "sub": "皐月ゆきみ",
-        "lang": "jp",
-        "picture": "143",
-        "badges": ["Streamer", "Artist"],
-        "socials": {
-            "x": "https://x.com/satsukiyukimi",
-            "youtube": "https://www.youtube.com/@satsukiyukimi"
-        },
-        "links": [
-
-            {
-                "title": "skeb",
-                "url": "http://skeb.jp/@satsukiyukimi"
-            },
-            {
-                "title": "Pixiv FANBOX",
-                "url": "https://satsukiyukimi.fanbox.cc/"
-            }
-        ]
-    },
-    {
-        "name": "zaru no.",
-        "picture": "21",
-        "badges": ["Streamer", "Artist"],
-        "socials": {
-            "x": "https://x.com/ZaruNo_21",
-            "instagram": "https://www.instagram.com/zaru_no._art/",
-            "twitch": "https://www.twitch.tv/zaru_no21"
-        }
-    }
+	{
+		"name": "Boyd TheRhythm",
+		"sub": "Kawachiboy14",
+		"lang": "en",
+		"picture": "150",
+		"badges": [
+			"Lucian Solutions",
+			"Streamer"
+		],
+		"socials": {
+			"x": "https://x.com/kawachiboy14",
+			"twitch": "https://www.twitch.tv/kawachiboy14",
+			"youtube": "https://www.youtube.com/@BoydTR"
+		}
+	},
+	{
+		"name": "Heroter",
+		"picture": "147",
+		"badges": [
+			"Lucian Solutions",
+			"Streamer"
+		],
+		"socials": {
+			"twitch": "https://www.twitch.tv/heroter"
+		}
+	},
+	{
+		"name": "InoOsaN",
+		"picture": "151",
+		"badges": [
+			"Lucian Solutions",
+			"Streamer",
+			"Sound Engineer"
+		],
+		"socials": {
+			"x": "https://x.com/inoosan1",
+			"twitch": "https://www.twitch.tv/inoosan",
+			"youtube": "https://www.youtube.com/@InoOsaN"
+		}
+	},
+	{
+		"name": "KindnessNumberSix",
+		"picture": "145",
+		"badges": [
+			"Lucian Solutions",
+			"Streamer"
+		],
+		"socials": {
+			"facebook": "https://www.facebook.com/KindnessNo6",
+			"x": "https://x.com/KindnessNumber6",
+			"twitch": "https://www.twitch.tv/kindnessnumbersix",
+			"youtube": "https://www.youtube.com/@KindnessNumberSix"
+		}
+	},
+	{
+		"name": "Lunyatic",
+		"picture": "20",
+		"badges": [
+			"Streamer",
+			"Artist"
+		],
+		"socials": {
+			"facebook": "https://www.facebook.com/lunyatic.art/",
+			"instagram": "https://www.instagram.com/lunyatic_art/",
+			"x": "https://x.com/lunyatic_art",
+			"twitch": "https://www.twitch.tv/lunyatic",
+			"youtube": "https://www.youtube.com/@lunyatic"
+		},
+		"links": [
+			{
+				"title": "Commission Info",
+				"url": "https://lunyatic-en.carrd.co/"
+			},
+			{
+				"title": "Arbum",
+				"url": "https://arbum.art/u/Lunyatic"
+			}
+		]
+	},
+	{
+		"name": "Momineko",
+		"sub": "もみねこ",
+		"lang": "jp",
+		"picture": "149",
+		"badges": [
+			"Streamer",
+			"Artist"
+		],
+		"socials": {
+			"x": "https://x.com/mominyako",
+			"twitch": "https://www.twitch.tv/momineko"
+		},
+		"links": [
+			{
+				"title": "Arbum",
+				"url": "https://arbum.art/u/momineko"
+			}
+		]
+	},
+	{
+		"name": "Neonsten",
+		"picture": "138",
+		"badges": [
+			"Streamer",
+			"Artist"
+		],
+		"socials": {
+			"x": "https://x.com/neonsten",
+			"twitch": "https://www.twitch.tv/neonsten",
+			"youtube": "https://www.youtube.com/@neonsten5626"
+		},
+		"links": [
+			{
+				"title": "Commission Info",
+				"url": "https://neonsten.carrd.co/"
+			}
+		]
+	},
+	{
+		"name": "Poychan",
+		"picture": "56",
+		"badges": [
+			"Streamer",
+			"Artist"
+		],
+		"socials": {
+			"facebook": "https://www.facebook.com/Poychan8/",
+			"x": "https://x.com/poychanart",
+			"instagram": "https://www.instagram.com/poychanart/",
+			"twitch": "https://www.twitch.tv/poychan"
+		},
+		"links": [
+			{
+				"title": "Commission Info",
+				"url": "https://poychan.carrd.co/"
+			},
+			{
+				"title": "Arbum",
+				"url": "https://arbum.art/u/Poychan"
+			}
+		]
+	},
+	{
+		"name": "SAISUD Studio",
+		"sub": "ทีมพากย์ใส่สุด",
+		"lang": "th",
+		"picture": "152",
+		"badges": [
+			"Voiceover"
+		],
+		"socials": {
+			"facebook": "https://www.facebook.com/SAISUDSTUDIO",
+			"youtube": "https://www.youtube.com/@SAISUD"
+		}
+	},
+	{
+		"name": "SksySONO",
+		"sub": "葉月想乃",
+		"lang": "jp",
+		"picture": "137",
+		"badges": [
+			"Streamer",
+			"Artist"
+		],
+		"socials": {
+			"facebook": "https://www.facebook.com/SkSySONO",
+			"x": "https://x.com/SkSySono",
+			"twitch": "https://www.twitch.tv/sksysono"
+		},
+		"links": [
+			{
+				"title": "Commission Info",
+				"url": "https://sksysono.carrd.co/"
+			},
+			{
+				"title": "Arbum",
+				"url": "https://arbum.art/u/SkSySONO/"
+			},
+			{
+				"title": "Pixiv",
+				"url": "https://www.pixiv.net/users/4557928"
+			}
+		]
+	},
+	{
+		"name": "ThePopup",
+		"picture": "148",
+		"badges": [
+			"Lucian Solutions",
+			"Streamer"
+		],
+		"socials": {
+			"x": "https://x.com/thepopup",
+			"twitch": "https://www.twitch.tv/thepopup"
+		}
+	},
+	{
+		"name": "Yukimi Satsuki",
+		"sub": "皐月ゆきみ",
+		"lang": "jp",
+		"picture": "143",
+		"badges": [
+			"Streamer",
+			"Artist"
+		],
+		"socials": {
+			"x": "https://x.com/satsukiyukimi",
+			"youtube": "https://www.youtube.com/@satsukiyukimi"
+		},
+		"links": [
+			{
+				"title": "skeb",
+				"url": "http://skeb.jp/@satsukiyukimi"
+			},
+			{
+				"title": "Pixiv FANBOX",
+				"url": "https://satsukiyukimi.fanbox.cc/"
+			}
+		]
+	},
+	{
+		"name": "thanik",
+		"picture": "146",
+		"badges": [
+			"Lucian Solutions",
+			"Streamer",
+			"Developer"
+		],
+		"socials": {
+			"x": "https://x.com/thanik",
+			"twitch": "https://www.twitch.tv/thanik5",
+			"github": "https://github.com/thanik"
+		}
+	},
+	{
+		"name": "zaru no.",
+		"picture": "21",
+		"badges": [
+			"Streamer",
+			"Artist"
+		],
+		"socials": {
+			"x": "https://x.com/ZaruNo_21",
+			"instagram": "https://www.instagram.com/zaru_no._art/",
+			"twitch": "https://www.twitch.tv/zaru_no21"
+		}
+	}
 ]
