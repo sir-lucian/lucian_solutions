@@ -62,7 +62,7 @@
     {
         "name": "Lunyatic",
         "picture": "20",
-        "badges": ["Artist", "Streamer"],
+        "badges": ["Streamer", "Artist"],
         "socials": {
             "facebook": "https://www.facebook.com/lunyatic.art/",
             "instagram": "https://www.instagram.com/lunyatic_art/",
@@ -86,7 +86,7 @@
         "sub": "もみねこ",
         "lang": "jp",
         "picture": "149",
-        "badges": ["Artist", "Streamer"],
+        "badges": ["Streamer", "Artist"],
         "socials": {
             "x": "https://x.com/mominyako",
             "twitch": "https://www.twitch.tv/momineko"
@@ -101,7 +101,7 @@
     {
         "name": "Neonsten",
         "picture": "138",
-        "badges": ["Artist", "Streamer"],
+        "badges": ["Streamer", "Artist"],
         "socials": {
             "x": "https://x.com/neonsten",
             "twitch": "https://www.twitch.tv/neonsten",
@@ -117,7 +117,7 @@
     {
         "name": "Poychan",
         "picture": "56",
-        "badges": ["Artist", "Streamer"],
+        "badges": ["Streamer", "Artist"],
         "socials": {
             "facebook": "https://www.facebook.com/Poychan8/",
             "x": "https://x.com/poychanart",
@@ -151,7 +151,7 @@
         "sub": "葉月想乃",
         "lang": "jp",
         "picture": "137",
-        "badges": ["Artist", "Streamer"],
+        "badges": ["Streamer", "Artist"],
         "socials": {
             "facebook": "https://www.facebook.com/SkSySONO",
             "x": "https://x.com/SkSySono",
@@ -177,7 +177,7 @@
         "sub": "皐月ゆきみ",
         "lang": "jp",
         "picture": "143",
-        "badges": ["Artist", "Streamer"],
+        "badges": ["Streamer", "Artist"],
         "socials": {
             "x": "https://x.com/satsukiyukimi",
             "youtube": "https://www.youtube.com/@satsukiyukimi"
@@ -197,7 +197,7 @@
     {
         "name": "zaru no.",
         "picture": "21",
-        "badges": ["Artist", "Streamer"],
+        "badges": ["Streamer", "Artist"],
         "socials": {
             "x": "https://x.com/ZaruNo_21",
             "instagram": "https://www.instagram.com/zaru_no._art/",

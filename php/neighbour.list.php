@@ -1,9 +1,9 @@
 <?php
 
 /* Badges */
-define('badgeLS', '<span class="badge bg-warning text-dark">Lucian Solutions</span> ');
-define('badgeStream', '<span class="badge bg-danger text-white">Streamer</span> ');
-define('badgeOther', ['<span class="badge bg-dark text-white">', '</span> ']);
+define('badgeLS', '<span class="badge bg-light text-dark shadow-sm">Lucian Solutions</span> ');
+define('badgeStream', '<span class="badge bg-danger text-white shadow-sm">Streamer</span> ');
+define('badgeOther', ['<span class="badge bg-dark text-white shadow-sm">', '</span> ']);
 
 /* Links Button */
 define('iconButton', '<a href="');
@@ -27,15 +27,21 @@ $neighbours = json_decode($json);
 foreach ($neighbours as $neighbour) {
     /* Container */
     echo '<div class="col-lg-4 col-md-6">';
-    echo '<div id="'.preg_replace('/\s+/', '_', strtolower($neighbour->name)).'" class="mb-1 p-1 bg-light rounded-3 shadow-sm text-center position-relative" style="margin-top: 100px; height: calc(100% - 100px);">';
+    echo '<div id="'.preg_replace('/\s+/', '_', strtolower($neighbour->name)).'" class="mb-1 p-1 box--gradient ';
+    if ($neighbour->badges[0] == 'Lucian Solutions') {
+        echo 'gold';
+    } else {
+        echo 'silver';
+    }
+    echo ' shadow-sm rounded-3 text-center position-relative border-bottom border-end border-2" style="margin-top: 100px; height: calc(100% - 100px); border-right-color: rgba(0,0,0,0.1) !important; border-bottom-color: rgba(0,0,0,0.25) !important;">';
 
     /* Picture */
-    echo '<txp:image id="'.$neighbour->picture.'" thumbnail class="img-fluid d-block rounded-circle shadow-sm position-absolute translate-middle start-50 bg-white" style="height:150px; width: auto;" loading="lazy"/>';
+    echo '<txp:image id="'.$neighbour->picture.'" thumbnail class="shadow-sm img-fluid d-block rounded-circle position-absolute translate-middle start-50 bg-white" style="height:150px; width: auto;" loading="lazy"/>';
 
     /* Name */
-    echo '<div style="padding-top: 100px;"><h4 class="mb-3">'.$neighbour->name.'</h4>';
+    echo '<div style="padding-top: 100px;"><h4 class="mb-3 text-dark fw-bold">'.$neighbour->name.'</h4>';
     if (isset($neighbour->sub)) {
-        echo '<p style="margin-top: -1rem; color: #a0a0a0;" itemprop="name" lang="'.$neighbour->lang.'">'.$neighbour->sub.'</p>';
+        echo '<p style="margin-top: -1rem; color: #555;" itemprop="name" lang="'.$neighbour->lang.'">'.$neighbour->sub.'</p>';
     }
 
     /* Badge */
