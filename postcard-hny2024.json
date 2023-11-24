@@ -2,111 +2,133 @@
     {
         "name": "BKI_book",
         "method": "รับเอง/ฝากคนรับ",
-        "status": "รับแล้ว"
+        "status": "รับแล้ว",
+        "color": "success"
     },
     {
         "name": "dogza900",
         "method": "ไปรษณีย์",
-        "status": "กรอกที่อยู่แล้ว"
+        "status": "จัดส่งแล้ว",
+        "color": "success"
     },
     {
         "name": "FateAura",
         "method": "รับเอง/ฝากคนรับ",
-        "status": "รอรับของ"
+        "status": "รอรับของ",
+        "color": "warning"
     },
     {
         "name": "Feentalis",
         "method": "รับเอง/ฝากคนรับ",
-        "status": "รอรับของ"
+        "status": "รอรับของ",
+        "color": "warning"
     },
     {
         "name": "GifuChannel",
         "method": "ไปรษณีย์",
-        "status": "ยังไม่ได้กรอกที่อยู่"
+        "status": "ยังไม่ได้กรอกที่อยู่",
+        "color": "danger"
     },
     {
         "name": "Heroter",
         "method": "รับเอง/ฝากคนรับ",
-        "status": "รอรับของ"
+        "status": "รอรับของ",
+        "color": "warning"
     },
     {
         "name": "Kawachiboy14",
         "method": "รับเอง/ฝากคนรับ",
-        "status": "รอรับของ"
+        "status": "รอรับของ",
+        "color": "warning"
     },
     {
         "name": "KindnessNumberSix",
         "method": "รับเอง/ฝากคนรับ",
-        "status": "รับแล้ว"
+        "status": "รับแล้ว",
+        "color": "success"
     },
     {
         "name": "Laplistz",
         "method": "รับเอง/ฝากคนรับ",
-        "status": "รับแล้ว"
+        "status": "รับแล้ว",
+        "color": "success"
     },
     {
         "name": "linna_rin",
         "method": "ไปรษณีย์",
-        "status": "กรอกที่อยู่แล้ว"
+        "status": "จัดส่งแล้ว",
+        "color": "success"
     },
     {
         "name": "Lunyatic",
         "method": "รับเอง/ฝากคนรับ",
-        "status": "รอรับของ"
+        "status": "รอรับของ",
+        "color": "warning"
     },
     {
         "name": "Ota_PP48",
         "method": "ไปรษณีย์",
-        "status": "กรอกที่อยู่แล้ว"
+        "status": "จัดส่งแล้ว",
+        "color": "success"
     },
     {
         "name": "ramune_K0_3",
         "method": "ไปรษณีย์",
-        "status": "กรอกที่อยู่แล้ว"
+        "status": "จัดส่งแล้ว",
+        "color": "success"
     },
     {
         "name": "Ryumine5",
         "method": "ไปรษณีย์",
-        "status": "กรอกที่อยู่แล้ว"
+        "status": "จัดส่งแล้ว",
+        "color": "success"
     },
     {
         "name": "sapphire_melon",
         "method": "ไปรษณีย์",
-        "status": "กรอกที่อยู่แล้ว"
+        "status": "จัดส่งแล้ว",
+        "color": "success"
     },
     {
         "name": "SkyLightEX",
         "method": "ไปรษณีย์",
-        "status": "กรอกที่อยู่แล้ว"
+        "status": "จัดส่งแล้ว",
+        "color": "success"
     },
     {
         "name": "SoutaCatZ",
         "method": "ไปรษณีย์",
-        "status": "กรอกที่อยู่แล้ว"
+        "status": "จัดส่งแล้ว",
+        "color": "success"
     },
     {
         "name": "Trlpzee",
         "method": "ไปรษณีย์",
-        "status": "กรอกที่อยู่แล้ว"
+        "status": "จัดส่งแล้ว",
+        "color": "success"
     },
     {
         "name": "veedooxsef",
         "method": "รับเอง/ฝากคนรับ",
-        "status": "รับแล้ว"
+        "status": "รับแล้ว",
+        "color": "success"
     },
     {
         "name": "Yoru_0_0",
         "method": "ไปรษณีย์",
-        "status": "กรอกที่อยู่แล้ว"
+        "status": "จัดส่งแล้ว",
+        "color": "success"
     },
     {
         "name": "zaru_no21",
         "method": "ไปรษณีย์",
-        "status": "ยังไม่ได้กรอกที่อยู่"
+        "status": "ยังไม่ได้กรอกที่อยู่",
+        "color": "danger"
     },
     {
         "name": "ZZMonnY",
         "method": "ไปรษณีย์",
-        "status": "กรอกที่อยู่แล้ว"
+        "status": "จัดส่งแล้ว",
+        "color": "success"
     }
 ]
