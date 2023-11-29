@@ -102,6 +102,12 @@
         "color": "success"
     },
     {
+        "name": "thanik5",
+        "method": "รับเอง/ฝากคนรับ",
+        "status": "รอรับของ",
+        "color": "warning"
+    },
+    {
         "name": "Trlpzee",
         "method": "ไปรษณีย์",
         "status": "จัดส่งแล้ว",
