@@ -6,6 +6,12 @@
         "color": "success"
     },
     {
+        "name": "Bisolte",
+        "method": "ไปรษณีย์",
+        "status": "รอจัดส่ง",
+        "color": "warning"
+    },
+    {
         "name": "dogza900",
         "method": "ไปรษณีย์",
         "status": "จัดส่งแล้ว",
@@ -26,8 +32,8 @@
     {
         "name": "GifuChannel",
         "method": "ไปรษณีย์",
-        "status": "ยังไม่ได้กรอกที่อยู่",
-        "color": "danger"
+        "status": "รอจัดส่ง",
+        "color": "warning"
     },
     {
         "name": "Heroter",
@@ -38,11 +44,17 @@
     {
         "name": "Kawachiboy14",
         "method": "รับเอง/ฝากคนรับ",
-        "status": "รอรับของ",
-        "color": "warning"
+        "status": "รับแล้ว",
+        "color": "success"
     },
     {
         "name": "KindnessNumberSix",
+        "method": "รับเอง/ฝากคนรับ",
+        "status": "รับแล้ว",
+        "color": "success"
+    },
+    {
+        "name": "KurosawaSP",
         "method": "รับเอง/ฝากคนรับ",
         "status": "รับแล้ว",
         "color": "success"
@@ -104,7 +116,13 @@
     {
         "name": "thanik5",
         "method": "รับเอง/ฝากคนรับ",
-        "status": "รอรับของ",
+        "status": "รับแล้ว",
+        "color": "success"
+    },
+    {
+        "name": "tinarskii",
+        "method": "ไปรษณีย์",
+        "status": "รอจัดส่ง",
         "color": "warning"
     },
     {
@@ -128,8 +146,8 @@
     {
         "name": "zaru_no21",
         "method": "ไปรษณีย์",
-        "status": "ยังไม่ได้กรอกที่อยู่",
-        "color": "danger"
+        "status": "รอจัดส่ง",
+        "color": "warning"
     },
     {
         "name": "ZZMonnY",
