@@ -8,8 +8,8 @@
     {
         "name": "Bisolte",
         "method": "ไปรษณีย์",
-        "status": "รอจัดส่ง",
-        "color": "warning"
+        "status": "จัดส่งแล้ว",
+        "color": "success"
     },
     {
         "name": "dogza900",
@@ -25,15 +25,15 @@
     },
     {
         "name": "Feentalis",
-        "method": "รับเอง/ฝากคนรับ",
-        "status": "รอรับของ",
-        "color": "warning"
+        "method": "ไปรษณีย์",
+        "status": "จัดส่งแล้ว",
+        "color": "success"
     },
     {
-        "name": "GifuChannel",
+        "name": "GifuRine",
         "method": "ไปรษณีย์",
-        "status": "รอจัดส่ง",
-        "color": "warning"
+        "status": "จัดส่งแล้ว",
+        "color": "success"
     },
     {
         "name": "Heroter",
@@ -122,8 +122,8 @@
     {
         "name": "tinarskii",
         "method": "ไปรษณีย์",
-        "status": "รอจัดส่ง",
-        "color": "warning"
+        "status": "จัดส่งแล้ว",
+        "color": "success"
     },
     {
         "name": "Trlpzee",
@@ -146,8 +146,8 @@
     {
         "name": "zaru_no21",
         "method": "ไปรษณีย์",
-        "status": "รอจัดส่ง",
-        "color": "warning"
+        "status": "จัดส่งแล้ว",
+        "color": "success"
     },
     {
         "name": "ZZMonnY",
