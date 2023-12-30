@@ -78,6 +78,12 @@
         "color": "warning"
     },
     {
+        "name": "NeKoSo_UL",
+        "method": "รับเอง/ฝากคนรับ",
+        "status": "รอรับของ",
+        "color": "warning"
+    },
+    {
         "name": "Ota_PP48",
         "method": "ไปรษณีย์",
         "status": "จัดส่งแล้ว",
