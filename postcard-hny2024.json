@@ -1,5 +1,11 @@
 [
     {
+        "name": "besidepie",
+        "method": "รับเอง/ฝากคนรับ",
+        "status": "รอรับของ",
+        "color": "warning"
+    },
+    {
         "name": "BKI_book",
         "method": "รับเอง/ฝากคนรับ",
         "status": "รับแล้ว",
@@ -37,6 +43,12 @@
     },
     {
         "name": "Heroter",
+        "method": "รับเอง/ฝากคนรับ",
+        "status": "รอรับของ",
+        "color": "warning"
+    },
+    {
+        "name": "InoOsaN",
         "method": "รับเอง/ฝากคนรับ",
         "status": "รอรับของ",
         "color": "warning"
@@ -148,6 +160,12 @@
         "method": "ไปรษณีย์",
         "status": "จัดส่งแล้ว",
         "color": "success"
+    },
+    {
+        "name": "yuuii_62",
+        "method": "ไปรษณีย์",
+        "status": "รอจัดส่ง",
+        "color": "warning"
     },
     {
         "name": "zaru_no21",
