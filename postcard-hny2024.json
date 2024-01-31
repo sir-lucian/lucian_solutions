@@ -1,9 +1,9 @@
 [
     {
         "name": "besidepie",
-        "method": "รับเอง/ฝากคนรับ",
-        "status": "รอรับของ",
-        "color": "warning"
+        "method": "ไปรษณีย์",
+        "status": "จัดส่งแล้ว",
+        "color": "success"
     },
     {
         "name": "BKI_book",
@@ -50,8 +50,8 @@
     {
         "name": "InoOsaN",
         "method": "รับเอง/ฝากคนรับ",
-        "status": "รอรับของ",
-        "color": "warning"
+        "status": "รับแล้ว",
+        "color": "success"
     },
     {
         "name": "Kawachiboy14",
@@ -100,6 +100,12 @@
         "method": "ไปรษณีย์",
         "status": "จัดส่งแล้ว",
         "color": "success"
+    },
+    {
+        "name": "Poychan",
+        "method": "ไปรษณีย์",
+        "status": "รอจัดส่ง",
+        "color": "warning"
     },
     {
         "name": "ramune_K0_3",
