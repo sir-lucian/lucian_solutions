@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="<txp:lang />" dir="<txp:text item="lang_dir" />">
+
+<head>
+    <meta name="title" content="Lucian Solutions - RNGesus">
+    <meta name="description" content="RNGesus - A randomiser from the destiny you chose">
+
+    <meta name="twitter:title" content="Lucian Solutions - RNGesus" />
+    <meta property="og:title" content="Lucian Solutions - RNGesus" />
+    <meta name="twitter:url" content="https://lucian.solutions/rngesus/" />
+    <meta property="og:url" content="https://lucian.solutions/rngesus/" />
+    <meta property="og:image" content="https://lucian.solutions/images/58t.jpg" />
+    <meta property="og:image:secure_url" content="https://lucian.solutions/images/58t.jpg" />
+    <meta name="twitter:image" content="https://lucian.solutions/images/58t.jpg" />
+
+    <txp:output_form form="open_graph" />
+    <title><txp:page_title /></title>
+
+    <link rel="stylesheet" href="/themes/lucian-theme/styles/css/bootstrap.css">
+    <link rel="stylesheet" href="/themes/lucian-theme/styles/css/navbar.css">
+
+    <style>
+        a {
+            color: #D4AF37;
+            transition: 0.5s;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #EEDFAF;
+        }
+
+        .inputDetails {
+            font-size: 0.75rem;
+            margin-left: 0.5rem;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <txp:output_form form="top_navbar" />
+
+    <!-- Web Page -->
+    <div id="spacer" style="height: 65px;"></div>
+    <div class="container-md px-2 py-5">
+        <div class="row">
+            <div class="col-md-9 text-center py-3">
+                <div id="start-panel">
+                    <txp:output_form form="rngesus-header" />
+                    <div class="py-3">
+                        <txp:image id="123" style="max-height: 224px; max-width: 100%; height: auto; width: auto;" class="mb-4" loading="lazy"/>
+                        <p><small>
+                            RNGesus คือระบบสุ่มผู้โชคดีโดยการคัดออกทีละหนึ่ง ผู้เข้าร่วมจะต้องระบุตัวเลขชี้ชะตาของตัวเองระหว่าง 1 - 1,000
+                            เมื่อเริ่มการสุ่ม ระบบจะทำการสุ่มตัวเลขมาจำนวนหนึ่ง และจะคัดผู้ที่มีเลขโชคชะตาใกล้เคียงกับเลขที่สุ่มได้มากที่สุดออกทีละหนึ่งท่าน
+                            จนกว่าจะมีผู้โชคดีเป็นจำนวนกี่ท่านสุดท้ายตามที่ผู้ดำเนินรายการต้องการ
+                        </small></p>
+                        <p><small>
+                            <strong style="color:#d4af37;">Special Thanks:</strong> SkyLightEX, thanik5
+                        </small></p>
+                    </div>
+                    <div>
+                        <button class="btn btn-outline-dark btn-lg" onClick="switchPanel('start-panel','input-panel')">PLAY / เล่น</button>
+                    </div>
+                </div>
+                <div id="input-panel" class="d-none">
+                    <txp:output_form form="rngesus-header" />
+                    <div class="py-3">
+                        <txp:image id="123" style="max-height: 224px; max-width: 100%; height: auto; width: auto;" class="mb-4" loading="lazy"/>
+                        <p><small>
+                            RNGesus คือระบบสุ่มผู้โชคดีโดยการคัดออกทีละหนึ่ง ผู้เข้าร่วมจะต้องระบุตัวเลขชี้ชะตาของตัวเองระหว่าง 1 - 1,000
+                            เมื่อเริ่มการสุ่ม ระบบจะทำการสุ่มตัวเลขมาจำนวนหนึ่ง และจะคัดผู้ที่มีเลขโชคชะตาใกล้เคียงกับเลขที่สุ่มได้มากที่สุดออกทีละหนึ่งท่าน
+                            จนกว่าจะมีผู้โชคดีเป็นจำนวนกี่ท่านสุดท้ายตามที่ผู้ดำเนินรายการต้องการ
+                        </small></p>
+                        <p><small>
+                            <strong style="color:#d4af37;">Special Thanks:</strong> SkyLightEX, thanik5
+                        </small></p>
+                    </div>
+                    <div class="text-start">
+                        <div class="mb-3">
+                            <label for="inputName" class="form-label">Name / ชื่อ</label><span class="inputDetails text-muted">กรุณาใส่ A-Z, 0-9, Hyphen(-) หรือ Underscore(_) เท่านั้น</span>
+                            <input type="text" id="inputName" class="form-control" onKeyUp="checkInputs()">
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputNumber" class="form-label">Lucky Number / เลขนำโชค</label><span class="inputDetails text-muted">กรุณาใส่เลขระหว่าง 1 - 1,000</span>
+                            <input type="number" id="inputNumber" min="1" max="1000" step="1" class="form-control" onKeyUp="checkInputs()">
+                        </div>
+                        <button type="button" id="addButton" class="btn btn-light disabled mb-1 me-1" onClick="checkDuplicate()">Add / เพิ่ม</button>
+                        <button type="button" id="startButton" class="btn btn-light disabled mb-1 me-1" onClick="switchPanel('input-panel','random-panel')">Start / เริ่มการสุ่ม</button>
+                        <small><p class="text-danger d-none" id="inputErrorMessage"></p></small>
+                    </div>
+                </div>
+                <div id="random-panel" class="d-none">
+                    <txp:output_form form="rngesus-header" />
+                    <div id="confirm-message" class="py-3 d-none">
+                        <txp:image id="10" style="max-height: 224px; max-width: 100%; height: auto; width: auto;" class="mb-4" loading="lazy"/>
+                        <p class="lead">Confirm / ยืนยันการสุ่ม</p>
+                    </div>
+                    <div id="first-random-button" class="d-none">
+                        <button class="btn btn-outline-danger" onClick="switchPanel('random-panel','input-panel')">Back / ย้อนกลับ</button>
+                        <button class="btn btn-outline-dark" onClick="firstRandom()">Random / สุ่ม</button>
+                    </div>
+                    <div id="random-display" class="d-none">
+                        <p class="pt-3"><span class="lead">RNGesus says</span><br><small>เลขที่ออก</small></p>
+                        <p class="display-1 fw-bold lang-th pt-3" id="destiny-number"></p>
+                        <p id="result-message" class="pb-3"></p>
+                    </div>
+                    <div id="result-display" class="d-none">
+                        <p class="pt-3"><span class="lead">The winner(s) go to</span><br><small>ผู้ได้รางวัลได้แก่</small></p>
+                        <div id="winner-list" class="mb-3 display-2"></div>
+                        <div>
+                            <button class="btn btn-outline-dark" onClick="switchPanel('random-panel','input-panel')">Back / ย้อนกลับ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 px-3">
+                <div class="container-fluid py-3 text-center text-md-start rounded-3" style="border: 1px solid #D4AF37;">
+                    <h1 class="d-2 text-center">Survivors</h1>
+                    <p class="lang-th text-center">ผู้โชคดีที่เหลืออยู่</p>
+                    <hr class="lucian-divider" />
+                    <div class="py-3" id="name-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <txp:output_form form="bottom_footer" />
+
+</body>
+
+    <script src="/themes/lucian-theme/styles/js/extended.js"></script>
+    <script src="/themes/lucian-theme/styles/js/bootstrap.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+
+        var waitingList = [];
+        var playingList = [];
+        var writeHTML = '';
+
+        const nextRandom = '<br><button class="btn btn-outline-dark mx-1 my-2" onClick="random()">Next / สุ่มต่อ</button><button class="btn btn-outline-success mx-1 my-2" onClick="result()">End / จบการสุ่ม</button>';
+        const lastRandom = '<br><button class="btn btn-outline-success mx-1 my-2" onClick="result()">End / จบการสุ่ม</button>';
+
+        function switchPanel(from, to) {
+            document.getElementById(from).classList.add('d-none');
+            document.getElementById(to).classList.remove('d-none');
+
+            if (from == 'input-panel' && to == 'random-panel') {
+                document.getElementById('random-display').classList.add('d-none');
+                document.getElementById('result-display').classList.add('d-none');
+                document.getElementById('confirm-message').classList.remove('d-none');
+                document.getElementById('first-random-button').classList.remove('d-none');
+            }
+            if (from == 'random-panel' && to == 'input-panel') {
+                document.getElementById('destiny-number').innerHTML = '';
+                document.getElementById('result-message').innerHTML = '';
+                document.getElementById('winner-list').innerHTML = '';
+                document.getElementById('confirm-message').classList.add('d-none');
+                document.getElementById('first-random-button').classList.add('d-none');
+                document.getElementById('random-display').classList.add('d-none');
+                document.getElementById('result-display').classList.add('d-none');
+                playingList = [];
+                writeHTML = '';
+                waitingList = waitingList.sort(compareName);
+                printWaitingList();
+                checkWaitingList();
+            }
+        }
+
+        function getItemFromWaitingList(item) {
+            writeHTML += '<p><button type="button" class="btn btn-sm btn-outline-danger me-2 mb-1" aria-label="Delete" id="'+item.Name+'-'+item.Number+'" onClick="deletePerson('+item.Number+')">';
+            writeHTML += '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16"><path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/></svg>';
+            writeHTML += '</button><span class="lead">'+item.Name+'</span> <small>#'+item.Number+'</small></p>';
+        }
+
+        function getItemFromPlayingList(item) {
+            writeHTML += '<p><span class="lead">'+item.Name+'</span> <small>#'+item.Number+'</small></p>';
+        }
+
+        function getWinnerFromPlayingList(item) {
+            document.getElementById('winner-list').innerHTML += '<br /><strong class="text-success">'+item.Name+'</strong>';
+        }
+
+        function printWaitingList() {
+            if (waitingList.length != 0) {
+                waitingList.forEach(getItemFromWaitingList);
+            }
+            else {
+                writeHTML = '<p class="lead text-muted text-center">- Empty -</p>';
+            }
+            document.getElementById('name-list').innerHTML = writeHTML;
+        }
+
+        function printPlayingList() {
+            if (playingList.length != 0) {
+                playingList.forEach(getItemFromPlayingList);
+            }
+            else {
+                writeHTML = '<p class="lead text-muted text-center">- Empty -</p>';
+            }
+            document.getElementById('name-list').innerHTML = writeHTML;
+        }
+
+        function compareName(a, b) {
+            const name1 = a.Name.toUpperCase();
+            const name2 = b.Name.toUpperCase();
+
+            let comparison = 0;
+
+            if (name1 > name2) {
+                comparison = 1;
+            }
+            else if (name1 < name2) {
+                comparison = -1;
+            }
+            return comparison;
+        }
+
+        function compareDiff(a, b) {
+            const num1 = a.Diff;
+            const num2 = b.Diff;
+
+            let comparison = 0;
+
+            if (num1 > num2) {
+                comparison = -1;
+            }
+            else if (num1 < num2) {
+                comparison = 1;
+            }
+            return comparison;
+        }
+
+        function checkInputName() {
+            var value = document.getElementById('inputName').value;
+            return /^[a-zA-Z0-9_-]{1,}$/.test(value);
+        }
+
+        function checkInputNumber() {
+            var value = document.getElementById('inputNumber').value;
+            if (!value || isNaN(value) || parseInt(value, 10) < 1 || parseInt(value, 10) > 1000) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+
+        function checkInputs() {
+            validName = checkInputName();
+            validNumber = checkInputNumber();
+            if (validName && validNumber) {
+                document.getElementById('addButton').classList.remove('disabled');
+                document.getElementById('addButton').classList.remove('btn-light');
+                document.getElementById('addButton').classList.add('btn-dark');
+                document.getElementById('addButton').removeAttribute("disabled");
+            }
+            else {
+                document.getElementById('addButton').classList.remove('btn-dark');
+                document.getElementById('addButton').classList.add('disabled');
+                document.getElementById('addButton').classList.add('btn-light');
+                document.getElementById('addButton').setAttribute("disabled","disabled");
+            }
+        }
+
+        function checkDuplicate() {
+            if (waitingList.length != 0) {
+                for (var entry = 0; entry < waitingList.length; entry++){
+                    var hasNameDupe = checkNameDuplicate(waitingList[entry]);
+                    var hasNumberDupe = checkNumberDuplicate(waitingList[entry]);
+                    if (hasNameDupe) {
+                        document.getElementById("inputErrorMessage").innerHTML = 'Duplicate Name / ชื่อซ้ำ';
+                        document.getElementById("inputErrorMessage").classList.remove('d-none');
+                        break;
+                    }
+                    else if (hasNumberDupe) {
+                        document.getElementById("inputErrorMessage").innerHTML = 'Duplicate Number / เลขซ้ำ';
+                        document.getElementById("inputErrorMessage").classList.remove('d-none');
+                        break;
+                    }
+                }
+                if (!hasNameDupe && !hasNumberDupe) {
+                    document.getElementById("inputErrorMessage").classList.add('d-none');
+                    addPerson();
+                    document.getElementById('inputName').value = '';
+                    document.getElementById('inputNumber').value = '';
+                    document.getElementById('addButton').classList.remove('btn-dark');
+                    document.getElementById('addButton').classList.add('disabled');
+                    document.getElementById('addButton').classList.add('btn-light');
+                    document.getElementById('addButton').setAttribute("disabled","disabled");
+                }
+            }
+            else {
+                document.getElementById("inputErrorMessage").classList.add('d-none');
+                addPerson();
+                document.getElementById('inputName').value = '';
+                document.getElementById('inputNumber').value = '';
+                document.getElementById('addButton').classList.remove('btn-dark');
+                document.getElementById('addButton').classList.add('disabled');
+                document.getElementById('addButton').classList.add('btn-light');
+                document.getElementById('addButton').setAttribute("disabled","disabled");
+            }
+        }
+
+        function checkNameDuplicate(entry) {
+            if (document.getElementById('inputName').value == entry.Name) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        function checkNumberDuplicate(entry) {
+            if (document.getElementById('inputNumber').value == entry.Number) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        function addPerson() {
+            var obj = { Name: document.getElementById('inputName').value, Number: parseInt(document.getElementById('inputNumber').value), InvNumber: parseInt(document.getElementById('inputNumber').value)-1000, Diff: 0 };
+            waitingList.push(obj);
+            waitingList = waitingList.sort(compareName);
+            writeHTML = '';
+            printWaitingList();
+            checkWaitingList();
+        }
+
+        function deletePerson(entry) {
+            for (var count = 0; count < waitingList.length; count++) {
+                if (waitingList[count].Number == entry) {
+                    waitingList.splice(count, 1);
+                    break;
+                }
+            }
+            writeHTML = '';
+            printWaitingList();
+            checkWaitingList();
+        }
+
+        function checkWaitingList() {
+            if (waitingList.length > 1) {
+                document.getElementById('startButton').classList.remove('btn-light');
+                document.getElementById('startButton').classList.remove('disabled');
+                document.getElementById('startButton').classList.add('btn-success');
+                document.getElementById('startButton').removeAttribute("disabled");
+            }
+            else {
+                document.getElementById('startButton').classList.remove('btn-success');
+                document.getElementById('startButton').classList.add('disabled');
+                document.getElementById('startButton').classList.add('btn-light');
+                document.getElementById('startButton').setAttribute("disabled","disabled");
+            }
+        }
+
+        function deleteFromPlayingList(number) {
+            for (var count = 0; count < playingList.length; count++) {
+                playingList[count].Diff = Math.abs(playingList[count].Number - number);
+                if (playingList[count].Diff > 500) {
+                    playingList[count].Diff = Math.abs(playingList[count].InvNumber - number);
+                    if (playingList[count].Diff > 500) {
+                        playingList[count].Diff = Math.abs(playingList[count].Number - (number-1000));
+                    }
+                }
+            }
+            playingList = playingList.sort(compareDiff);
+            if (playingList[playingList.length - 1].Diff == playingList[playingList.length - 2].Diff) {
+                return null;
+            }
+            else {
+                deletedUser = playingList.pop();
+                playingList = playingList.sort(compareName);
+
+                writeHTML = '';
+                printPlayingList();
+
+                return deletedUser;
+            }
+        }
+
+        function firstRandom() {
+            document.getElementById('confirm-message').classList.add('d-none');
+            document.getElementById('first-random-button').classList.add('d-none');
+            document.getElementById('random-display').classList.remove('d-none');
+            for (var count = 0; count < waitingList.length; count++) {
+                playingList.push(waitingList[count]);
+            }
+            writeHTML = '';
+            playingList = playingList.sort(compareName);
+            printPlayingList();
+            random();
+        }
+
+        function random() {
+
+            var destinyNumber = 0;
+            var showNumberDiv = document.getElementById('destiny-number');
+            var resultDiv = document.getElementById('result-message');
+            const fastSpeedIteration = 50;
+            const midSpeedIteration = Math.floor((Math.random() * 12) + 8);
+            const slowSpeedIteration = Math.floor((Math.random() * 7) + 1);
+            var i = 0;
+
+            showNumberDiv.style.color = 'black';
+            showNumberDiv.innerHTML = '';
+            resultDiv.innerHTML = '';
+
+            for (i = 0; i < fastSpeedIteration+midSpeedIteration+slowSpeedIteration; i++) {
+                if (i < fastSpeedIteration)
+                setTimeout( function() {
+                    destinyNumber = Math.floor((Math.random() * 1000) + 1);
+                    showNumberDiv.innerHTML = destinyNumber;
+                }, 50*i);
+                else if (i < fastSpeedIteration+midSpeedIteration-1)
+                setTimeout( function() {
+                    destinyNumber = Math.floor((Math.random() * 1000) + 1);
+                    showNumberDiv.innerHTML = destinyNumber;
+                }, (50*(fastSpeedIteration)) + 150*(i-fastSpeedIteration-1));
+                else
+                setTimeout( function() {
+                    destinyNumber = Math.floor((Math.random() * 1000) + 1);
+                    showNumberDiv.innerHTML = destinyNumber;
+                }, (50*(fastSpeedIteration)) + 150*(midSpeedIteration) + 650*(i-(midSpeedIteration+fastSpeedIteration-1)));
+                if (i == fastSpeedIteration+midSpeedIteration+slowSpeedIteration-1) {
+                    setTimeout( function() {
+                        showNumberDiv.style.color = 'red';
+                        var deletedUser = deleteFromPlayingList(destinyNumber);
+
+                        if (deletedUser != null) {
+                            resultDiv.innerHTML = '<span class="lead fw-bold">'+deletedUser.Name+'</span> <small>#'+deletedUser.Number+'</small><br><small>Eliminated / ตกรอบ!</small><br><span>Difference / ระยะห่าง = '+deletedUser.Diff+'</span>';
+                        }
+                        else {
+                            resultDiv.innerHTML = '<span class="lead fw-bold">Draw! ระยะห่างเท่ากัน</span><br><small>Random Again - สุ่มอีกรอบ</small>';
+                        }
+
+                        if (playingList.length > 1){
+                            resultDiv.innerHTML += nextRandom;
+                        }
+                        else {
+                            resultDiv.innerHTML += lastRandom;
+                        }
+                    }, 650 + (50*(fastSpeedIteration)) + 150*(midSpeedIteration) + 650*(i-(midSpeedIteration+fastSpeedIteration-1)));
+                }
+            }
+
+        }
+
+        function result() {
+            document.getElementById('destiny-number').innerHTML = '';
+            document.getElementById('result-message').innerHTML = '';
+            document.getElementById('random-display').classList.add('d-none');
+            document.getElementById('result-display').classList.remove('d-none');
+            document.getElementById('winner-list').innerHTML = '<txp:image id="125" style="max-height: 224px; max-width: 100%; height: auto; width: auto;" class="mb-4" loading="lazy"/>'
+            playingList.forEach(getWinnerFromPlayingList);
+
+        }
+
+        printWaitingList();
+        checkWaitingList();
+
+        document.getElementById("inputName").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("addButton").click();
+        }
+        });
+
+        document.getElementById("inputNumber").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("addButton").click();
+        }
+        });
+
+    </script>
+
+</html>
