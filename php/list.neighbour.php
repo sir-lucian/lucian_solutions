@@ -10,7 +10,7 @@ define('iconButton', '<a href="');
 
 /* Socials */
 define('iconFB', '" target="_blank" class="btn btn-outline-dark border-0 m-1"><i class="bi bi-facebook fs-5"></i></a>');
-define('iconX', '" target="_blank" class="btn btn-outline-dark border-0 m-1"><i class="bi bi-twitter fs-5"></i></a>');
+define('iconX', '" target="_blank" class="btn btn-outline-dark border-0 m-1"><i class="bi bi-twitter-x fs-5"></i></a>');
 define('iconYT', '" target="_blank" class="btn btn-outline-dark border-0 m-1"><i class="bi bi-youtube fs-5"></i></a>');
 define('iconGH', '" target="_blank" class="btn btn-outline-dark border-0 m-1"><i class="bi bi-github fs-5"></i></a>');
 define('iconFedi', '" target="_blank" class="btn btn-outline-dark border-0 m-1"><i class="bi bi-mastodon fs-5"></i></a>');
@@ -20,7 +20,7 @@ define('iconTTV', '" target="_blank" class="btn btn-outline-dark border-0 m-1"><
 /* Other Links */
 define('iconLink', ['" target="_blank" class="btn btn-outline-dark border-0 btn-sm m-1"><i class="bi bi-link-45deg me-2"></i>', '</a>']);
 
-$url = 'https://raw.githubusercontent.com/lucidkarn/lucian_solutions/main/neighbours.json';
+$url = 'https://raw.githubusercontent.com/lucidkarn/lucian_solutions/main/json/list.neighbour.json';
 $json = file_get_contents($url);
 $neighbours = json_decode($json);
 
