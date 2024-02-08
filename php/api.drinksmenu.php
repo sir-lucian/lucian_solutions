@@ -5,19 +5,19 @@ define('url', 'https://lucian.solutions/files/drinksmenu.json');
 function getDrink($list, $category)
 {
     switch ($category) {
-        case 0: // Coffee
+        case 1: // Coffee
             $reply = $list->coffee[rand(0, count($list->coffee) - 1)];
             break;
-        case 1: // Tea
+        case 2: // Tea
             $reply = $list->tea[rand(0, count($list->tea) - 1)];
             break;
-        case 2: // Juice
+        case 3: // Juice
             $reply = $list->juice[rand(0, count($list->juice) - 1)];
             break;
-        case 3: // Soda
+        case 4: // Soda
             $reply = $list->soda[rand(0, count($list->soda) - 1)];
             break;
-        case 4: // Alcohol
+        case 5: // Alcohol
             $reply = $list->alcohol[rand(0, count($list->alcohol) - 1)];
             break;
         default:
@@ -43,46 +43,80 @@ curl_close($ch);
 
 $partyMode = 0;
 $category = 0;
+$args = ['', '', ''];
 
-if (isset($_GET['partymode'])) {
-    if ($_GET['partymode'] == 1) {
-        $partyMode = 1;
-    } else {
-        $partyMode = 0;
+if (isset($_GET['fullarg'])) {
+    $fullarg = rawurldecode($_GET['fullarg']);
+    $args = explode(' ', $fullarg);
+    if (!isset($args[0])) {
+        $args[0] = '';
     }
-} else {
-    $partyMode = 0;
+    if (!isset($args[1])) {
+        $args[1] = '';
+    }
+    if (!isset($args[2])) {
+        $args[2] = '';
+    }
 }
 
-if (isset($_GET['category'])) {
-    switch ($_GET['category']) {
-        case 'coffee':
-            $category = 0;
+if (isset($_GET['args1'])) {
+    $args[1] = $_GET['args1'];
+}
+
+if (isset($_GET['args2'])) {
+    $args[2] = $_GET['args2'];
+}
+
+switch ($args[1]) {
+    case 'partymode':
+        $partyMode = 1;
+        break;
+    case 'coffee':
+        $category = 1;
+        break;
+    case 'tea':
+        $category = 2;
+        break;
+    case 'juice':
+        $category = 3;
+        break;
+    case 'soda':
+        $category = 4;
+        break;
+    case 'alcohol':
+        $category = 5;
+        break;
+}
+
+switch ($args[2]) {
+    case 'partymode':
+        $partyMode = 1;
+        break;
+    case 'coffee':
+        $category = 1;
+        break;
+    case 'tea':
+        $category = 2;
+        break;
+    case 'juice':
+        $category = 3;
+        break;
+    case 'soda':
+        $category = 4;
+        break;
+    case 'alcohol':
+        $category = 5;
+        break;
+}
+
+if ($category == 0) {
+    switch ($partyMode) {
+        case 0:
+            $category = rand(1, 4);
             break;
-        case 'tea':
-            $category = 1;
+        case 1:
+            $category = rand(1, 5);
             break;
-        case 'juice':
-            $category = 2;
-            break;
-        case 'soda':
-            $category = 3;
-            break;
-        case 'alcohol':
-            $category = 4;
-            break;
-        default:
-            if ($partyMode == 1) {
-                $category = rand(0, 4);
-            } else {
-                $category = rand(0, 3);
-            }
-    }
-} else {
-    if ($partyMode == 1) {
-        $category = rand(0, 4);
-    } else {
-        $category = rand(0, 3);
     }
 }
 

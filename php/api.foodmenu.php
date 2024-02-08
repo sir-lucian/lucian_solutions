@@ -2,10 +2,10 @@
 
 define('url', 'https://lucian.solutions/files/foodmenu.json');
 
-function getDrink($list, $category)
+function getFood($list, $category, $halal)
 {
     switch ($category) {
-        case 0: // Rice
+        case 1: // Rice
             $reply = 'ข้าว';
             switch (rand(0, 2)) {
                 case 0: // Wok Station
@@ -31,7 +31,7 @@ function getDrink($list, $category)
                     break;
             }
             break;
-        case 1: // Noodles
+        case 2: // Noodles
             $reply = 'ก๋วยเตี๋ยว';
             switch (rand(0, 1)) {
                 case 0: // Type
@@ -43,17 +43,17 @@ function getDrink($list, $category)
                     break;
             }
             break;
-        case 2: // Soup
+        case 3: // Soup
             $reply = $list->soup[rand(0, count($list->soup) - 1)];
             break;
-        case 3: // Others
+        case 4: // Others
             $reply = $list->others[rand(0, count($list->others) - 1)];
             break;
         default:
             $reply = 'Error: Category is invalid';
     }
 
-    $pattern = '/w3schools/i';
+    $pattern = '/(หมู)|(แฮม)|(เล้ง)|(ลาบ)|(น้ำตก)/g';
 
     if (preg_match($pattern, $reply) && $halal == 1) {
         $reply = getDrink($drinksList, $category, $halal);
@@ -78,36 +78,68 @@ curl_close($ch);
 
 $halal = 0;
 $category = 0;
+$args = ['', '', ''];
 
-if (isset($_GET['halal'])) {
-    if ($_GET['halal'] == 1) {
+if (isset($_GET['fullarg'])) {
+    $fullarg = rawurldecode($_GET['fullarg']);
+    $args = explode(' ', $fullarg);
+    if (!isset($args[0])) {
+        $args[0] = '';
+    }
+    if (!isset($args[1])) {
+        $args[1] = '';
+    }
+    if (!isset($args[2])) {
+        $args[2] = '';
+    }
+}
+
+if (isset($_GET['args1'])) {
+    $args[1] = $_GET['args1'];
+}
+
+if (isset($_GET['args2'])) {
+    $args[2] = $_GET['args2'];
+}
+
+switch ($args[1]) {
+    case 'halal':
         $halal = 1;
-    } else {
-        $halal = 0;
-    }
-} else {
-    $halal = 0;
+        break;
+    case 'rice':
+        $category = 1;
+        break;
+    case 'noodles':
+        $category = 2;
+        break;
+    case 'soup':
+        $category = 3;
+        break;
+    case 'others':
+        $category = 4;
+        break;
 }
 
-if (isset($_GET['category'])) {
-    switch ($_GET['category']) {
-        case 'rice':
-            $category = 0;
-            break;
-        case 'noodles':
-            $category = 1;
-            break;
-        case 'soup':
-            $category = 2;
-            break;
-        case 'others':
-            $category = 3;
-            break;
-        default:
-            $category = rand(0, 3);
-    }
-} else {
-    $category = rand(0, 3);
+switch ($args[2]) {
+    case 'halal':
+        $halal = 1;
+        break;
+    case 'rice':
+        $category = 1;
+        break;
+    case 'noodles':
+        $category = 2;
+        break;
+    case 'soup':
+        $category = 3;
+        break;
+    case 'others':
+        $category = 4;
+        break;
 }
 
-echo getDrink($foodList, $category, $halal);
+if ($category == 0) {
+    $category = rand(1, 4);
+}
+
+echo getFood($foodList, $category, $halal);
