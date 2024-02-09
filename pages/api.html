@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="/themes/lucian-theme/styles/css/bootstrap.css">
     <link rel="stylesheet" href="/themes/lucian-theme/styles/css/navbar.css">
     <link rel="stylesheet" href="/themes/lucian-theme/styles/css/extended.css">
+    <link rel="stylesheet" href="https://emoji-css.afeld.me/emoji.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     <style>
@@ -56,7 +57,7 @@
     <hr class="lucian-divider" />
 
     <div class="container-xl">
-        <h2 class="comm-details-title mt-5 mb-3" id="overview">Overview</h2>
+        <h2 class="comm-details-title mt-5 mb-3" id="overview">Overview 🧡</h2>
         <p>
             สำหรับ API ของที่นี่ก็จะเน้นพวกของเล่นเพื่อซัพพอร์ตสตรีมเมอร์หรือคนที่ต้องการจะ Host Event ต่างๆนะครับ มักจะเป็นการเรียก API เพื่อสุ่มเอาข้อมูลออกมา 1 รายการ ตามเงื่อนไขที่ Query เข้าไปนะครับ มีการเรียกข้อมูลอย่างไร อะไรบ้าง ใช้งานอย่างไร เราไปดูกันครับ
         </p>
@@ -68,7 +69,7 @@
     <hr class="lucian-divider" />
 
     <div class="container-xl">
-        <h2 class="comm-details-title mt-5 mb-3" id="foodmenu">Food Menu <small class="lang-thai">เมนูอาหาร</small></h2>
+        <h2 class="comm-details-title mt-5 mb-3" id="foodmenu">Food Menu <small class="lang-thai">🍱 เมนูอาหาร</small></h2>
         <p>
             การสุ่มเมนูอาหาร จะสุ่มจากการยิง Request ไปที่ <code class="text-dark bg-light rounded p-1">https://api.lucian.solutions/api.foodmenu.php</code> ครับ โดยในส่วนของ body จะ output ออกมาเป็น Text ให้เอาไปใช้ต่อได้เลย
             โดยที่หลักๆจะมีอาหารอยู่ 4 ประเภท
@@ -87,7 +88,7 @@
             ดังนั้นแล้ว URL เต็มๆ จะมีค่าประมาณว่า
         </p>
         <p class="lead">
-            <code class="p-1 text-white bg-dark rounded shadow">https://api.lucian.solutions/api.foodmenu.php?args1=example&arg2=example</code>
+            <code class="text-dark">https://api.lucian.solutions/api.foodmenu.php?<span class="text-danger">args1</span>=<span class="text-primary">example</span>&<span class="text-danger">args2</span>=<span class="text-primary">example</span></code>
         </p>
         <p>
             โดยที่ค่าที่ส่งไป (ที่จะเปลี่ยนจาก example) สามารถเปลี่ยนค่าได้ดังนี้
@@ -103,19 +104,19 @@
             ตัวอย่างที่ถูกต้อง จะเป็นประมาณว่า
         </p>
         <p class="lead">
-            <code class="p-1 text-white bg-dark rounded shadow">https://api.lucian.solutions/api.foodmenu.php?args1=noodles&arg2=halal</code>
+            <code class="text-dark">https://api.lucian.solutions/api.foodmenu.php?<span class="text-danger">args1</span>=<span class="text-primary">noodles</span>&<span class="text-danger">args2</span>=<span class="text-primary">halal</span></code>
         </p>
         <p>
             ซึ่งจะเป็นการเลือกเมนูเส้นที่ฮาลาล หรืออีกตัวอย่าง เช่น
         </p>
         <p class="lead">
-            <code class="p-1 text-white bg-dark rounded shadow">https://api.lucian.solutions/api.foodmenu.php?args1=soup</code>
+            <code class="text-dark">https://api.lucian.solutions/api.foodmenu.php?<span class="text-danger">args1</span>=<span class="text-primary">soup</span></code>
         </p>
         <p>
             ซึ่งจะเป็นการเลือกเมนูซุป/ต้ม/แกง โดยใส่แค่ค่าเดียว หรือจะเป็น
         </p>
         <p class="lead">
-            <code class="p-1 text-white bg-dark rounded shadow">https://api.lucian.solutions/api.foodmenu.php</code>
+            <code class="text-dark">https://api.lucian.solutions/api.foodmenu.php</code>
         </p>
         <p>
             ก็ได้ ซึ่งจะเป็นการสุ่มจากทุกอย่างในรายการ ไม่มีการกรองครับผม
@@ -125,21 +126,40 @@
             ซึ่งจะเป็นการเอาข้อความแชทตรงนั้นทั้งก้อนมาตัดคำด้วย whitespace หรือเว้นวรรค เช่น <code class="text-dark bg-light rounded p-1">!foodmenu halal soup</code> มันก็จะ URL encode มาตัดคำ เอา parameter 2 ตัว
             (ซึ่งจะมีหรือไม่มีก็ได้) มาใส่เป็น query เหมือนด้านบนครับ โดยที่ตัวอย่างการพิมพ์รับ parameter ด้วย chatbot ก็จะประมาณว่า
         </p>
-        <p class="lead">
-            <code class="p-1 text-white bg-success rounded shadow me-2">StreamElements</code><code class="p-1 text-white bg-dark rounded shadow">${customapi.https://api.lucian.solutions/api.foodmenu.php?fullarg=${queryescape${0:}}}</code>
-        </p>
-        <p>
-            ซึ่งเป็น syntax ของ StreamElements ครับ 
-        </p>
+
+        <div class="container-fluid p-3 my-3 border bg-white shadow-sm rounded">
+            <h3>StreamElements</h3>
+            <p class="lead">
+                <code
+                    class="text-dark"><span class="text-primary">${customapi.</span>https://api.lucian.solutions/api.foodmenu.php?fullarg=<span class="text-danger">${queryescape <span class="text-success">${0:}</span>}</span><span class="text-primary">}</span></code>
+            </p>
+            <code id="foodmenu-se"
+                class="d-none">${customapi.https://api.lucian.solutions/api.foodmenu.php?fullarg=${queryescape ${0:}}}</code>
+            <button class="btn btn-sm btn-outline-dark" type="button" onclick="copyToClipboard('#foodmenu-se')"><i
+                    class="bi bi-copy me-2"></i>Copy to Clipboard</button>
+        </div>
+        
+        <div class="container-fluid p-3 my-3 border bg-white shadow-sm rounded">
+            <h3>Nightbot</h3>
+            <p class="lead">
+                <code
+                    class="text-dark"><span class="text-primary">$(urlfetch </span>https://api.lucian.solutions/api.foodmenu.php?fullarg=<span class="text-danger">$(querystring food <span class="text-success">$(1) $(2)</span>)</span><span class="text-primary">)</span></code>
+            </p>
+            <code id="foodmenu-nb"
+                class="d-none">$(urlfetch https://api.lucian.solutions/api.foodmenu.php?fullarg=$(querystring food $(1) $(2)))</code>
+            <button class="btn btn-sm btn-outline-dark" type="button" onclick="copyToClipboard('#foodmenu-nb')"><i
+                    class="bi bi-copy me-2"></i>Copy to Clipboard</button>
+        </div>
+
     </div>
 
     <hr class="lucian-divider" />
 
     <div class="container-xl">
-        <h2 class="comm-details-title mt-5 mb-3" id="drinksmenu">Drinks Menu <small class="lang-thai">เมนูเครื่องดื่ม</small></h2>
+        <h2 class="comm-details-title mt-5 mb-3" id="drinksmenu">Drinks Menu <small class="lang-thai">☕ เมนูเครื่องดื่ม</small></h2>
         <p>
             การสุ่มเมนูเครื่องดื่ม เช่นเดียวกับอาหารครับ จะสุ่มจากการยิง Request ไปที่ <code class="text-dark bg-light rounded p-1">https://api.lucian.solutions/api.drinksmenu.php</code> ครับ โดยในส่วนของ body จะ output ออกมาเป็น Text ให้เอาไปใช้ต่อได้เลย
-            โดยที่หลักๆจะมีอาหารอยู่ 5 ประเภท
+            โดยที่หลักๆจะมีเครื่องดื่มอยู่ 5 ประเภท
         </p>
         <ol>
             <li><p>กาแฟและนม (เมนูที่ปกติจะสั่งได้ที่ร้านกาแฟ)</p></li>
@@ -156,7 +176,7 @@
             ดังนั้นแล้ว URL เต็มๆ จะมีค่าประมาณว่า
         </p>
         <p class="lead">
-            <code class="p-1 text-white bg-dark rounded shadow">https://api.lucian.solutions/api.drinksmenu.php?args1=example</code>
+            <code class="text-dark">https://api.lucian.solutions/api.drinksmenu.php?<span class="text-danger">args1</span>=<span class="text-primary">example</span></code>
         </p>
         <p>
             โดยที่ค่าที่ส่งไป (ที่จะเปลี่ยนจาก example) สามารถเปลี่ยนค่าได้ดังนี้
@@ -173,19 +193,19 @@
             ตัวอย่างที่ถูกต้อง จะเป็นประมาณว่า
         </p>
         <p class="lead">
-            <code class="p-1 text-white bg-dark rounded shadow">https://api.lucian.solutions/api.drinksmenu.php?args1=soda</code>
+            <code class="text-dark">https://api.lucian.solutions/api.drinksmenu.php?<span class="text-danger">args1</span>=<span class="text-primary">soda</span></code>
         </p>
         <p>
             ซึ่งจะเป็นการเลือกเมนูน้ำอัดลม หรืออีกตัวอย่าง เช่น
         </p>
         <p class="lead">
-            <code class="p-1 text-white bg-dark rounded shadow">https://api.lucian.solutions/api.drinksmenu.php?args1=partymode</code>
+            <code class="text-dark">https://api.lucian.solutions/api.drinksmenu.php?<span class="text-danger">args1</span>=<span class="text-primary">partymode</span></code>
         </p>
         <p>
             ซึ่งจะเป็นการสุ่มทุกอย่าง รวมเครื่องดื่มแอลกอฮอล์ด้วย หรือจะเป็น
         </p>
         <p class="lead">
-            <code class="p-1 text-white bg-dark rounded shadow">https://api.lucian.solutions/api.drinksmenu.php</code>
+            <code class="text-dark">https://api.lucian.solutions/api.drinksmenu.php</code>
         </p>
         <p>
             ก็ได้ ซึ่งจะไม่มีการสุ่มจากเครื่องดื่มแอลกอฮอล์ในรายการครับผม
@@ -195,12 +215,41 @@
             ซึ่งจะเป็นการเอาข้อความแชทตรงนั้นทั้งก้อนมาตัดคำด้วย whitespace หรือเว้นวรรค เช่น <code class="text-dark bg-light rounded p-1">!drinksmenu coffee</code> มันก็จะ URL encode มาตัดคำ เอา parameter
             (ซึ่งจะมีหรือไม่มีก็ได้) มาใส่เป็น query เหมือนด้านบนครับ โดยที่ตัวอย่างการพิมพ์รับ parameter ด้วย chatbot ก็จะประมาณว่า
         </p>
-        <p class="lead">
-            <code class="p-1 text-white bg-success rounded shadow me-2">StreamElements</code><code class="p-1 text-white bg-dark rounded shadow">${customapi.https://api.lucian.solutions/api.drinksmenu.php?fullarg=${queryescape${0:}}}</code>
-        </p>
-        <p>
-            ซึ่งเป็น syntax ของ StreamElements ครับ 
-        </p>
+
+        <div class="container-fluid p-3 my-3 border bg-white shadow-sm rounded">
+            <h3>StreamElements</h3>
+            <p class="lead">
+                <code
+                    class="text-dark"><span class="text-primary">${customapi.</span>https://api.lucian.solutions/api.drinksmenu.php?fullarg=<span class="text-danger">${queryescape <span class="text-success">${0:}</span>}</span><span class="text-primary">}</span></code>
+            </p>
+            <code id="drinksmenu-se"
+                class="d-none">${customapi.https://api.lucian.solutions/api.drinksmenu.php?fullarg=${queryescape ${0:}}}</code>
+            <button class="btn btn-sm btn-outline-dark" type="button" onclick="copyToClipboard('#drinksmenu-se')"><i
+                    class="bi bi-copy me-2"></i>Copy to Clipboard</button>
+        </div>
+        
+        <div class="container-fluid p-3 my-3 border bg-white shadow-sm rounded">
+            <h3>Nightbot</h3>
+            <p class="lead">
+                <code
+                    class="text-dark"><span class="text-primary">$(urlfetch </span>https://api.lucian.solutions/api.drinksmenu.php?fullarg=<span class="text-danger">$(querystring drinks <span class="text-success">$(1)</span>)</span><span class="text-primary">)</span></code>
+            </p>
+            <code id="drinksmenu-nb"
+                class="d-none">$(urlfetch https://api.lucian.solutions/api.drinksmenu.php?fullarg=$(querystring drinks $(1)))</code>
+            <button class="btn btn-sm btn-outline-dark" type="button" onclick="copyToClipboard('#drinksmenu-nb')"><i
+                    class="bi bi-copy me-2"></i>Copy to Clipboard</button>
+        </div>
+    </div>
+
+    <div class="position-fixed bottom-0 start-50 translate-middle-x p-3" style="z-index: 11">
+        <div class="toast align-items-center text-white bg-success" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body" style="flex: 1 1 0; min-width: 0;">
+                    Copied link to clipboard.
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
     </div>
 
     <txp:output_form form="bottom_footer" />
@@ -213,12 +262,12 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 <script>
 
     $(window).scroll(function () {
         if ($(document).scrollTop() > 50) {
             $('.nav').addClass('affix');
-            console.log("OK");
         } else {
             $('.nav').removeClass('affix');
         }
@@ -264,6 +313,17 @@
         $("#page-title").removeClass("invisible");
         $("#page-title").fadeIn(1000);
     });
+
+    twemoji.parse(document.body);
+
+    function copyToClipboard(element) {
+        var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            $temp.remove();
+            $(".toast").toast('show');
+    }
 
 </script>
 
