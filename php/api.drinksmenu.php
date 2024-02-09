@@ -54,9 +54,6 @@ if (isset($_GET['fullarg'])) {
     if (!isset($args[1])) {
         $args[1] = '';
     }
-    if (!isset($args[2])) {
-        $args[2] = '';
-    }
 }
 
 if (isset($_GET['args1'])) {

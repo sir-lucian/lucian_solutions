@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="<txp:lang />" dir="<txp:text item=" lang_dir" />">
+
+<head>
+    <meta name="title" content="Lucian Solutions - API">
+    <meta name="description" content="Lucian Solutions API">
+
+    <meta name="twitter:title" content="Lucian Solutions - API" />
+    <meta property="og:title" content="Lucian Solutions - API" />
+    <meta name="twitter:url" content="https://lucian.solutions/api/" />
+    <meta property="og:url" content="https://lucian.solutions/api/" />
+    <meta property="og:image" content="https://lucian.solutions/images/58t.jpg" />
+    <meta property="og:image:secure_url" content="https://lucian.solutions/images/58t.jpg" />
+    <meta name="twitter:image" content="https://lucian.solutions/images/58t.jpg" />
+
+    <txp:output_form form="open_graph" />
+    <title>
+        <txp:page_title />
+    </title>
+
+    <link rel="stylesheet" href="/themes/lucian-theme/styles/css/bootstrap.css">
+    <link rel="stylesheet" href="/themes/lucian-theme/styles/css/navbar.css">
+    <link rel="stylesheet" href="/themes/lucian-theme/styles/css/extended.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+        .gold-highlight {
+            text-decoration: none;
+            transition: 250ms;
+        }
+
+        a.gold-highlight:hover {
+            color: #fff;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <txp:output_form form="top_navbar" />
+
+    <div id="spacer" style="height: 65px;"></div>
+
+    <div class="container-xl">
+        <div class="my-5 col-lg-9 mx-auto text-center">
+            <h1 class="comm-details-title mb-3 text-center" id="top-comm"><span class="gold-highlight">api</span>.lucian.solutions/</h1>
+            <div class="list-group d-inline-block">
+                <a href="#overview" class="list-group-item list-group-item-action text-start"><span class="gold-highlight">#</span> Overview</a>
+                <a href="#foodmenu" class="list-group-item list-group-item-action text-start"><span class="gold-highlight">#</span> Food Menu <small lang="th">เมนูอาหาร</small></a>
+                <a href="#drinksmenu" class="list-group-item list-group-item-action text-start"><span class="gold-highlight">#</span> Drinks Menu <small lang="th">เมนูเครื่องดื่ม</small></a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="lucian-divider" />
+
+    <div class="container-xl">
+        <h2 class="comm-details-title mt-5 mb-3" id="overview">Overview</h2>
+        <p>
+            สำหรับ API ของที่นี่ก็จะเน้นพวกของเล่นเพื่อซัพพอร์ตสตรีมเมอร์หรือคนที่ต้องการจะ Host Event ต่างๆนะครับ มักจะเป็นการเรียก API เพื่อสุ่มเอาข้อมูลออกมา 1 รายการ ตามเงื่อนไขที่ Query เข้าไปนะครับ มีการเรียกข้อมูลอย่างไร อะไรบ้าง ใช้งานอย่างไร เราไปดูกันครับ
+        </p>
+    </div>
+
+    <hr class="lucian-divider" />
+
+    <div class="container-xl">
+        <h2 class="comm-details-title mt-5 mb-3" id="foodmenu">Food Menu <small class="lang-thai">เมนูอาหาร</small></h2>
+        <p>
+            การสุ่มเมนูอาหาร จะสุ่มจากการยิง Request ไปที่ <code class="text-dark bg-light rounded p-1">https://api.lucian.solutions/api.foodmenu.php</code> ครับ โดยในส่วนของ body จะ output ออกมาเป็น Text ให้เอาไปใช้ต่อได้เลย
+            โดยที่หลักๆจะมีอาหารอยู่ 4 ประเภท
+        </p>
+        <ol>
+            <li><p>ข้าว</p></li>
+            <li><p>เมนูเส้น/ก๋วยเตี๋ยว</p></li>
+            <li><p>ซุป/ต้ม/แกง</p></li>
+            <li><p>อื่นๆ</p></li>
+        </ol>
+        <p>
+            จริงๆแล้ว เราสามารถเลือกประเภทให้อยู่ในประเภทเดียวได้โดยการเพิ่ม query ได้ และยังสามารถฟิลเตอร์ให้ออกเฉพาะเมนูฮาลาลได้ด้วย การ query นั้น จะมี parameter อยู่สองตัว คือ <code class="text-dark bg-light rounded p-1">args1</code>
+            และ <code class="text-dark bg-light rounded p-1">args2</code> เราสามารถใส่ค่าให้เลือกประเภทได้ผ่านทางสองค่านี้ โดยที่ไม่สนว่าเราจะใส่ช่องไหน (แต่ใส่ประเภทอาหารทั้งสองค่า จะเอาจาก <code class="text-dark bg-light rounded p-1">args2</code> เป็นหลัก)
+        </p>
+        <p>
+            ดังนั้นแล้ว URL เต็มๆ จะมีค่าประมาณว่า
+        </p>
+        <p class="lead">
+            <code class="p-1 text-white bg-dark rounded shadow">https://api.lucian.solutions/api.foodmenu.php?args1=example&arg2=example</code>
+        </p>
+        <p>
+            โดยที่ค่าที่ส่งไป (ที่จะเปลี่ยนจาก example) สามารถเปลี่ยนค่าได้ดังนี้
+        </p>
+        <ol>
+            <li><p><code class="text-dark bg-light rounded p-1">rice</code> ไว้สุ่มเมนูข้าว</p></li>
+            <li><p><code class="text-dark bg-light rounded p-1">noodles</code> ไว้สุ่มเมนูเส้น/ก๋วยเตี๋ยว</p></li>
+            <li><p><code class="text-dark bg-light rounded p-1">soup</code> ไว้สุ่มเมนูซุป/ต้ม/แกง</p></li>
+            <li><p><code class="text-dark bg-light rounded p-1">others</code> ไว้สุ่มเมนูอื่นๆนอกจากที่ระบุ เช่น สเต๊ก ส้มตำ พิซซ่า ฯลฯ</p></li>
+            <li><p><code class="text-dark bg-light rounded p-1">halal</code> ไว้กรองเฉพาะเมนูฮาลาล</p></li>
+        </ol>
+        <p>
+            ตัวอย่างที่ถูกต้อง จะเป็นประมาณว่า
+        </p>
+        <p class="lead">
+            <code class="p-1 text-white bg-dark rounded shadow">https://api.lucian.solutions/api.foodmenu.php?args1=noodles&arg2=halal</code>
+        </p>
+        <p>
+            ซึ่งจะเป็นการเลือกเมนูเส้นที่ฮาลาล หรืออีกตัวอย่าง เช่น
+        </p>
+        <p class="lead">
+            <code class="p-1 text-white bg-dark rounded shadow">https://api.lucian.solutions/api.foodmenu.php?args1=soup</code>
+        </p>
+        <p>
+            ซึ่งจะเป็นการเลือกเมนูซุป/ต้ม/แกง โดยใส่แค่ค่าเดียว หรือจะเป็น
+        </p>
+        <p class="lead">
+            <code class="p-1 text-white bg-dark rounded shadow">https://api.lucian.solutions/api.foodmenu.php</code>
+        </p>
+        <p>
+            ก็ได้ ซึ่งจะไม่มีการสุ่มจากทุกอย่างในรายการ ไม่มีการกรองครับผม
+        </p>
+        <p>
+            จริงๆมันมีการใส่ parameter อีกแบบด้วยครับ แต่ไม่แนะนำให้ใช้ มันเกิดมาเพื่อซัพพอร์ตกับการเรียก command ผ่านแชทสตรีมเมอร์ครับ โดยจะใช้ parameter <code class="text-dark bg-light rounded p-1">fullarg</code>
+            ซึ่งจะเป็นการเอาข้อความแชทตรงนั้นทั้งก้อนมาตัดคำด้วย whitespace หรือเว้นวรรค เช่น <code class="text-dark bg-light rounded p-1">!foodmenu halal soup</code> มันก็จะ URL encode มาตัดคำ เอา parameter 2 ตัว
+            (ซึ่งจะมีหรือไม่มีก็ได้) มาใส่เป็น query เหมือนด้านบนครับ โดยที่ตัวอย่างการพิมพ์รับ parameter ด้วย chatbot ก็จะประมาณว่า
+        </p>
+        <p class="lead">
+            <code class="p-1 text-white bg-dark rounded shadow">${customapi.https://api.lucian.solutions/api.foodmenu.php?fullarg=${queryescape${0:}}}</code>
+        </p>
+        <p>
+            ซึ่งเป็น syntax ของ StreamElements ครับ 
+        </p>
+    </div>
+
+    <hr class="lucian-divider" />
+
+    <div class="container-xl">
+        <h2 class="comm-details-title mt-5 mb-3" id="drinksmenu">Drinks Menu <small class="lang-thai">เมนูเครื่องดื่ม</small></h2>
+        <p>
+            การสุ่มเมนูเครื่องดื่ม เช่นเดียวกับอาหารครับ จะสุ่มจากการยิง Request ไปที่ <code class="text-dark bg-light rounded p-1">https://api.lucian.solutions/api.drinksmenu.php</code> ครับ โดยในส่วนของ body จะ output ออกมาเป็น Text ให้เอาไปใช้ต่อได้เลย
+            โดยที่หลักๆจะมีอาหารอยู่ 5 ประเภท
+        </p>
+        <ol>
+            <li><p>กาแฟและนม (เมนูที่ปกติจะสั่งได้ที่ร้านกาแฟ)</p></li>
+            <li><p>ชา (และน้ำสมุนไพรอื่นๆ)</p></li>
+            <li><p>น้ำผลไม้หรือผลไม้ปั่น</p></li>
+            <li><p>น้ำอัดลม อิตาเลียนโซดา และเครื่องดื่มชูกำลัง</p></li>
+            <li><p>เครื่องดื่มแอลกอฮอล์</p></li>
+        </ol>
+        <p>
+            เราสามารถเลือกประเภทให้อยู่ในประเภทเดียวได้โดยการเพิ่ม query ได้ ซึ่งปกติการสุ่มจะไม่นับเครื่องดื่มแอลกอฮอล์ด้วยถ้าไม่ได้ระบุว่าจะสุ่มแอลกอฮอล์ โดยถ้าจะให้สุ่มทุกอย่างรวมแอลกอฮอล์ด้วย จะใข้ query <code class="text-dark bg-light rounded p-1">partymode</code> ครับ
+            โดยการ query นั้น จะมี parameter อยู่หนึ่งตัว คือ <code class="text-dark bg-light rounded p-1">args1</code> เราสามารถใส่ค่าให้เลือกประเภทได้ผ่านทางค่านี้
+        </p>
+        <p>
+            ดังนั้นแล้ว URL เต็มๆ จะมีค่าประมาณว่า
+        </p>
+        <p class="lead">
+            <code class="p-1 text-white bg-dark rounded shadow">https://api.lucian.solutions/api.drinksmenu.php?args1=example</code>
+        </p>
+        <p>
+            โดยที่ค่าที่ส่งไป (ที่จะเปลี่ยนจาก example) สามารถเปลี่ยนค่าได้ดังนี้
+        </p>
+        <ol>
+            <li><p><code class="text-dark bg-light rounded p-1">coffee</code> ไว้สุ่มเมนูร้านกาแฟ</p></li>
+            <li><p><code class="text-dark bg-light rounded p-1">tea</code> ไว้สุ่มเมนูชาและสมุนไพร</p></li>
+            <li><p><code class="text-dark bg-light rounded p-1">juice</code> ไว้สุ่มเมนูน้ำผลไม้หรือผลไม้ปั่น</p></li>
+            <li><p><code class="text-dark bg-light rounded p-1">soda</code> ไว้สุ่มเมนูน้ำอัดลม</p></li>
+            <li><p><code class="text-dark bg-light rounded p-1">alcohol</code> ไว้สุ่มเมนูเครื่องดื่มแอลกอฮอล์</p></li>
+            <li><p><code class="text-dark bg-light rounded p-1">partymode</code> ไว้สำหรับนับเครื่องดื่มแอลกอฮอล์ในการสุ่มรวมด้วย</p></li>
+        </ol>
+        <p>
+            ตัวอย่างที่ถูกต้อง จะเป็นประมาณว่า
+        </p>
+        <p class="lead">
+            <code class="p-1 text-white bg-dark rounded shadow">https://api.lucian.solutions/api.drinksmenu.php?args1=soda</code>
+        </p>
+        <p>
+            ซึ่งจะเป็นการเลือกเมนูน้ำอัดลม หรืออีกตัวอย่าง เช่น
+        </p>
+        <p class="lead">
+            <code class="p-1 text-white bg-dark rounded shadow">https://api.lucian.solutions/api.drinksmenu.php?args1=partymode</code>
+        </p>
+        <p>
+            ซึ่งจะเป็นการสุ่มทถกอย่าง รวมเครื่องดื่มแอลกอฮอล์ด้วย หรือจะเป็น
+        </p>
+        <p class="lead">
+            <code class="p-1 text-white bg-dark rounded shadow">https://api.lucian.solutions/api.drinksmenu.php</code>
+        </p>
+        <p>
+            ก็ได้ ซึ่งจะไม่มีการสุ่มจากทุกอย่างในรายการ ไม่มีการกรองครับผม
+        </p>
+        <p>
+            จริงๆมันมีการใส่ parameter อีกแบบเพื่อซัพพอร์ตกับการเรียก command ผ่านแชทสตรีมเมอร์เหมือนสุ่มเมนูอาหารครับ โดยจะใช้ parameter <code class="text-dark bg-light rounded p-1">fullarg</code>
+            ซึ่งจะเป็นการเอาข้อความแชทตรงนั้นทั้งก้อนมาตัดคำด้วย whitespace หรือเว้นวรรค เช่น <code class="text-dark bg-light rounded p-1">!drinksmenu coffee</code> มันก็จะ URL encode มาตัดคำ เอา parameter
+            (ซึ่งจะมีหรือไม่มีก็ได้) มาใส่เป็น query เหมือนด้านบนครับ โดยที่ตัวอย่างการพิมพ์รับ parameter ด้วย chatbot ก็จะประมาณว่า
+        </p>
+        <p class="lead">
+            <code class="p-1 text-white bg-dark rounded shadow">${customapi.https://api.lucian.solutions/api.drinksmenu.php?fullarg=${queryescape${0:}}}</code>
+        </p>
+        <p>
+            ซึ่งเป็น syntax ของ StreamElements ครับ 
+        </p>
+    </div>
+
+    <txp:output_form form="bottom_footer" />
+
+</body>
+
+<script src="/themes/lucian-theme/styles/js/extended.js"></script>
+<script src="/themes/lucian-theme/styles/js/bootstrap.min.js"></script>
+<script src="/themes/lucian-theme/styles/js/lightbox.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+
+    $(window).scroll(function () {
+        if ($(document).scrollTop() > 50) {
+            $('.nav').addClass('affix');
+            console.log("OK");
+        } else {
+            $('.nav').removeClass('affix');
+        }
+
+        pxlCount = $(document).scrollTop() / 50;
+
+        if (1 - $(document).scrollTop() / 2000 > 0) {
+            opacity = 1 - $(document).scrollTop() / 2000;
+        }
+        else {
+            opacity = 0;
+        }
+        $(".home2").css({
+            "-webkit-filter": "blur(" + pxlCount + "px) opacity(" + opacity + ")",
+            "-moz-filter": "blur(" + pxlCount + "px) opacity(" + opacity + ")",
+            "filter": "blur(" + pxlCount + "px) opacity(" + opacity + ")"
+        })
+    });
+
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            $('.hideme').each(function (i) {
+                var bottom_of_object = $(this).offset().top + 20;
+                var bottom_of_window = $(window).scrollTop() + $(window).height();
+                if (bottom_of_window > bottom_of_object) { $(this).animate({ 'opacity': '1' }, 500); }
+            });
+        });
+    });
+
+    /*
+    $(window).onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            $('#backtotop').show();
+        }
+        else {
+            $('#backtotop').removeAttr("style").hide();;
+        }
+    };
+    */
+
+    $(document).ready(function () {
+        $("#page-title").fadeOut(1);
+        $("#page-title").removeClass("invisible");
+        $("#page-title").fadeIn(1000);
+    });
+
+</script>
+
+</html>
