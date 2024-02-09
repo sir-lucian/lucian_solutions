@@ -51,7 +51,7 @@
 
     <div class="container-xl">
         <div class="my-5 container-lg mx-auto px-3">
-            <h1 class="comm-details-title mb-3 text-center" id="top-comm">lucian.solutions/<span class="gold-highlight">apps</span></h1>
+            <h1 class="comm-details-title mb-3 text-center" id="top-comm">lucian.solutions/<span class="gold-highlight">apps</span>/</h1>
             <p class="blockquote-footer text-center">Applications & Systems developed by <cite
                     title="Lucian Solutions">Sir Lucian</cite></p>
         </div>
@@ -139,10 +139,99 @@
                 </div>
             </div>
 
+            <!-- DJMax -->
+            <div class="col-xl-3 col-lg-4 col-md-6 p-2">
+                <div class="article-list card border-0 p-0 bg-light h-100 shadow bg-light" itemprop="blogPost" itemscope
+                    itemtype="https://schema.org/BlogPosting">
+                    <div class="position-relative">
+                        <txp:image id="167" class="card-img-top" thumbnail
+                            style="object-fit: cover; aspect-ratio: 1 / 1; height: auto;" loading="lazy"
+                            itemprop="url contentUrl" src="<txp:image_url link='0' />" />
+                        <div class="position-absolute top-0 start-0 w-100 h-100 img-card-gradient"></div>
+                    </div>
+                    <h4 class="mx-3 mt-3 gold-highlight" itemprop="headline">
+                        DJMax Respect V - Pattern Design
+                    </h4>
+                    <div class="mx-3">
+                        <p class="card-text"><small class="text-body-secondary">DJMax's gameplay experience</small></p>
+                    </div>
+                    <div class="m-3" itemprop="description">
+                        <p class="card-text">All patterns I designed for DJMax Respect V</p>
+                        <p class="card-text">แพทเทิร์นทั้งหมดที่เคยทำให้ DJMax Respect V</p>
+                    </div>
+
+                    <a href="javascript:void(0)" class="stretched-link" itemprop="url mainEntityOfPage" title="DJMax Respect V" data-bs-toggle="modal" data-bs-target="#djmaxPatterns"></a>
+                </div>
+            </div>
+
         </div>
     </div>
 
     <txp:output_form form="bottom_footer" />
+
+    <div class="modal fade" id="djmaxPatterns" tabindex="-1" aria-labelledby="Payment" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">DJMax Respect V - Sir Lucian's Patterns</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-sm table-responsive table-hover">
+                        <thead class="table-light">
+                            <tr>
+                                <th scope="col">Song Name</th>
+                                <th scope="col">Pack</th>
+                                <th scope="col" class="text-center">4B SC</th>
+                                <th scope="col" class="text-center">5B SC</th>
+                                <th scope="col" class="text-center">6B SC</th>
+                                <th scope="col" class="text-center">8B SC</th>
+                                <th scope="col">Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Every Morning <small lang="ko">아침형 인간</small></td>
+                                <td>Portable 1</td>
+                                <td class="text-success text-center"></td>
+                                <td class="text-success text-center"></td>
+                                <td class="text-success text-center">&check;</td>
+                                <td class="text-success text-center"></td>
+                                <td>DPC 2022</td>
+                            </tr>
+                            <tr>
+                                <td>HAMSIN</td>
+                                <td>Portable 1</td>
+                                <td class="text-success text-center"></td>
+                                <td class="text-success text-center">&check;</td>
+                                <td class="text-success text-center">&check;</td>
+                                <td class="text-success text-center"></td>
+                                <td>DPC 2023</td>
+                            </tr>
+                            <tr>
+                                <td>Tok! Tok! Tok!</td>
+                                <td>Respect</td>
+                                <td class="text-success text-center">&check;</td>
+                                <td class="text-success text-center">&check;</td>
+                                <td class="text-success text-center"></td>
+                                <td class="text-success text-center"></td>
+                                <td>DPC 2023</td>
+                            </tr>
+                            <tr>
+                                <td>Yo Creo Que Si</td>
+                                <td>Portable 2</td>
+                                <td class="text-success text-center"></td>
+                                <td class="text-success text-center">&check;</td>
+                                <td class="text-success text-center"></td>
+                                <td class="text-success text-center">&check;</td>
+                                <td>DPC 2023</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>  
 
 </body>
 
@@ -153,6 +242,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script>
+
+    var djmaxModal = document.getElementById('djmaxPatterns')
+    var djmaxInput = document.getElementById('djmaxInput')
+
+    djmaxModal.addEventListener('shown.bs.modal', function () {
+        djmaxInput.focus();
+    })
 
     $(window).scroll(function () {
         if ($(document).scrollTop() > 50) {
