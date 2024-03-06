@@ -265,49 +265,6 @@
 <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 <script>
 
-    $(window).scroll(function () {
-        if ($(document).scrollTop() > 50) {
-            $('.nav').addClass('affix');
-        } else {
-            $('.nav').removeClass('affix');
-        }
-
-        pxlCount = $(document).scrollTop() / 50;
-
-        if (1 - $(document).scrollTop() / 2000 > 0) {
-            opacity = 1 - $(document).scrollTop() / 2000;
-        }
-        else {
-            opacity = 0;
-        }
-        $(".home2").css({
-            "-webkit-filter": "blur(" + pxlCount + "px) opacity(" + opacity + ")",
-            "-moz-filter": "blur(" + pxlCount + "px) opacity(" + opacity + ")",
-            "filter": "blur(" + pxlCount + "px) opacity(" + opacity + ")"
-        })
-    });
-
-    $(document).ready(function () {
-        $(window).scroll(function () {
-            $('.hideme').each(function (i) {
-                var bottom_of_object = $(this).offset().top + 20;
-                var bottom_of_window = $(window).scrollTop() + $(window).height();
-                if (bottom_of_window > bottom_of_object) { $(this).animate({ 'opacity': '1' }, 500); }
-            });
-        });
-    });
-
-    /*
-    $(window).onscroll = function() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            $('#backtotop').show();
-        }
-        else {
-            $('#backtotop').removeAttr("style").hide();;
-        }
-    };
-    */
-
     $(document).ready(function () {
         $("#page-title").fadeOut(1);
         $("#page-title").removeClass("invisible");

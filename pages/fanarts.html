@@ -103,12 +103,6 @@
                         echo '</a></div>';
                     }       
                     echo '</div>'; 
-                    
-                    /* Hashtag Info */
-                    echo '</div><hr class="lucian-divider" />';
-                    echo '<div class="text-center my-3">';
-                    echo '<p class="text-center lead">Use <span class="badge bg-dark">#lucianavenue</span> on Twitter</p>';
-                    echo '</div><hr class="lucian-divider" />';
 
                     /* Artwork List */
                     echo '<div class="d-flex flex-wrap my-5">';
@@ -154,7 +148,6 @@
     $(window).scroll(function () {
         if ($(document).scrollTop() > 50) {
             $('.nav').addClass('affix');
-            console.log("OK");
         } else {
             $('.nav').removeClass('affix');
         }
@@ -187,17 +180,6 @@
             });
         });
     });
-
-    /*
-    $(window).onscroll = function() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            $('#backtotop').show();
-        }
-        else {
-            $('#backtotop').removeAttr("style").hide();;
-        }
-    };
-    */
 
     $(document).ready(function () {
         $("#page-title").fadeOut(1);

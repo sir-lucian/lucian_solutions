@@ -16,12 +16,6 @@ foreach ($contributors as $entry) {
 }
 echo '</div>';
 
-/* Hashtag Info */
-echo '</div><hr class="lucian-divider" />';
-echo '<div class="text-center my-3">';
-echo '<p class="text-center lead">Use <span class="badge bg-dark">#lucianavenue</span> on Twitter</p>';
-echo '</div><hr class="lucian-divider" />';
-
 /* Artwork List */
 echo '<div class="d-flex flex-wrap my-5">';
 foreach ($contributors as $entry) {

@@ -65,7 +65,7 @@
                 <div class="article-list card border-0 p-0 bg-light h-100 shadow bg-light" itemprop="blogPost" itemscope
                     itemtype="https://schema.org/BlogPosting">
                     <div class="position-relative">
-                        <txp:image id="231" class="card-img-top" thumbnail
+                        <txp:image id="239" class="card-img-top" thumbnail
                             style="object-fit: cover; aspect-ratio: 1 / 1; height: auto;" loading="lazy"
                             itemprop="url contentUrl" src="<txp:image_url link='0' />" />
                         <div class="position-absolute top-0 start-0 w-100 h-100 img-card-gradient"></div>
@@ -144,7 +144,7 @@
                 <div class="article-list card border-0 p-0 bg-light h-100 shadow bg-light" itemprop="blogPost" itemscope
                     itemtype="https://schema.org/BlogPosting">
                     <div class="position-relative">
-                        <txp:image id="167" class="card-img-top" thumbnail
+                        <txp:image id="242" class="card-img-top" thumbnail
                             style="object-fit: cover; aspect-ratio: 1 / 1; height: auto;" loading="lazy"
                             itemprop="url contentUrl" src="<txp:image_url link='0' />" />
                         <div class="position-absolute top-0 start-0 w-100 h-100 img-card-gradient"></div>
@@ -182,10 +182,10 @@
                             <tr>
                                 <th scope="col">Song Name</th>
                                 <th scope="col">Pack</th>
-                                <th scope="col" class="text-center">4B SC</th>
-                                <th scope="col" class="text-center">5B SC</th>
-                                <th scope="col" class="text-center">6B SC</th>
-                                <th scope="col" class="text-center">8B SC</th>
+                                <th scope="col" class="text-center text-success">4B SC</th>
+                                <th scope="col" class="text-center text-primary">5B SC</th>
+                                <th scope="col" class="text-center text-warning">6B SC</th>
+                                <th scope="col" class="text-center text-danger">8B SC</th>
                                 <th scope="col">Remarks</th>
                             </tr>
                         </thead>
@@ -247,13 +247,11 @@
     var djmaxInput = document.getElementById('djmaxInput')
 
     djmaxModal.addEventListener('shown.bs.modal', function () {
-        djmaxInput.focus();
     })
 
     $(window).scroll(function () {
         if ($(document).scrollTop() > 50) {
             $('.nav').addClass('affix');
-            console.log("OK");
         } else {
             $('.nav').removeClass('affix');
         }
@@ -266,7 +264,7 @@
         else {
             opacity = 0;
         }
-        $(".home2").css({
+        $(".home3").css({
             "-webkit-filter": "blur(" + pxlCount + "px) opacity(" + opacity + ")",
             "-moz-filter": "blur(" + pxlCount + "px) opacity(" + opacity + ")",
             "filter": "blur(" + pxlCount + "px) opacity(" + opacity + ")"
@@ -282,17 +280,6 @@
             });
         });
     });
-
-    /*
-    $(window).onscroll = function() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            $('#backtotop').show();
-        }
-        else {
-            $('#backtotop').removeAttr("style").hide();;
-        }
-    };
-    */
 
     $(document).ready(function () {
         $("#page-title").fadeOut(1);

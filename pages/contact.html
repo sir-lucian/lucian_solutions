@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<txp:lang />" dir="<txp:text item="lang_dir" />">
+<html lang="<txp:lang />" dir="<txp:text item=" lang_dir" />">
 
 <head>
     <meta name="title" content="Lucian Solutions - Contact">
@@ -11,10 +11,12 @@
     <meta property="og:url" content="https://lucian.solutions/contact/" />
     <meta property="og:image" content="https://lucian.solutions/images/170t.png" />
     <meta property="og:image:secure_url" content="https://lucian.solutions/images/170t.png" />
-    <meta name="twitter:image" content="https://lucian.solutions/images/170t.png" /> 
+    <meta name="twitter:image" content="https://lucian.solutions/images/170t.png" />
 
     <txp:output_form form="open_graph" />
-    <title><txp:page_title /></title>
+    <title>
+        <txp:page_title />
+    </title>
 
     <link rel="stylesheet" href="/themes/lucian-theme/styles/css/bootstrap.css">
     <link rel="stylesheet" href="/themes/lucian-theme/styles/css/navbar.css">
@@ -27,7 +29,7 @@
         }
 
         a.gold-highlight:hover {
-            color:#fff;
+            color: #fff;
         }
 
         .traffic-video {
@@ -47,7 +49,7 @@
         }
 
         .contact-detail {
-            background-color: rgba(0,0,0,0.75);
+            background-color: rgba(0, 0, 0, 0.75);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
@@ -60,49 +62,60 @@
     <txp:output_form form="top_navbar" />
 
     <div class="home2"></div>
-    <div id="page-title" class="container container-fluid position-absolute top-50 start-50 translate-middle text-center invisible">
+    <div id="page-title"
+        class="container container-fluid position-absolute top-50 start-50 translate-middle text-center invisible">
         <div class="bg-white text-dark py-3 rounded shadow mx-auto text-center" style="--bs-bg-opacity: .9;">
             <h1 class="display-2 text-center fw-bold my-2">Contact</h1>
             <h4 class="display-5 text-center lang-thai"><small>ข้อมูลติดต่อ</small></h4>
         </div>
     </div>
 
-    <!--button type="button" id="backtotop" class="btn btn-dark rounded-pill position-fixed bottom-0 end-0 m-5" onclick="topFunction()" style="display: none;">
-        <img src="/themes/lucian-theme/styles/css/up-arrow-icon.svg" alt="Back to Top" style="height: 1rem; filter: invert(1);">
-    </button-->
-
     <div class="traffic-video my-5 position-relative">
         <video autoplay muted loop id="myVideo" class="position-absolute">
             <source src="/images/Traffic-Small.mp4" type="video/mp4">
         </video>
-        <div class="container-fluid my-5 py-5 text-center text-white contact-detail" itemscope itemtype="https://schema.org/Person">
-            <txp:image id="111" thumbnail class="img-fluid mx-auto d-block border border-white border-2 rounded-circle mt-3" style="height:200px; width: auto;" loading="lazy" itemprop="image"/>
+        <div class="container-fluid my-5 py-5 text-center text-white contact-detail" itemscope
+            itemtype="https://schema.org/Person">
+            <txp:image id="111" thumbnail
+                class="img-fluid mx-auto d-block border border-white border-2 rounded-circle mt-3"
+                style="height:200px; width: auto;" loading="lazy" itemprop="image" />
             <h1 class="display-5 my-3"><span itemprop="honorificPrefix">Sir</span> Lucian</h1>
-            <h6 class="mb-3"><span itemprop="givenName">Karn</span> <span itemprop="additionalName">Lucian</span> <span itemprop="familyName">Kamolnavin</span></h6>
+            <h6 class="mb-3"><span itemprop="givenName">Karn</span> <span itemprop="additionalName">Lucian</span> <span
+                    itemprop="familyName">Kamolnavin</span></h6>
             <p class="d-none" itemprop="url">https://lucian.solutions</p>
             <p class="d-none" itemprop="name">Karn Lucian Kamolnavin</p>
             <div>
-                <a rel="me" href="https://mastodon.in.th/@sirlucian" target="_blank" class="btn btn-outline-light border-0 m-1">
+                <a rel="me" href="https://mastodon.in.th/@sirlucian" target="_blank"
+                    class="btn btn-outline-light border-0 m-1">
                     <i class="bi bi-mastodon fs-5"></i>
                 </a>
                 <a rel="me" href="https://x.com/lucidkarn" target="_blank" class="btn btn-outline-light border-0 m-1">
                     <i class="bi bi-twitter-x fs-5"></i>
                 </a>
-                <a rel="me" href="https://www.youtube.com/@SirLucian" target="_blank" class="btn btn-outline-light border-0 m-1">
+                <a rel="me" href="https://www.youtube.com/@SirLucian" target="_blank"
+                    class="btn btn-outline-light border-0 m-1">
                     <i class="bi bi-youtube fs-5"></i>
                 </a>
-                <a rel="me" href="https://twitch.tv/stlucian" target="_blank" class="btn btn-outline-light border-0 m-1">
+                <a rel="me" href="https://twitch.tv/stlucian" target="_blank"
+                    class="btn btn-outline-light border-0 m-1">
                     <i class="bi bi-twitch fs-5"></i>
                 </a>
-                <a rel="me" href="https://github.com/lucidkarn" target="_blank" class="btn btn-outline-light border-0 m-1">
+                <a rel="me" href="https://github.com/lucidkarn" target="_blank"
+                    class="btn btn-outline-light border-0 m-1">
                     <i class="bi bi-github fs-5"></i>
+                </a>
+                <a rel="me" href="https://discordapp.com/users/219307656777564160" target="_blank"
+                    class="btn btn-outline-light border-0 m-1">
+                    <i class="bi bi-discord fs-5"></i>
                 </a>
             </div>
             <div>
-                <a rel="me" href="https://pixiv.me/holypriest" target="_blank" class="btn btn-outline-light btn-sm border-0 m-1">
+                <a rel="me" href="https://pixiv.me/holypriest" target="_blank"
+                    class="btn btn-outline-light btn-sm border-0 m-1">
                     <i class="bi bi-link-45deg me-2"></i>Pixiv
                 </a>
-                <a rel="me" href="https://arbum.art/u/sirlucian" target="_blank" class="btn btn-outline-light btn-sm border-0 m-1">
+                <a rel="me" href="https://arbum.art/u/sirlucian" target="_blank"
+                    class="btn btn-outline-light btn-sm border-0 m-1">
                     <i class="bi bi-link-45deg me-2"></i>Arbum
                 </a>
             </div>
@@ -121,64 +134,52 @@
 
 </body>
 
-    <script src="/themes/lucian-theme/styles/js/extended.js"></script>
-    <script src="/themes/lucian-theme/styles/js/bootstrap.min.js"></script>
-    <script src="/themes/lucian-theme/styles/js/lightbox.js"></script>
+<script src="/themes/lucian-theme/styles/js/extended.js"></script>
+<script src="/themes/lucian-theme/styles/js/bootstrap.min.js"></script>
+<script src="/themes/lucian-theme/styles/js/lightbox.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
 
-        $(window).scroll(function() {
-            if ($(document).scrollTop() > 50) {
-                $('.nav').addClass('affix');
-                console.log("OK");
-            } else {
-                $('.nav').removeClass('affix');
-            }
+    $(window).scroll(function () {
+        if ($(document).scrollTop() > 50) {
+            $('.nav').addClass('affix');
+        } else {
+            $('.nav').removeClass('affix');
+        }
 
-            pxlCount = $(document).scrollTop()/50;
+        pxlCount = $(document).scrollTop() / 50;
 
-            if (1-$(document).scrollTop()/2000 > 0){
-                opacity = 1-$(document).scrollTop()/2000;
-            }
-            else {
-                opacity = 0;
-            }
-            $(".home2").css({
-                "-webkit-filter": "blur("+pxlCount+"px) opacity("+opacity+")",
-                "-moz-filter": "blur("+pxlCount+"px) opacity("+opacity+")",
-                "filter": "blur("+pxlCount+"px) opacity("+opacity+")"
-            })
-        });
+        if (1 - $(document).scrollTop() / 2000 > 0) {
+            opacity = 1 - $(document).scrollTop() / 2000;
+        }
+        else {
+            opacity = 0;
+        }
+        $(".home2").css({
+            "-webkit-filter": "blur(" + pxlCount + "px) opacity(" + opacity + ")",
+            "-moz-filter": "blur(" + pxlCount + "px) opacity(" + opacity + ")",
+            "filter": "blur(" + pxlCount + "px) opacity(" + opacity + ")"
+        })
+    });
 
-        $(document).ready(function() {
-            $(window).scroll( function() {
-                $('.hideme').each( function(i) {
-                    var bottom_of_object = $(this).offset().top + 20;
-                    var bottom_of_window = $(window).scrollTop() + $(window).height();
-                    if( bottom_of_window > bottom_of_object ){$(this).animate({'opacity':'1'},500);}
-                });
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            $('.hideme').each(function (i) {
+                var bottom_of_object = $(this).offset().top + 20;
+                var bottom_of_window = $(window).scrollTop() + $(window).height();
+                if (bottom_of_window > bottom_of_object) { $(this).animate({ 'opacity': '1' }, 500); }
             });
         });
+    });
 
-        /*
-        $(window).onscroll = function() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                $('#backtotop').show();
-            }
-            else {
-                $('#backtotop').removeAttr("style").hide();;
-            }
-        };
-        */
+    $(document).ready(function () {
+        $("#page-title").fadeOut(1);
+        $("#page-title").removeClass("invisible");
+        $("#page-title").fadeIn(1000);
+    });
 
-        $(document).ready(function(){
-            $("#page-title").fadeOut(1);
-            $("#page-title").removeClass("invisible");
-            $("#page-title").fadeIn(1000);
-        });
-
-    </script>
+</script>
 
 </html>
