@@ -53,22 +53,6 @@
             font-family: var(--bs-body-font-family);
         }
 
-        .list-group {
-            background-color: transparent;
-            border-radius: 5px;
-        }
-        
-        .list-group-item {
-            color: white;
-            background-color: rgba(0,0,0,0.25);
-            border-radius: 5px;
-            border: none;
-        }
-
-        .list-group-item-action {
-            transition: 0.3s;
-        }
-
         .traffic-video {
             width: 100vw;
             height: 100vh;
@@ -95,52 +79,37 @@
             <source src="/images/Traffic-Small.mp4" type="video/mp4">
         </video>
     </div>
-    <div class="cover-container d-flex w-100 p-3 mx-auto flex-column">
+    <div class="cover-container d-flex w-100 mx-auto flex-column">
 
-        <header class="mb-auto">
-            <div>
-                <h2 class="float-md-start mb-0 h4"><img src="/images/4.png" class="sitelogo" alt="Lucian Solutions"><txp:site_name /></h2>
-                <p class="nav nav-masthead justify-content-center float-md-end"><i><txp:site_slogan /></i></p>
-            </div>
+        <header class="position-absolute w-100">
+            <h2 class="h4 text-center mt-3"><img src="/images/4.png" class="sitelogo" alt="Lucian Solutions"><txp:site_name /></h2>
         </header>
 
-        <main class="container lucian-hidden" id="hero">
-            <div class="d-flex flex-wrap justify-content-center" style="align-items: center;" itemscope itemtype="https://schema.org/Person">
-                <div class="col-md-6 h-100 align-middle my-3">
-                    <a href="/contact/"><img src="/images/111t.png" class="img-circle lucian-icon" alt="Sir Lucian" loading="lazy" itemprop="image"></a>
-                    <h1 style="font-size: 3em;"><span itemprop="honorificPrefix">Sir</span> Lucian</h1>
-                    <h2 class="lead gold-highlight"><span itemprop="givenName">Karn</span> <span itemprop="additionalName">Lucian</span> <span itemprop="familyName">Kamolnavin</span></h2>
+        <main class="container container-fluid position-absolute top-50 start-50 translate-middle lucian-hidden py-2" id="hero">
+            <div class="text-center" itemscope itemtype="https://schema.org/Person">
+                <div class="d-inline-block">
+                    <a href="/contact/"><img src="/images/111t.png" class="img-circle lucian-icon mt-0 mb-2" alt="Sir Lucian" loading="lazy" itemprop="image"></a>
+                    <h1 style="font-size: 3em;" class="gold-highlight"><span itemprop="honorificPrefix">Sir</span> Lucian</h1>
+                    <h2 class="lead gold-highlight d-none"><span itemprop="givenName">Karn</span> <span itemprop="additionalName">Lucian</span> <span itemprop="familyName">Kamolnavin</span></h2>
                     <p class="d-none" itemprop="url">https://lucian.solutions</p>
                     <p class="d-none" itemprop="name">Karn Lucian Kamolnavin</p>
-                </div>
-                <div class="col-md-6 h-100 text-md-start align-middle my-3">
-                    <h3 class="gold-highlight mb-3">
-                        <i class="bi bi-code-slash"></i>
-                        <i class="bi bi-palette-fill"></i>
-                        <span class="text-white">Developer & Illustrator</span>
-                    </h3>
-                    <p class="text-white">
+                    <p class="lead">
                         Greetings! I'm <strong>Lucian</strong>, a full-stack developer from Thailand.
                     </p>
-                    <div class="d-inline-block">
-                        <ul style="font-size:0.9rem">
-                            <li class="text-start">Full-time full stack developer in a state-owned enterprise</li>
-                            <li class="text-start">Commissioned pattern designer for <a href="https://store.steampowered.com/app/960170/DJMAX_RESPECT_V/" target="_blank" class="d-inline-block text-decoration-none textlink">DJMax Respect V</a></li>
-                            <li class="text-start">Drawing & programming as hobbies</li>
-                        </ul>
-                    </div>
-                    <br />
-                    <div class="mt-2 list-group d-inline-block">
-                        <a href="/apps/" class="list-group-item list-group-item-action text-start mb-1">
+                    <p class="fst-italic">
+                        NodeJS & Laravel PHP full stack developer <small class="text-secondary">⨉</small> Illustrator <small class="text-secondary">⨉</small> <a href="https://store.steampowered.com/app/960170/DJMAX_RESPECT_V/" target="_blank" class="d-inline-block text-decoration-none textlink">DJMax Respect V</a> pattern designer
+                    </p>
+                    <div class="m-1">
+                        <a href="/apps/" class="btn btn-outline-light rounded-pill text-start m-1 px-3 fs-5">
                             <i class="bi bi-journal-bookmark-fill gold-highlight me-2"></i>Apps
                         </a>
-                        <a href="/blog/" class="list-group-item list-group-item-action text-start mb-1">
+                        <a href="/blog/" class="btn btn-outline-light rounded-pill text-start m-1 px-3 fs-5">
                             <i class="bi bi-pencil-square gold-highlight me-2"></i>Blog
                         </a>
-                        <a href="/contact/" class="list-group-item list-group-item-action text-start mb-1">
+                        <a href="/contact/" class="btn btn-outline-light rounded-pill text-start m-1 px-3 fs-5">
                             <i class="bi bi-person-lines-fill gold-highlight me-2"></i>Contact
                         </a>
-                        <a href="/fanarts/" class="list-group-item list-group-item-action text-start mb-1">
+                        <a href="/fanarts/" class="btn btn-outline-light rounded-pill text-start m-1 px-3 fs-5">
                             <i class="bi bi-images gold-highlight me-2"></i>Fanarts
                         </a>
                     </div>
@@ -190,6 +159,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
 
     <script>
         $(document).ready(function(){
@@ -200,6 +170,7 @@
         })
 
         $("#current-year").text( (new Date).getFullYear() );
+        twemoji.parse(document.body);
     </script>
 
 </html>
