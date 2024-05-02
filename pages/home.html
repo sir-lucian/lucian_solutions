@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="<txp:page_url type="theme_path" />/styles/css/bootstrap.css">
     <link rel="stylesheet" href="<txp:page_url type="theme_path" />/styles/css/cover.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="<txp:page_url type="theme_path" />/styles/css/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -87,7 +87,7 @@
             <h2 class="h4 text-center mt-3"><img src="/images/4.png" class="sitelogo" alt="Lucian Solutions"><txp:site_name /></h2>
         </header>
 
-        <main class="d-block lucian-hidden w-100 py-2" id="hero">
+        <main class="lucian-hidden w-100 py-2" id="home_data">
             <div class="container-fluid text-center w-100" itemscope itemtype="https://schema.org/Person">
                 <div class="d-inline-block w-100">
                     <a href="/contact/"><img src="/images/111t.png" class="img-circle lucian-icon mt-0 mb-2" alt="Sir Lucian" loading="lazy" itemprop="image"></a>
@@ -166,7 +166,7 @@
 
     <script>
         $(document).ready(function(){
-            $("#hero").fadeIn(1000).removeClass("lucian-hidden");
+            $("#home_data").fadeIn(1500).removeClass("lucian-hidden");
         });
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()

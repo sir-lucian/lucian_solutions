@@ -1,11 +1,40 @@
+/*
+var waitingList = [
+    {
+        Name: "Lucian",
+        Number: 573,
+        InvNumber: 573-1000,
+        Diff: 0
+    },
+    {
+        Name: "Niiraitsu",
+        Number: 765,
+        InvNumber: 765-1000,
+        Diff: 0
+    },
+    {
+        Name: "cath_na",
+        Number: 933,
+        InvNumber: 933-1000,
+        Diff: 0
+    },
+    {
+        Name: "Ota_PP48",
+        Number: 48,
+        InvNumber: 48-1000,
+        Diff: 0
+    },
+];
+*/
 var waitingList = [];
 var playingList = [];
 var writeHTML = "";
+var playing = 0;
 
 const nextRandom =
-    '<br><button class="btn btn-outline-dark mx-1 my-2" onClick="random()">Next / สุ่มต่อ</button><button class="btn btn-outline-success mx-1 my-2" onClick="result()">End / จบการสุ่ม</button>';
+    '<br><button class="btn btn-outline-dark mx-1 my-2" onClick="random()"><i class="bi bi-dice-5 me-2"></i>Next</button><button class="btn btn-outline-success mx-1 my-2" onClick="result()"><i class="bi bi-trophy me-2"></i>Go to Result</button>';
 const lastRandom =
-    '<br><button class="btn btn-outline-success mx-1 my-2" onClick="result()">End / จบการสุ่ม</button>';
+    '<br><button class="btn btn-outline-success mx-1 my-2" onClick="result()"><i class="bi bi-trophy me-2"></i>Go to Result</button>';
 
 function switchPanel(from, to) {
     document.getElementById(from).classList.add("d-none");
@@ -27,10 +56,9 @@ function switchPanel(from, to) {
         document.getElementById("first-random-button").classList.add("d-none");
         document.getElementById("random-display").classList.add("d-none");
         document.getElementById("result-display").classList.add("d-none");
+        playing = 0;
         playingList = [];
-        writeHTML = "";
-        waitingList = waitingList.sort(compareName);
-        printWaitingList();
+        checkSorting();
         checkWaitingList();
     }
 }
@@ -112,6 +140,20 @@ function compareName(a, b) {
     if (name1 > name2) {
         comparison = 1;
     } else if (name1 < name2) {
+        comparison = -1;
+    }
+    return comparison;
+}
+
+function compareNumber(a, b) {
+    const number1 = a.Number;
+    const number2 = b.Number;
+
+    let comparison = 0;
+
+    if (number1 > number2) {
+        comparison = 1;
+    } else if (number1 < number2) {
         comparison = -1;
     }
     return comparison;
@@ -242,9 +284,7 @@ function addPerson() {
         Diff: 0,
     };
     waitingList.push(obj);
-    waitingList = waitingList.sort(compareName);
-    writeHTML = "";
-    printWaitingList();
+    checkSorting();
     checkWaitingList();
 }
 
@@ -255,8 +295,7 @@ function deletePerson(entry) {
             break;
         }
     }
-    writeHTML = "";
-    printWaitingList();
+    checkSorting();
     checkWaitingList();
 }
 
@@ -300,8 +339,7 @@ function deleteFromPlayingList(number) {
         deletedUser = playingList.pop();
         playingList = playingList.sort(compareName);
 
-        writeHTML = "";
-        printPlayingList();
+        checkSorting();
 
         return deletedUser;
     }
@@ -314,9 +352,9 @@ function firstRandom() {
     for (var count = 0; count < waitingList.length; count++) {
         playingList.push(waitingList[count]);
     }
-    writeHTML = "";
-    playingList = playingList.sort(compareName);
-    printPlayingList();
+    playing = 1;
+
+    checkSorting();
     random();
 }
 
@@ -369,12 +407,12 @@ function random() {
                         deletedUser.Name +
                         "</span> <small>#" +
                         deletedUser.Number +
-                        "</small><br><small>Eliminated / ตกรอบ!</small><br><span>Difference / ระยะห่าง = " +
+                        "</small><br><small>Eliminated!</small><br><span>Difference = " +
                         deletedUser.Diff +
                         "</span>";
                 } else {
                     resultDiv.innerHTML =
-                        '<span class="lead fw-bold">Draw! ระยะห่างเท่ากัน</span><br><small>Random Again - สุ่มอีกรอบ</small>';
+                        '<span class="lead fw-bold">Draw! </span><br><small>This is getting intense!</small>';
                 }
 
                 if (playingList.length > 1) {
@@ -398,4 +436,55 @@ function result() {
     document.getElementById("winner-list").innerHTML =
         '<img src="https://lucian.solutions/images/125.png" alt="LucianLove" class="mb-4" style="max-height: 224px; max-width: 100%; height: auto; width: auto;" width="800" height="800" loading="lazy"></img>';
     playingList.forEach(getWinnerFromPlayingList);
+}
+
+function checkSorting() {
+    const element = document.getElementsByName("sorting");
+    let sorting = "";
+    for (i = 0; i < element.length; i++) {
+        if (element[i].checked) {
+            sorting = element[i].value;
+            break;
+        }
+    }
+
+    if (playing == 0) {
+        switch (sorting) {
+            case "numericdesc":
+                waitingList = waitingList.sort(compareNumber);
+                waitingList = waitingList.reverse();
+                break;
+            case "numericasc":
+                waitingList = waitingList.sort(compareNumber);
+                break;
+            case "alphadesc":
+                waitingList = waitingList.sort(compareName);
+                waitingList = waitingList.reverse();
+                break;
+            case "alphaasc":
+            default:
+                waitingList = waitingList.sort(compareName);
+        }
+        writeHTML = "";
+        printWaitingList();
+    } else if (playing == 1) {
+        switch (sorting) {
+            case "numericdesc":
+                playingList = playingList.sort(compareNumber);
+                playingList = playingList.reverse();
+                break;
+            case "numericasc":
+                playingList = playingList.sort(compareNumber);
+                break;
+            case "alphadesc":
+                playingList = playingList.sort(compareName);
+                playingList = playingList.reverse();
+                break;
+            case "alphaasc":
+            default:
+                playingList = playingList.sort(compareName);
+        }
+        writeHTML = "";
+        printPlayingList();
+    }
 }
