@@ -1,0 +1,110 @@
+{
+    "charts": [
+        {
+            "name": "Another DAY",
+            "pack": "Portable 2",
+            "sc": [8],
+            "remarks": "Season 12"
+        },
+        {
+            "name": "Ask to Wind",
+            "local_name": "바람에게 부탁해",
+            "local_lang": "ko",
+            "pack": "Portable 1",
+            "sc": [8],
+            "remarks": "Season 12"
+        },
+        {
+            "name": "Brand NEW Days",
+            "pack": "Portable 2",
+            "sc": [5],
+            "remarks": "Season 12"
+        },
+        {
+            "name": "Desperado ~Nu Skool Mix~",
+            "pack": "Portable 3",
+            "sc": [5],
+            "remarks": "Season 12"
+        },
+        {
+            "name": "Divine Service",
+            "pack": "Portable 2",
+            "sc": [4],
+            "remarks": "Season 12"
+        },
+        {
+            "name": "Every Morning",
+            "local_name": "아침형 인간",
+            "local_lang": "ko",
+            "pack": "Portable 1",
+            "sc": [6],
+            "remarks": "DPC2022"
+        },
+        {
+            "name": "glory day (JHS Remix)",
+            "pack": "Portable 3",
+            "sc": [6],
+            "remarks": "Season 12"
+        },
+        {
+            "name": "glory day (Mintorment Remix)",
+            "pack": "Portable 3",
+            "sc": [5],
+            "remarks": "Season 12"
+        },
+        {
+            "name": "HAMSIN",
+            "pack": "Portable 1",
+            "sc": [5,6],
+            "remarks": "DPC 2023"
+        },
+        {
+            "name": "Hanz up!",
+            "pack": "Portable 3",
+            "sc": [4],
+            "remarks": "Season 12"
+        },
+        {
+            "name": "IF",
+            "pack": "Portable 3",
+            "sc": [6],
+            "remarks": "Season 12"
+        },
+        {
+            "name": "Luv is True",
+            "pack": "Portable 3",
+            "sc": [6],
+            "remarks": "Season 12"
+        },
+        {
+            "name": "Raise me up",
+            "pack": "Portable 3",
+            "sc": [8],
+            "remarks": "Season 12"
+        },
+        {
+            "name": "Seeker",
+            "pack": "Portable 2",
+            "sc": [8],
+            "remarks": "Season 12"
+        },
+        {
+            "name": "Sunny Side",
+            "pack": "Portable 1",
+            "sc": [4,5],
+            "remarks": "Season 12"
+        },
+        {
+            "name": "Tok! Tok! Tok!",
+            "pack": "Respect",
+            "sc": [4,5],
+            "remarks": "DPC 2023"
+        },
+        {
+            "name": "Yo Creo Que Si",
+            "pack": "Portable 2",
+            "sc": [5,8],
+            "remarks": "DPC 2023"
+        }
+    ]
+}
