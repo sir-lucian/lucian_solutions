@@ -51,7 +51,8 @@
 
     <div class="container-xl">
         <div class="my-5 container-lg mx-auto px-3">
-            <h1 class="comm-details-title mb-3 text-center" id="top-comm">lucian.solutions/<span class="gold-highlight">apps</span>/</h1>
+            <h1 class="comm-details-title mb-3 text-center" id="top-comm">lucian.solutions/<span
+                    class="gold-highlight">apps</span>/</h1>
             <p class="blockquote-footer text-center">Applications & Systems developed by <cite
                     title="Lucian Solutions">Sir Lucian</cite></p>
         </div>
@@ -110,7 +111,8 @@
                         <p class="card-text">ระบบ API ต่างๆจากเว็บไซต์</p>
                     </div>
 
-                    <a href="https://api.lucian.solutions/" class="stretched-link" itemprop="url mainEntityOfPage" title="Lucian Solutions API"></a>
+                    <a href="https://api.lucian.solutions/" class="stretched-link" itemprop="url mainEntityOfPage"
+                        title="Lucian Solutions API"></a>
                 </div>
             </div>
 
@@ -128,7 +130,8 @@
                         RNGesus
                     </h4>
                     <div class="mx-3">
-                        <p class="card-text"><small class="text-body-secondary">Winner randomiser for hosting events</small></p>
+                        <p class="card-text"><small class="text-body-secondary">Winner randomiser for hosting
+                                events</small></p>
                     </div>
                     <div class="m-3" itemprop="description">
                         <p class="card-text">A randomiser from the destiny you chose!</p>
@@ -160,7 +163,8 @@
                         <p class="card-text">แพทเทิร์นทั้งหมดที่เคยทำให้ DJMax Respect V</p>
                     </div>
 
-                    <a href="javascript:void(0)" class="stretched-link" itemprop="url mainEntityOfPage" title="DJMax Respect V" data-bs-toggle="modal" data-bs-target="#djmaxPatterns"></a>
+                    <a href="javascript:void(0)" class="stretched-link" itemprop="url mainEntityOfPage"
+                        title="DJMax Respect V" data-bs-toggle="modal" data-bs-target="#djmaxPatterns"></a>
                 </div>
             </div>
 
@@ -191,22 +195,32 @@
                         </thead>
                         <tbody>
                             <txp:php>
-                                $url = 'https://raw.githubusercontent.com/lucidkarn/lucian_solutions/main/json/list.djmax.json';
+                                $url =
+                                'https://raw.githubusercontent.com/lucidkarn/lucian_solutions/main/json/list.djmax.json';
                                 $json = file_get_contents($url);
                                 $data = json_decode($json);
                                 $blank_cell = '<td class="text-success text-center"></td>';
-                                $checked_cell = '<td class="text-success text-center">&check;</td>';
-                            
+                                $checked_cell = ['<td class="', ' text-center">&check;</td>'];
+
                                 foreach ($data->charts as $chart) {
-                                echo '<tr><td>'.$chart->name;
-                                echo (isset($chart->local_name) && !empty($chart->local_name)) ? ' <small
-                                        lang="'.$chart->local_lang.'">'.$chart->local_name.'</small></td>' : '</td>';
-                                echo (in_array(4, $chart->sc)) ? $checked_cell : $blank_cell;
-                                echo (in_array(5, $chart->sc)) ? $checked_cell : $blank_cell;
-                                echo (in_array(6, $chart->sc)) ? $checked_cell : $blank_cell;
-                                echo (in_array(8, $chart->sc)) ? $checked_cell : $blank_cell;
-                                echo (isset($chart->remarks) && !empty($chart->remarks)) ? '<td>'.$chart->remarks.'</td>' : $blank_cell;
-                                echo '</tr>';
+                                echo '<tr>
+                                    <td>'.$chart->name;
+                                        echo (isset($chart->local_name) && !empty($chart->local_name)) ? ' <small
+                                            lang="'.$chart->local_lang.'">'.$chart->local_name.'</small></td>' : '</td>
+                                    ';
+                                    echo '<td>'.$chart->pack.'</td>';
+                                    echo (in_array(4, $chart->sc)) ? $checked_cell[0].'text-success'.$checked_cell[1] :
+                                    $blank_cell;
+                                    echo (in_array(5, $chart->sc)) ? $checked_cell[0].'text-primary'.$checked_cell[1] :
+                                    $blank_cell;
+                                    echo (in_array(6, $chart->sc)) ? $checked_cell[0].'text-warning'.$checked_cell[1] :
+                                    $blank_cell;
+                                    echo (in_array(8, $chart->sc)) ? $checked_cell[0].'text-danger'.$checked_cell[1] :
+                                    $blank_cell;
+                                    echo (isset($chart->remarks) && !empty($chart->remarks)) ? '<td>'.$chart->remarks.'
+                                    </td>' : $blank_cell;
+                                    echo '
+                                </tr>';
                                 }
                             </txp:php>
                         </tbody>
@@ -214,7 +228,7 @@
                 </div>
             </div>
         </div>
-    </div>  
+    </div>
 
 </body>
 
