@@ -77,6 +77,14 @@
             "remarks": "Season 12"
         },
         {
+            "name": "Piano Concerto No.1",
+            "local_name": "피아노 협주곡 1번",
+            "local_lang": "ko",
+            "pack": "Portable 1",
+            "sc": [8],
+            "remarks": "Season 12"
+        },
+        {
             "name": "Raise me up",
             "pack": "Portable 3",
             "sc": [8],
