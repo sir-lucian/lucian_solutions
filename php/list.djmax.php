@@ -1,6 +1,6 @@
 <?php
 
-$url = 'https://raw.githubusercontent.com/lucidkarn/lucian_solutions/main/json/list.djmax.json';
+$url = 'https://raw.githubusercontent.com/sir-lucian/lucian_solutions/main/json/list.djmax.json';
 $json = file_get_contents($url);
 $data = json_decode($json);
 $blank_cell = '<td class="border-0 fw-bold"></td>';
