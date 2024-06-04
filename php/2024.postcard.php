@@ -1,6 +1,6 @@
 <?php
 
-$url = 'https://raw.githubusercontent.com/lucidkarn/lucian_solutions/main/postcard-hny2024.json';
+$url = 'https://raw.githubusercontent.com/sir-lucian/lucian_solutions/main/postcard-hny2024.json';
 $json = file_get_contents($url);
 $postcardList = json_decode($json);
 
