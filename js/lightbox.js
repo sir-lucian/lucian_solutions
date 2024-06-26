@@ -118,7 +118,7 @@
                             .concat(s ? "" : "active", '" style="min-height: 100px">\n\t\t\t\t\t')
                             .concat(
                                 '<div class="position-absolute top-50 start-50 translate-middle text-white"><div class="spinner-border" style="width: 3rem height: 3rem" role="status"></div></div>',
-                                '\n\t\t\t\t\t<div class="lightbox-fitscreen ratio" style="background-color: rgba(0,0,0,0.5);">'
+                                '\n\t\t\t\t\t<div class="lightbox-fitscreen ratio rounded-3" style="background-color: black;">'
                             )
                             .concat(d, "</div>\n\t\t\t\t\t")
                             .concat(r, "\n\t\t\t\t</div>");
@@ -177,7 +177,7 @@
                     .concat(this.hash, '" tabindex="-1" aria-hidden="true">\n\t\t\t\t<div class="modal-dialog modal-dialog-centered modal-')
                     .concat(
                         this.settings.size,
-                        '">\n\t\t\t\t\t<div class="modal-content border-0 bg-transparent">\n\t\t\t\t\t\t<div class="modal-body p-0">\n\t\t\t\t\t\t\t<button type="button" class="btn-close position-absolute top-0 end-0 p-3 invisible" data-bs-dismiss="modal" aria-label="Close" style="z-index: 2; background: none;">'
+                        '">\n\t\t\t\t\t<div class="modal-content border-0 bg-transparent">\n\t\t\t\t\t\t<div class="modal-body p-0">\n\t\t\t\t\t\t\t<button type="button" class="btn-close position-absolute top-0 end-0 p-3" data-bs-dismiss="modal" aria-label="Close" style="z-index: 2; background: none;">'
                     )
                     .concat(
                         '<svg xmlns="http://www.w3.org/2000/svg" style="position: relative; top: -5px;" viewBox="0 0 16 16" fill="#fff"><path d="M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z"/></svg>',

@@ -64,7 +64,7 @@
 .home {
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1)), url(/images/2t.jpg);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1)), url(/images/130.png);
     background-size: cover;
     background-position: center;
     margin-bottom: 1rem;
@@ -73,7 +73,7 @@
 .home2 {
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1)), url(/images/18t.jpg);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1)), url(/images/170.png);
     background-size: cover;
     background-position: center;
     margin-bottom: 1rem;
@@ -82,7 +82,7 @@
 .home3 {
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1)), url(/images/19t.jpg);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1)), url(/images/239.png);
     background-size: cover;
     background-position: center;
     margin-bottom: 1rem;
@@ -91,7 +91,7 @@
 .home4 {
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1)), url(/images/25t.jpg);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1)), url(/images/25.jpg);
     background-size: cover;
     background-position: center;
     margin-bottom: 1rem;
@@ -362,7 +362,6 @@
 
 .hero-bullet::marker {
     color: #d4af37;
-    font-family: 'DM Serif Display', 'Times New Roman', sans-serif;
     font-size: 1.5rem;
 }
 
@@ -380,7 +379,7 @@
 }
 
 .lang-thai {
-    font-family: 'IBM Plex Sans Thai', Arial, sans-serif;
+    color: inherit;
 }
 
 small {

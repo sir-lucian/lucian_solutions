@@ -32,9 +32,9 @@ var writeHTML = "";
 var playing = 0;
 
 const nextRandom =
-    '<br><button class="btn btn-outline-dark mx-1 my-2" onClick="random()"><i class="bi bi-dice-5 me-2"></i>Next</button><button class="btn btn-outline-success mx-1 my-2" onClick="result()"><i class="bi bi-trophy me-2"></i>Go to Result</button>';
+    '<br><div class="my-3"></div><br><button class="btn btn-outline-dark mx-1 my-2" onClick="random()"><i class="bi bi-dice-5 me-2"></i>Next</button><button class="btn btn-outline-success mx-1 my-2" onClick="result()"><i class="bi bi-trophy me-2"></i>Go to Result</button>';
 const lastRandom =
-    '<br><button class="btn btn-outline-success mx-1 my-2" onClick="result()"><i class="bi bi-trophy me-2"></i>Go to Result</button>';
+    '<br><div class="my-3"></div><br><button class="btn btn-outline-success mx-1 my-2" onClick="result()"><i class="bi bi-trophy me-2"></i>Go to Result</button>';
 
 function switchPanel(from, to) {
     document.getElementById(from).classList.add("d-none");

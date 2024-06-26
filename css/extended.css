@@ -76,36 +76,13 @@ img.emoji {
 
 .box--gradient {
 
-    &:after {
-        content: "";
-        top: 0;
-        transform: translateX(100%) rotate(30deg);
-        width: 300%;
-        height: 300%;
-        position: absolute;
-        z-index: 1;
-        animation: shine 3s infinite ease-in;
-        background: linear-gradient(
-            to right,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, 0.8) 50%,
-            rgba(128, 186, 232, 0) 99%,
-            rgba(128, 186, 232, 0) 100%
-        );
-    }
     &.silver {
         background: linear-gradient(to bottom, #bcc6cc, #eee, #bcc6cc);
     }
     &.gold {
         background: linear-gradient(to bottom, #c39738, #deb761, #c39738);
-        &:after {
-            animation-delay: 1s;
-        }
     }
     &.platinum {
         background: linear-gradient(to bottom, #d5d7e5, #eee, #d5d7e5);
-        &:after {
-            animation-delay: 2s;
-        }
     }
 }
