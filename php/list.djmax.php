@@ -10,7 +10,7 @@ $new_badge = ' <span class="badge rounded-pill bg-danger">New</span>';
 foreach ($data->charts as $chart) {
     echo '<tr><td class="border-0 fw-bold">'.$chart->name;
     echo (isset($chart->local_name) && !empty($chart->local_name)) ? ' <small lang="'.$chart->local_lang.'" class="text-muted fw-light">'.$chart->local_name.'</small>' : '';
-    echo (isset($chart->remarks) && $chart->remarks == 'Season 12') ? $new_badge : '';
+    echo (isset($chart->remarks) && $chart->remarks == 'V Liberty') ? $new_badge : '';
     echo '</td><td class="border-0">'.$chart->pack.'</td>';
     echo (in_array(4, $chart->sc)) ? $checked_cell[0].'bg-success'.$checked_cell[1] : $blank_cell;
     echo (in_array(5, $chart->sc)) ? $checked_cell[0].'bg-primary'.$checked_cell[1] : $blank_cell;
