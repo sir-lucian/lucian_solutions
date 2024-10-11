@@ -9,6 +9,15 @@
         ]
     },
     {
+        "artist": "bibi",
+        "art": [
+            {
+                "id": 289,
+                "ext": "png"
+            }
+        ]
+    },
+    {
         "artist": "Bisolte",
         "art": [
             {
@@ -257,6 +266,15 @@
         "art": [
             {
                 "id": 169,
+                "ext": "png"
+            }
+        ]
+    },
+    {
+        "artist": "Ota_PP48",
+        "art": [
+            {
+                "id": 290,
                 "ext": "png"
             }
         ]
