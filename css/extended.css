@@ -14,10 +14,10 @@ body {
 }
 
 .article-list {
-    transition: 0.5s;
+    transition: ease 0.25s;
 }
 .article-list:hover {
-    filter: brightness(80%) saturate(90%);
+    transform: scale(1.04);
 }
 
 .square-pix {
@@ -72,17 +72,4 @@ img.emoji {
     background: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%,rgba(0,0,0,0.3) 100%); /* Chrome10+,Safari5.1+ */
     background: -o-linear-gradient(top, rgba(0,0,0,0) 50%,rgba(0,0,0,0.3) 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient(top, rgba(0,0,0,0) 50%,rgba(0,0,0,0.3) 100%); /* IE10+ */
-}
-
-.box--gradient {
-
-    &.silver {
-        background: linear-gradient(to bottom, #bcc6cc, #eee, #bcc6cc);
-    }
-    &.gold {
-        background: linear-gradient(to bottom, #c39738, #deb761, #c39738);
-    }
-    &.platinum {
-        background: linear-gradient(to bottom, #d5d7e5, #eee, #d5d7e5);
-    }
 }
