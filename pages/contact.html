@@ -79,13 +79,16 @@
             <txp:image id="111" thumbnail
                 class="img-fluid mx-auto d-block border border-white border-2 rounded-circle mt-3"
                 style="height:200px; width: auto;" loading="lazy" itemprop="image" />
-            <h1 class="my-3" style="color: #d4af37; font-size: 3em;"><span itemprop="honorificPrefix">Sir</span> Lucian</h1>
-            <p class="mb-3 lead"><span itemprop="givenName">Karn</span> <span itemprop="additionalName">Lucian</span> <span
-                    itemprop="familyName">Kamolnavin</span></p>
-            <p class="d-none" itemprop="url">https://lucian.solutions</p>
-            <p class="d-none" itemprop="name">Karn Lucian Kamolnavin</p>
-            <button class="mx-auto my-2 btn btn-sm btn-outline-light rounded-pill px-4" style="display: block;" id="emailBtn" onclick="showEmail()"><i class="bi bi-search me-2"></i>Show Email</button>
-            <small><p class="mb-3 text-center text-white" id="emailShow" style="display: none;"></p></small>
+            <h1 class="mt-3 mb-0" style="color: #d4af37; font-size: 3em;"><span itemprop="honorificPrefix">Sir</span>
+                Lucian</h1>
+            <div class="py-1 lead"><span itemprop="givenName">Karn</span> <span itemprop="additionalName">Lucian</span>
+                <span itemprop="familyName">Kamolnavin</span></div>
+            <div class="d-none" itemprop="url">https://lucian.solutions</div>
+            <div class="d-none" itemprop="name">Karn Lucian Kamolnavin</div>
+            <button class="mx-auto my-2 btn btn-sm btn-outline-light border-0 rounded-pill px-4" style="display: block;"
+                id="emailBtn" onclick="showEmail()"><i class="bi bi-search me-2"></i>Show Email</button>
+            <button class="mx-auto my-2 btn btn-sm btn-outline-light border-0 rounded-pill px-4" id="emailShow"
+                style="display: none;" onclick="copyToClipboard('#emailShow')"></button>
             <div>
                 <a rel="me" href="https://mastodon.in.th/@sirlucian" target="_blank"
                     class="btn btn-outline-light border-0 rounded-circle m-1" title="Mastodon/Fediverse">
@@ -113,6 +116,19 @@
                     class="btn btn-outline-light btn-sm border-0 rounded-pill m-1">
                     <i class="bi bi-link-45deg me-2" style="color: #d4af37;"></i>Arbum
                 </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="position-fixed bottom-0 start-50 translate-middle-x p-3" style="z-index: 11">
+        <div class="toast align-items-center text-white bg-success" role="alert" aria-live="assertive"
+            aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body" style="flex: 1 1 0; min-width: 0;">
+                    Copied to clipboard.
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
             </div>
         </div>
     </div>
@@ -165,18 +181,28 @@
         });
     });
 
+    function copyToClipboard(element) {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val($(element).text()).select();
+        document.execCommand("copy");
+        $temp.remove();
+        $(".toast").toast('show');
+    }
+
     $(document).ready(function () {
         $("#page-title").fadeOut(1);
         $("#page-title").removeClass("invisible");
         $("#page-title").fadeIn(1000);
     });
 
-    
+
     function showEmail() {
         const email = ['@', '.', 'com', 'karn', 'gmail', 'lattecandy'];
+        const emailLogo = '<i class="bi bi-copy me-2"></i>';
         document.getElementById('emailBtn').style.display = 'none';
         document.getElementById('emailShow').style.display = 'block';
-        document.getElementById('emailShow').innerHTML = email[3]+email[1]+email[5]+email[0]+email[4]+email[1]+email[2];
+        document.getElementById('emailShow').innerHTML = emailLogo + email[3] + email[1] + email[5] + email[0] + email[4] + email[1] + email[2];
     }
 
 </script>

@@ -1,4 +1,4 @@
-<div class="col-lg-4 col-md-6 p-2">
+<div class="col-xl-4 col-md-6 p-2">
     <div class="position-relative article-list card border-0 p-0 bg-light h-100 shadow"
         itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
         <div class="d-block">
@@ -35,20 +35,20 @@
 
         <div class="d-block invisible w-100">
             <div class="d-flex justify-content-between text-muted px-3 w-100">
-                <div class="d-block my-3">
-                    <div><small"><i class="bi bi-person-fill me-2"></i>
+                <div class="d-block my-3" style="z-index: 2;">
+                    <div><small><i class="bi bi-person-fill me-2"></i>
                         <txp:author this_section link class="text-decoration-none" /></small>
                     </div>
                     <div><small><i class="bi bi-clock me-2"></i>
                         <txp:posted /></small>
                     </div>
                 </div>
-                <div class="d-flex flex-row-reversed flex-end my-3" style="z-index: 2; align-items: flex-end;">
+                <div class="d-flex flex-row-reversed flex-end my-3" style="align-items: flex-end;">
                     <txp:if_article_category>
-                        <span itemprop="keywords">
+                        <span itemprop="keywords" style="white-space: nowrap;">
                             <txp:category_list categories='<txp:category1 />,<txp:category2 />' children="0" break=" "
                                 trim>
-                                <txp:category title link class="btn btn-sm btn-outline-dark" />
+                                <txp:category title link class="mt-1 btn btn-sm btn-outline-dark text-nowrap" />
                             </txp:category_list>
                         </span>
                     </txp:if_article_category>
@@ -68,10 +68,10 @@
                 </div>
                 <div class="d-flex flex-row-reversed flex-end my-3" style="z-index: 2; align-items: flex-end;">
                     <txp:if_article_category>
-                        <span itemprop="keywords">
+                        <span itemprop="keywords" style="white-space: nowrap;">
                             <txp:category_list categories='<txp:category1 />,<txp:category2 />' children="0" break=" "
                                 trim>
-                                <txp:category title link class="btn btn-sm btn-outline-dark" />
+                                <txp:category title link class="mt-1 btn btn-sm btn-outline-dark text-nowrap" />
                             </txp:category_list>
                         </span>
                     </txp:if_article_category>
