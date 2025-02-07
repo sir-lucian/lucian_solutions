@@ -53,7 +53,7 @@ function getFood($list, $category, $halal)
             $reply = 'Error: Category is invalid';
     }
 
-    $pattern = '/(หมู)|(แฮม)|(เล้ง)|(ลาบ)|(น้ำตก)/g';
+    $pattern = '/(หมู)|(แฮม)|(เล้ง)|(ลาบ)|(น้ำตก)/';
 
     if (preg_match($pattern, $reply) && $halal == 1) {
         $reply = getDrink($drinksList, $category, $halal);
