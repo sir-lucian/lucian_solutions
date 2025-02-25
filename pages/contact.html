@@ -49,6 +49,17 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
+
+        .bi-bluesky::before {
+            content: "";
+            background-color: currentColor;
+            -webkit-mask: url("/files/src/bluesky.svg") no-repeat 50% 50%;
+            mask: url("/files/src/bluesky.svg") no-repeat 50% 50%;
+            -webkit-mask-size: cover;
+            mask-size: cover;
+            height: 18px;
+            width: 18px;
+        }
     </style>
 </head>
 
@@ -82,27 +93,22 @@
             <button class="mx-auto my-2 btn btn-sm btn-outline-light border-0 rounded-pill px-4" id="emailShow"
                 style="display: none;" onclick="copyToClipboard('#emailShow')"></button>
             <div>
-                <a rel="me" href="https://mastodon.in.th/@sirlucian" target="_blank"
-                    class="btn btn-outline-light border-0 rounded-circle m-1" title="Mastodon/Fediverse"><i
-                        class="bi bi-mastodon fs-5" style="color: #d4af37;"></i></a><a rel="me"
-                    href="https://x.com/sirlucian_" target="_blank"
-                    class="btn btn-outline-light border-0 rounded-circle m-1" title="X/Twitter"><i
-                        class="bi bi-twitter-x fs-5" style="color: #d4af37;"></i></a><a rel="me"
+                <a rel="me"
                     href="https://github.com/sir-lucian" target="_blank"
-                    class="btn btn-outline-light border-0 rounded-circle m-1" title="GitHub"><i
-                        class="bi bi-github fs-5" style="color: #d4af37;"></i></a>
+                    class="btn btn-outline-light border-0 rounded-circle m-1 fs-5" title="GitHub"><i
+                        class="bi bi-github" style="color: #d4af37;"></i></a>
+                <a rel="me" href="https://bsky.app/profile/lucian.solutions" target="_blank"
+                    class="btn btn-outline-light border-0 rounded-circle m-1 fs-5" title="Bluesky"><i
+                        class="bi bi-bluesky" style="color: #d4af37;"></i></a>
                 <a rel="me" href="https://discordapp.com/users/219307656777564160" target="_blank"
-                    class="btn btn-outline-light border-0 rounded-circle m-1" title="Discord"><i
-                        class="bi bi-discord fs-5" style="color: #d4af37;"></i></a>
+                    class="btn btn-outline-light border-0 rounded-circle m-1 fs-5" title="Discord"><i
+                        class="bi bi-discord" style="color: #d4af37;"></i></a>
             </div>
             <div><a rel="me" href="https://pixiv.me/holypriest" target="_blank"
                     class="btn btn-outline-light btn-sm border-0 rounded-pill m-1"><i class="bi bi-link-45deg me-2"
                         style="color: #d4af37;"></i>Pixiv</a><a rel="me" href="https://arbum.art/u/sirlucian"
                     target="_blank" class="btn btn-outline-light btn-sm border-0 rounded-pill m-1"><i
-                        class="bi bi-link-45deg me-2" style="color: #d4af37;"></i>Arbum</a><a rel="me"
-                    href="https://bsky.app/profile/lucian.solutions" target="_blank"
-                    class="btn btn-outline-light btn-sm border-0 rounded-pill m-1"><i class="bi bi-link-45deg me-2"
-                        style="color: #d4af37;"></i>Bluesky</a>
+                        class="bi bi-link-45deg me-2" style="color: #d4af37;"></i>Arbum</a>
             </div>
         </div>
     </div>

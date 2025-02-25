@@ -68,6 +68,18 @@
             width: 100%;
             height: 100%;
         }
+
+        .bi-bluesky::before {
+            content: "";
+            background-color: currentColor;
+            -webkit-mask: url("/files/src/bluesky.svg") no-repeat 50% 50%;
+            mask: url("/files/src/bluesky.svg") no-repeat 50% 50%;
+            -webkit-mask-size: cover;
+            mask-size: cover;
+            height: 16px;
+            width: 16px;
+        }
+        
     </style>
     
 </head>
@@ -75,7 +87,7 @@
 <body class="d-flex h-100 text-center text-bg-dark home-background">
     
     <div class="position-fixed traffic-video">
-        <video autoplay muted loop id="myVideo">
+        <video autoplay playsinline muted loop id="myVideo" disablePictureInPicture controlsList="nodownload">
             <source src="/images/Traffic-Small.mp4" type="video/mp4">
         </video>
     </div>
@@ -90,7 +102,7 @@
         <main class="w-100 py-2" id="home_data" style="display: none;">
             <div class="container-fluid text-center w-100" itemscope itemtype="https://schema.org/Person">
                 <div class="d-inline-block w-100">
-                    <a href="/contact/"><txp:image id="111" class="img-circle lucian-icon mt-0 mb-2" loading="lazy" itemprop="image" /></a>
+                    <a href="/contact/"><txp:image id="111" class="img-circle lucian-icon mt-0 mb-2 shadow-sm" loading="lazy" itemprop="image" /></a>
                     <h1 style="font-size: 3em;" class="gold-highlight mt-4"><span itemprop="honorificPrefix">Sir</span> Lucian</h1>
                     <h2 class="lead gold-highlight d-none"><span itemprop="givenName">Karn</span> <span itemprop="additionalName">Lucian</span> <span itemprop="familyName">Kamolnavin</span></h2>
                     <p class="d-none" itemprop="url">https://lucian.solutions</p>
@@ -129,13 +141,9 @@
                     class="d-inline-block mb-1 text-decoration-none" style="color: #ee802f;">
                     <i class="bi bi-rss-fill mx-2"></i>
                 </a>
-                <a rel="me" href="https://mastodon.in.th/@sirlucian" target="_blank"
+                <a rel="me" href="https://bsky.app/profile/lucian.solutions" target="_blank"
                     class="d-inline-block mb-1 social">
-                    <i class="bi bi-mastodon mx-2"></i>
-                </a>
-                <a rel="me" href="https://x.com/sirlucian_" target="_blank"
-                    class="d-inline-block mb-1 social">
-                    <i class="bi bi-twitter-x mx-2"></i>
+                    <i class="bi bi-bluesky mx-2"></i>
                 </a>
                 <a rel="me" href="https://github.com/sir-lucian" target="_blank"
                     class="d-inline-block mb-1 social">
@@ -144,7 +152,7 @@
             </p>
             <p>
                 Website written by <span class="text-white">Karn Lucian Kamolnavin (Sir Lucian)</span>, 2022-<span
-                    id="current-year"></span>
+                    id="current-year">Present</span>
             </p>
         </footer>
         </div>

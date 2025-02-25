@@ -1,6 +1,6 @@
 <?php
 
-define('url', 'https://lucian.solutions/files/foodmenu.json');
+define('url', 'https://api.lucian.solutions/json/foodmenu.json');
 
 function getFood($list, $category, $halal)
 {
@@ -63,6 +63,7 @@ function getFood($list, $category, $halal)
 }
 
 $ch = curl_init(url);
+curl_setopt($ch, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_2);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
     'Accept: application/json',
@@ -71,7 +72,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, [
 $res = curl_exec($ch);
 $foodList = json_decode($res);
 if (curl_errno($ch)) {
-    echo 'Error: '.curl_errno($ch).curl_error($ch);
+    echo 'Error: '.curl_errno($ch).' '.curl_error($ch).' '.CURL_SSLVERSION_TLSv1_2;
     exit;
 }
 curl_close($ch);
@@ -141,5 +142,4 @@ switch ($args[2]) {
 if ($category == 0) {
     $category = rand(1, 4);
 }
-
 echo getFood($foodList, $category, $halal);

@@ -1,6 +1,6 @@
 <?php
 
-define('url', 'https://lucian.solutions/files/drinksmenu.json');
+define('url', 'https://api.lucian.solutions/json/drinksmenu.json');
 
 function getDrink($list, $category)
 {
@@ -28,6 +28,7 @@ function getDrink($list, $category)
 }
 
 $ch = curl_init(url);
+curl_setopt($ch, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_2);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
     'Accept: application/json',
