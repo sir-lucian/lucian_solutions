@@ -56,7 +56,7 @@ function getFood($list, $category, $halal)
     $pattern = '/(หมู)|(แฮม)|(เล้ง)|(ลาบ)|(น้ำตก)/';
 
     if (preg_match($pattern, $reply) && $halal == 1) {
-        $reply = getDrink($drinksList, $category, $halal);
+        $reply = getFood($list, $category, $halal);
     } else {
         return $reply;
     }
