@@ -40,13 +40,13 @@
 
         <div class="position-relative">
             <p>
-                <a href="https://twitter.com/share?url=<txp:site_url trim="/" /><txp:page_url />" target="_blank" class="btn btn-dark border-0 mb-1 me-1 text-white"  data-size="large" data-url="https://lucian.solutions" data-hashtags="lucianavenue" data-show-count="false">
-                    <i class="bi bi-twitter-x me-2"></i>Post
+                <a href="https://bsky.app/intent/compose?text=<txp:site_url trim="/" /><txp:page_url />" target="_blank" class="btn btn-info border-0 mb-1 me-1 text-white"  data-size="large" data-url="https://lucian.solutions" data-hashtags="lucianavenue" data-show-count="false">
+                    <i class="bi bi-bluesky me-2"></i>Post
                 </a>
                 <a href="https://www.facebook.com/sharer/sharer.php?u=<txp:site_url trim="/" /><txp:page_url />" target="_blank" class=" btn btn-primary mb-1 me-1 border-0">
                     <i class="bi bi-facebook me-2"></i>Share
                 </a>
-                <button class="btn btn-secondary mb-1 me-1 border-0" onclick="copyToClipboard('#article-link')">
+                <button class="btn btn-outline-dark mb-1 me-1" onclick="copyToClipboard('#article-link')">
                     <i class="bi bi-link-45deg me-2"></i>Copy Link
                 </button>
                 <span id="article-link" class="d-none"><txp:site_url trim="/" /><txp:page_url /></span>
