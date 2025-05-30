@@ -175,7 +175,7 @@
 
                 <!-- is this the search result page? also omits the pagination links below (uses pagination format within search_display.txp instead) -->
                 <txp:if_search>
-                    <div class="container-lg">
+                    <div>
                         <txp:output_form form="search_input" />
                     </div>
                     <txp:output_form form="search_display" />
@@ -186,7 +186,7 @@
                         <txp:if_individual_article>
                             <!-- Do nothing -->
                         <txp:else />
-                            <div class="container-lg">
+                            <div>
                                 <txp:output_form form="search_input" />
                             </div>
                         </txp:if_individual_article>
@@ -196,7 +196,7 @@
 
                     <txp:else />
                         <!-- else is this an article author list? -->
-                        <div class="container-lg">
+                        <div>
                             <txp:output_form form="search_input" />
                         </div>
                         <txp:if_author>

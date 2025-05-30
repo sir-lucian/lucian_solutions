@@ -72,14 +72,14 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, [
 $res = curl_exec($ch);
 $foodList = json_decode($res);
 if (curl_errno($ch)) {
-    echo 'Error: '.curl_errno($ch).' '.curl_error($ch).' '.CURL_SSLVERSION_TLSv1_2;
+    echo 'Error: ' . curl_errno($ch) . ' ' . curl_error($ch) . ' ' . CURL_SSLVERSION_TLSv1_2;
     exit;
 }
 curl_close($ch);
 
 $halal = 0;
 $category = 0;
-$args = ['', '', ''];
+$args = [NULL, NULL, NULL];
 
 if (isset($_GET['fullarg'])) {
     $fullarg = rawurldecode($_GET['fullarg']);
@@ -96,47 +96,52 @@ if (isset($_GET['fullarg'])) {
 }
 
 if (isset($_GET['args1'])) {
-    $args[1] = $_GET['args1'];
+    $args[1] = $_GET['args1'] ?? NULL;
 }
 
 if (isset($_GET['args2'])) {
-    $args[2] = $_GET['args2'];
+    $args[2] = $_GET['args2'] ?? NULL;
 }
 
-switch ($args[1]) {
-    case 'halal':
-        $halal = 1;
-        break;
-    case 'rice':
-        $category = 1;
-        break;
-    case 'noodles':
-        $category = 2;
-        break;
-    case 'soup':
-        $category = 3;
-        break;
-    case 'others':
-        $category = 4;
-        break;
+if (isset($args[1]) && $args[1] !== NULL) {
+    switch ($args[1]) {
+        case 'halal':
+            $halal = 1;
+            break;
+        case 'rice':
+            $category = 1;
+            break;
+        case 'noodles':
+            $category = 2;
+            break;
+        case 'soup':
+            $category = 3;
+            break;
+        case 'others':
+            $category = 4;
+            break;
+    }
 }
 
-switch ($args[2]) {
-    case 'halal':
-        $halal = 1;
-        break;
-    case 'rice':
-        $category = 1;
-        break;
-    case 'noodles':
-        $category = 2;
-        break;
-    case 'soup':
-        $category = 3;
-        break;
-    case 'others':
-        $category = 4;
-        break;
+if (isset($args[2]) && $args[2] !== NULL) {
+
+    switch ($args[2]) {
+        case 'halal':
+            $halal = 1;
+            break;
+        case 'rice':
+            $category = 1;
+            break;
+        case 'noodles':
+            $category = 2;
+            break;
+        case 'soup':
+            $category = 3;
+            break;
+        case 'others':
+            $category = 4;
+            break;
+    }
 }
 
 if ($category == 0) {

@@ -37,14 +37,14 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, [
 $res = curl_exec($ch);
 $drinksList = json_decode($res);
 if (curl_errno($ch)) {
-    echo 'Error: '.curl_errno($ch).curl_error($ch);
+    echo 'Error: ' . curl_errno($ch) . curl_error($ch);
     exit;
 }
 curl_close($ch);
 
 $partyMode = 0;
 $category = 0;
-$args = ['', '', ''];
+$args = [NULL, NULL, NULL];
 
 if (isset($_GET['fullarg'])) {
     $fullarg = rawurldecode($_GET['fullarg']);
@@ -58,53 +58,60 @@ if (isset($_GET['fullarg'])) {
 }
 
 if (isset($_GET['args1'])) {
-    $args[1] = $_GET['args1'];
+    $args[1] = $_GET['args1'] ?? NULL;
 }
 
 if (isset($_GET['args2'])) {
-    $args[2] = $_GET['args2'];
+    $args[2] = $_GET['args2'] ?? NULL;
 }
 
-switch ($args[1]) {
-    case 'partymode':
-        $partyMode = 1;
-        break;
-    case 'coffee':
-        $category = 1;
-        break;
-    case 'tea':
-        $category = 2;
-        break;
-    case 'juice':
-        $category = 3;
-        break;
-    case 'soda':
-        $category = 4;
-        break;
-    case 'alcohol':
-        $category = 5;
-        break;
+if (isset($args[1]) && $args[1] !== NULL) {
+
+    switch ($args[1]) {
+        case 'partymode':
+            $partyMode = 1;
+            break;
+        case 'coffee':
+            $category = 1;
+            break;
+        case 'tea':
+            $category = 2;
+            break;
+        case 'juice':
+            $category = 3;
+            break;
+        case 'soda':
+            $category = 4;
+            break;
+        case 'alcohol':
+            $category = 5;
+            break;
+    }
+
 }
 
-switch ($args[2]) {
-    case 'partymode':
-        $partyMode = 1;
-        break;
-    case 'coffee':
-        $category = 1;
-        break;
-    case 'tea':
-        $category = 2;
-        break;
-    case 'juice':
-        $category = 3;
-        break;
-    case 'soda':
-        $category = 4;
-        break;
-    case 'alcohol':
-        $category = 5;
-        break;
+if (isset($args[2]) && $args[2] !== NULL) {
+
+    switch ($args[2]) {
+        case 'partymode':
+            $partyMode = 1;
+            break;
+        case 'coffee':
+            $category = 1;
+            break;
+        case 'tea':
+            $category = 2;
+            break;
+        case 'juice':
+            $category = 3;
+            break;
+        case 'soda':
+            $category = 4;
+            break;
+        case 'alcohol':
+            $category = 5;
+            break;
+    }
 }
 
 if ($category == 0) {
