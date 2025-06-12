@@ -32,12 +32,21 @@
             transition: 0.25s;
 
             &:hover {
-                color: #d4af37;
+                color: #D4AF37;
+            }
+        }
+
+        a.social-red {
+            color: black;
+            transition: 0.25s;
+
+            &:hover {
+                color: #DC143C;
             }
         }
 
         a.textlink {
-            color: #d4af37;
+            color: #D4AF37;
             transition: 0.25s;
 
             &:hover {
@@ -45,8 +54,29 @@
             }
         }
 
+        a.textlink-red {
+            color: #DC143C;
+            transition: 0.25s;
+
+            &:hover {
+                color: #ff7388;
+            }
+        }
+
         .gold-highlight {
-            color: #d4af37;
+            color: #D4AF37;
+        }
+
+        .red-highlight {
+            color: #DC143C
+        }
+
+        img.emoji {
+            width: 1.2em;
+            height: 1.2em;
+            vertical-align: middle;
+            margin: 0 0.25em;
+            display: inline-block;
         }
 
         .lang-thai {
@@ -88,7 +118,15 @@
     
     <div class="position-fixed traffic-video">
         <video autoplay playsinline muted loop id="myVideo" disablePictureInPicture controlsList="nodownload">
-            <source src="/images/Traffic-Small.mp4" type="video/mp4">
+            <txp:php>
+                if (intval(date('n')) == 4 && intval(date('j')) == 1 || intval(date('n')) == 12 && intval(date('j')) == 25) {
+                    echo '<source src="/images/lucia_bgv.mp4" type="video/mp4">';
+                }
+                else {
+                    echo '<source src="/images/Traffic-Small.mp4" type="video/mp4">';
+                }
+            </txp:php>
+            
         </video>
     </div>
     <div class="cover-container w-100 mx-auto" style="align-items: center;">
@@ -96,34 +134,52 @@
         <div class="text-center w-100 h-100 d-flex" style="flex-direction: column; justify-content: space-between;">
 
         <header class="d-block container-fluid w-100 mb-4">
-            <h2 class="h4 text-center mt-3"><img src="/images/4.png" class="sitelogo" alt="Lucian Solutions"><txp:site_name /></h2>
+            <h2 class="h4 text-center mt-3"><img src="/images/4.png" class="sitelogo" id="sitelogo" alt="Lucian Solutions">
+                <txp:php>
+                    if (intval(date('n')) == 4 && intval(date('j')) == 1 || intval(date('n')) == 12 && intval(date('j')) == 25) {
+                        echo 'Mesugaki Solutions';
+                    }
+                    else {
+                        echo '<txp:site_name />';
+                    }
+                </txp:php>
+            </h2>
         </header>
 
         <main class="w-100 py-2" id="home_data" style="display: none;">
             <div class="container-fluid text-center w-100" itemscope itemtype="https://schema.org/Person">
                 <div class="d-inline-block w-100">
-                    <a href="/contact/"><txp:image id="111" class="img-circle lucian-icon mt-0 mb-2 shadow-sm" loading="lazy" itemprop="image" /></a>
-                    <h1 style="font-size: 3em;" class="gold-highlight mt-4"><span itemprop="honorificPrefix">Sir</span> Lucian</h1>
+                    <a href="/contact/">
+                        <txp:php>
+                            if (intval(date('n')) == 4 && intval(date('j')) == 1 || intval(date('n')) == 12 && intval(date('j')) == 25) {
+                                echo '<txp:image id="335" class="img-circle lucian-icon mt-0 mb-2 shadow-sm" loading="lazy" itemprop="image" />';
+                            }
+                            else {
+                                echo '<txp:image id="111" class="img-circle lucian-icon mt-0 mb-2 shadow-sm" loading="lazy" itemprop="image" />';
+                            }
+                        </txp:php>
+                    </a>
+                    <h1 style="font-size: 3em;" class="gold-highlight mt-4" id ="lucia-switch-title"><span itemprop="honorificPrefix">Sir</span> Lucian</h1>
                     <h2 class="lead gold-highlight d-none"><span itemprop="givenName">Karn</span> <span itemprop="additionalName">Lucian</span> <span itemprop="familyName">Kamolnavin</span></h2>
                     <p class="d-none" itemprop="url">https://lucian.solutions</p>
                     <p class="d-none" itemprop="name">Karn Lucian Kamolnavin</p>
-                    <p class="lead">
+                    <p class="lead" id="lucia-switch-description">
                         Greetings! I'm&nbsp;<strong>Lucian</strong>, a developer from Thailand.
                     </p>
-                    <p class="fst-italic">
+                    <p class="fst-italic" id="lucia-switch-subtitle">
                         Developer&nbsp;<small class="text-secondary">⨉</small>&nbsp;Guest pattern designer of&nbsp;<a href="https://store.steampowered.com/app/960170/DJMAX_RESPECT_V/" target="_blank" class="d-inline-block text-decoration-none textlink">DJMax Respect V</a>
                     </p>
                     <div class="m-1">
-                        <a href="/apps/" class="btn btn-outline-light rounded-pill border-0 text-start m-1 px-3 fs-5">
+                        <a href="/apps/" class="home-menu-btn btn btn-outline-light rounded-pill border-0 text-start m-1 px-3 fs-5">
                             <i class="bi bi-journal-bookmark-fill gold-highlight me-2"></i>Apps
                         </a>
-                        <a href="/blog/" class="btn btn-outline-light rounded-pill border-0 text-start m-1 px-3 fs-5">
+                        <a href="/blog/" class="home-menu-btn btn btn-outline-light rounded-pill border-0 text-start m-1 px-3 fs-5">
                             <i class="bi bi-pencil-square gold-highlight me-2"></i>Blog
                         </a>
-                        <a href="/contact/" class="btn btn-outline-light rounded-pill border-0 text-start m-1 px-3 fs-5">
+                        <a href="/contact/" class="home-menu-btn btn btn-outline-light rounded-pill border-0 text-start m-1 px-3 fs-5">
                             <i class="bi bi-person-lines-fill gold-highlight me-2"></i>Contact
                         </a>
-                        <a href="/fanarts/" class="btn btn-outline-light rounded-pill border-0 text-start m-1 px-3 fs-5">
+                        <a href="/fanarts/" class="home-menu-btn btn btn-outline-light rounded-pill border-0 text-start m-1 px-3 fs-5">
                             <i class="bi bi-images gold-highlight me-2"></i>Fanarts
                         </a>
                     </div>
@@ -166,10 +222,81 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="/themes/lucian-theme/styles/twemoji/twemoji.min.js"></script>
 
     <script lang="js">
-        $('#home_data').fadeIn();
-        document.getElementById('current-year').innerHTML = new Date().getFullYear();
+
+    function switchClass(deleteClass, addClass) {
+        const elements = document.querySelectorAll('.' + deleteClass);
+        elements.forEach(element => {
+            element.classList.remove(deleteClass);
+            element.classList.add(addClass);
+        });
+    }
+
+    function switchContentToLucia() {
+        switchClass('gold-highlight', 'red-highlight');
+        switchClass('textlink', 'textlink-red');
+        switchClass('social', 'social-red');
+        switchClass('text-white', 'text-black');
+        switchClass('text-white-50', 'text-black-50');
+        
+        const elements = document.querySelectorAll('.home-menu-btn');
+        elements.forEach(element => {
+            element.classList.add('text-black');
+        });
+
+        const lucianIcon = document.getElementById('sitelogo');
+        if (lucianIcon) {
+            lucianIcon.style.filter = 'invert(1) hue-rotate(180deg)';
+        }
+
+        window.document.body.classList.remove('text-bg-dark');
+
+        const elementsBackdrop = document.querySelectorAll('.cover-container');
+        if (elementsBackdrop) {
+            elementsBackdrop[0].style.backdropFilter = 'none';
+            elementsBackdrop[0].style.webkitBackdropFilter = 'none';
+            elementsBackdrop[0].style.backgroundColor = 'transparent';
+        }
+
+        const luciaSwitchTitle = document.getElementById('lucia-switch-title');
+        if (luciaSwitchTitle) {
+            luciaSwitchTitle.innerHTML = 'LuciaLatte'; // New Title
+        }
+
+        const luciaSwitchDescription = document.getElementById('lucia-switch-description');
+        if (luciaSwitchDescription) {
+            luciaSwitchDescription.innerHTML = 'Your local sassy assistant, Lucia, is here~❤️'; // New Description
+        }
+
+        const luciaSwitchSubtitle = document.getElementById('lucia-switch-subtitle');
+        if (luciaSwitchSubtitle) {
+            luciaSwitchSubtitle.innerHTML = 'Want some eggs, big bro~? 😘'; // New Subtitle
+        }
+    }
+
+    const isTheDay = 
+    <txp:php>
+        if (intval(date('n')) == 4 && intval(date('j')) == 1 || intval(date('n')) == 12 && intval(date('j')) == 25) {
+            echo 'true';
+        } else {
+            echo 'false';
+        }
+    </txp:php>;
+
+    if (isTheDay) {
+        // April Fools' Day
+        // console.log('Switching to LuciaLatte for April Fools\' Day');
+        switchContentToLucia();
+    } else {
+        // console.log('Not April Fools\' Day, keeping original content');
+    }
+
+    $('#home_data').fadeIn();
+    document.getElementById('current-year').innerHTML = new Date().getFullYear();
+
+    twemoji.parse(document.body);
     </script>
 
 </html>
