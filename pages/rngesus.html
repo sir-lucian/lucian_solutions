@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="/themes/lucian-theme/styles/css/bootstrap.css">
     <link rel="stylesheet" href="/themes/lucian-theme/styles/css/navbar.css">
     <link rel="stylesheet" href="/themes/lucian-theme/styles/css/toggle-switch.css">
-    <link rel="stylesheet" href="/themes/lucian-theme/styles/css/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="<txp:page_url type="theme_path" />/styles/css/bootstrap-icons-1.13.1/bootstrap-icons.min.css">
 
     <style>
         a {
@@ -101,7 +101,7 @@
                 <div class="container-fluid py-3 text-center text-md-start rounded-3" style="border: 1px solid #D4AF37;">
                     <h1 class="d-2 text-center">Survivors</h1>
                     <p class="lang-th text-center">ผู้โชคดีที่เหลืออยู่</p>
-                    <div class="text-center">
+                    <div class="text-center d-flex flex-wrap justify-content-center gap-1">
                         <input type="radio" class="btn-check" name="sorting" oninput="checkSorting();" id="sort-alpha-asc" value="alphaasc" autocomplete="off" checked>
                         <label class="btn btn-sm btn-outline-danger border-0 rounded-circle" for="sort-alpha-asc"><i class="bi bi-sort-alpha-down fs-5"></i></label>
 
@@ -113,6 +113,8 @@
 
                         <input type="radio" class="btn-check" name="sorting" oninput="checkSorting();" id="sort-numeric-desc" value="numericdesc" autocomplete="off">
                         <label class="btn btn-sm btn-outline-danger border-0 rounded-circle" for="sort-numeric-desc"><i class="bi bi-sort-numeric-up-alt fs-5"></i></label>
+
+                        <button class="btn btn-sm btn-warning rounded-md" onClick="clearWaitingList()"><i class="bi bi-trash3 me-2"></i>Clear All</button>
                     </div>
                     <hr class="lucian-divider" />
                     <div class="py-3" id="name-list"></div>
@@ -133,10 +135,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script>
 
-        $(function () {
+        window.onload = function () {
+            loadFromLocalStorage();
             printWaitingList();
             checkWaitingList();
-        });
+        };
 
         document
             .getElementById("inputName")
